@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sevenfeettravel.com/sitemap.xml
+Sitemap: https://www.sevenfeettravel.com/sitemap.xml
