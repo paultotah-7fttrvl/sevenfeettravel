@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Feet Travel | Boutique Travel Planning by Paul Totah</title>
+<meta name="description" content="Seven Feet Travel plans personalized international trips: boutique itineraries, hotels and dining, Sydney guides, hotel rate scanning, and transparent fees. Independent travel advisor Paul Totah, Washington (Fora Travel).">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Paul Totah">
+<meta property="og:title" content="Seven Feet Travel | Boutique Travel Planning">
+<meta property="og:description" content="Personalized international travel planning from Paul Totah: curated stays, dining, Sydney destination guides, transparent fees, and the Hotel Scanner tool.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seven Feet Travel">
+<meta name="twitter:description" content="Boutique travel planning for trips that fit how you travel. Sydney guides, transparent fees, Hotel Scanner.">
+<meta property="og:url" content="https://sevenfeettravel.com/">
+<meta property="og:image" content="https://sevenfeettravel.com/paul.PNG">
+<meta name="twitter:image" content="https://sevenfeettravel.com/paul.PNG">
+<link rel="canonical" href="https://sevenfeettravel.com/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Seven Feet Travel","url":"https://sevenfeettravel.com/","description":"Boutique international travel planning, itineraries, hotels, and Sydney destination guides.","email":"paul.totah@fora.travel","founder":{"@type":"Person","name":"Paul Totah"},"areaServed":{"@type":"Place","name":"Worldwide"},"sameAs":["https://www.instagram.com/sevenfeettravel/"]}
+</script>
+<style>
+:root {
+  --black: #0d0d0d;
+  --offblack: #141414;
+  --charcoal: #1e1e1e;
+  --mid: #2a2a2a;
+  --border: #2a2a2a;
+  --white: #ffffff;
+  --offwhite: #f5f4f1;
+  --muted: rgba(255,255,255,0.66);
+  --gold: #c8a84b;
+  --gold-dim: rgba(200,168,75,0.15);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--black); color:var(--white); font-family:'Inter',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  height:68px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 48px; transition:background 0.4s, border-color 0.4s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled { background:rgba(13,13,13,0.96); backdrop-filter:blur(14px); border-color:var(--border); }
+.nav-logo { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--white); text-decoration:none; letter-spacing:0.03em; }
+.nav-logo em { font-style:italic; }
+.nav-logo em span { color:inherit; }
+.nav-right { display:flex; align-items:center; gap:20px; }
+.nav-ig-link { display:flex; align-items:center; gap:6px; font-size:11px; font-weight:500; letter-spacing:0.1em; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+.nav-ig-link:hover { color:var(--gold); }
+.nav-ig-link svg { width:13px; height:13px; }
+.menu-btn {
+  display:flex; align-items:center; gap:9px;
+  background:none; border:1px solid rgba(255,255,255,0.14); border-radius:40px;
+  padding:8px 18px; cursor:pointer; font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--muted); transition:all 0.2s;
+}
+.menu-btn:hover { color:var(--white); border-color:rgba(255,255,255,0.35); }
+.menu-btn .menu-lines { display:flex; flex-direction:column; gap:4px; }
+.menu-btn .menu-lines span { display:block; width:14px; height:1px; background:currentColor; transition:all 0.2s; }
+
+/* ── FULL MENU OVERLAY ── */
+.menu-overlay {
+  position:fixed; inset:0; z-index:500;
+  background:linear-gradient(135deg,rgba(9,9,9,0.99),rgba(20,20,20,0.98)); backdrop-filter:blur(20px);
+  display:flex; flex-direction:column;
+  padding:88px 72px 60px;
+  overflow-y:auto;
+  opacity:0; pointer-events:none; transition:opacity 0.3s ease;
+}
+.menu-overlay.open { opacity:1; pointer-events:all; }
+
+.menu-close {
+  position:fixed; top:22px; right:48px; z-index:501;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16); border-radius:999px; cursor:pointer;
+  font-family:'Inter',sans-serif; font-size:11px; font-weight:500;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:rgba(255,255,255,0.82); display:flex; align-items:center; gap:8px; padding:9px 16px; transition:color 0.2s,border-color 0.2s,background 0.2s;
+}
+.menu-close:hover { color:var(--white); border-color:rgba(255,255,255,0.32); background:rgba(255,255,255,0.1); }
+.menu-close-x { font-size:16px; line-height:1; }
+
+.menu-body {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:48px 56px; width:100%; max-width:1100px;
+  padding:34px; border:1px solid rgba(255,255,255,0.1); border-radius:18px;
+  background:rgba(255,255,255,0.035); box-shadow:0 24px 80px rgba(0,0,0,0.34);
+}
+.menu-col-title {
+  font-size:9.5px; font-weight:600; letter-spacing:0.26em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:18px; padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,0.14);
+}
+.menu-links { list-style:none; display:flex; flex-direction:column; gap:2px; }
+.menu-links > li { display:flex; flex-direction:column; }
+.menu-links a {
+  font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600;
+  color:rgba(255,255,255,0.92); text-decoration:none; padding:6px 0;
+  transition:color 0.2s,transform 0.2s; line-height:1.12;
+}
+.menu-links a:hover { color:var(--gold); transform:translateX(3px); }
+
+/* Accordion sub-items */
+.menu-acc-toggle {
+  background:none; border:none; cursor:pointer;
+  font-size:10px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;
+  color:rgba(255,255,255,0.62); font-family:'Inter',sans-serif;
+  padding:2px 0 8px; text-align:left; transition:color 0.2s;
+  display:flex; align-items:center; gap:5px;
+}
+.menu-acc-toggle:hover { color:var(--gold); }
+.menu-acc-arrow { transition:transform 0.2s; display:inline-block; }
+.menu-acc-toggle.is-open .menu-acc-arrow { transform:rotate(180deg); }
+.menu-sub { list-style:none; display:none; flex-direction:column; gap:1px; padding-left:12px; border-left:1px solid rgba(200,168,75,0.4); margin-bottom:8px; }
+.menu-sub.open { display:flex; }
+.menu-sub a { font-family:'Inter',sans-serif; font-size:12.5px; font-weight:400; color:rgba(255,255,255,0.72); padding:4px 0; transition:color 0.2s; }
+.menu-sub a:hover { color:var(--gold); }
+
+.menu-footer { margin-top:auto; padding-top:48px; border-top:1px solid rgba(255,255,255,0.12); }
+.menu-footer a { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+.menu-footer a:hover { opacity:0.8; }
+
+@media (max-width:820px) {
+  nav { padding:0 20px; }
+  .nav-ig-link { display:none; }
+  .menu-overlay { padding:88px 28px 48px; }
+  .menu-close { right:20px; }
+  .menu-body { grid-template-columns:1fr 1fr; gap:36px 28px; padding:24px; }
+  .menu-links a { font-size:22px; }
+}
+@media (max-width:560px) {
+  .menu-overlay { padding:84px 18px 36px; }
+  .menu-body { grid-template-columns:1fr; gap:30px; padding:22px; border-radius:14px; }
+}
+
+/* ── HERO ── */
+#hero { background:var(--black); padding:80px 20px 20px; min-height:100vh; display:flex; flex-direction:column; }
+.hero-card { flex:1; border-radius:20px; overflow:hidden; position:relative; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; padding:56px 40px 52px; text-align:center; min-height:calc(100vh - 100px); }
+.hero-card-photo { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1733697968338-21feb4b7a4c3?w=1600&fit=crop&q=90'); background-size:cover; background-position:center 40%; transition:transform 6s ease; }
+.hero-card:hover .hero-card-photo { transform:scale(1.03); }
+.hero-card-vignette { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.45) 40%,rgba(0,0,0,0.1) 100%); }
+.hero-card-content { position:relative; z-index:10; display:flex; flex-direction:column; align-items:center; max-width:800px; }
+.hero-eyebrow { font-size:11px; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:24px; display:flex; align-items:center; gap:12px; }
+.hero-eyebrow::before,.hero-eyebrow::after { content:''; display:block; width:28px; height:1px; background:var(--gold); opacity:0.7; }
+.hero-headline { font-family:'Cormorant Garamond',serif; font-size:clamp(72px,12vw,140px); font-weight:700; line-height:0.92; letter-spacing:-0.02em; color:var(--white); margin-bottom:36px; }
+.hero-headline em { font-style:italic; color:var(--gold); }
+.hero-actions { display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center; }
+.btn-primary { display:inline-block; background:var(--gold); color:var(--black); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; padding:14px 28px; border-radius:40px; text-decoration:none; transition:background 0.2s,transform 0.2s; }
+.btn-primary:hover { background:#b5922e; transform:translateY(-1px); }
+.scroll-cue { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; gap:6px; color:rgba(255,255,255,0.35); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; }
+.scroll-line { width:1px; height:32px; background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.4)); animation:pulse 2s ease-in-out infinite; }
+@media (max-width:820px) {
+  #hero { padding:72px 12px 12px; }
+  .hero-card { padding:40px 24px 44px; border-radius:14px; }
+  .hero-headline { font-size:clamp(56px,16vw,88px); }
+}
+
+/* ── DESTINATION MOSAIC ── */
+.dest-mosaic { display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:repeat(2,200px); gap:3px; }
+.d-photo { background-size:cover; background-position:center; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:12px; transition:transform 0.4s; }
+.d-photo:hover { transform:scale(1.02); z-index:2; }
+.d-photo::before { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 55%); }
+.d-label { position:relative; z-index:1; font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.9); }
+@media (max-width:820px) { .dest-mosaic { grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(5,160px); } }
+
+/* ── SECTIONS ── */
+.sec { padding:100px 48px; }
+.sec-light { background:var(--offwhite); color:#111; }
+.sec-mid { background:var(--offblack); }
+.sec-inner { max-width:1060px; margin:0 auto; }
+.lbl { font-size:10.5px; font-weight:500; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.lbl::before { content:''; display:block; width:24px; height:1px; background:var(--gold); }
+.sec-light .lbl { color:#8a7040; }
+.sec-light .lbl::before { background:#8a7040; }
+h2.dsp { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,5vw,64px); font-weight:300; line-height:1.05; letter-spacing:-0.01em; margin-bottom:36px; }
+h2.dsp em { font-style:italic; color:var(--gold); }
+.sec-light h2.dsp em { color:#a07030; }
+.rule { width:40px; height:1px; background:var(--gold); margin-bottom:32px; opacity:0.7; }
+.rule-dk { background:#8a7040; }
+
+/* ── ABOUT (The Agency) ── tighter rhythm ── */
+#about-sf {
+  padding:48px 40px 52px;
+}
+#about-sf .lbl { margin-bottom:10px; }
+#about-sf h2.dsp { margin-bottom:12px; color:#111; }
+#about-sf .rule-dk { margin-top:16px; margin-bottom:16px; }
+.about-intro { font-size:15px; font-weight:300; color:#555; line-height:1.75; max-width:580px; margin-top:0; }
+.about-layout { display:grid; grid-template-columns:1fr 340px; gap:42px; align-items:start; margin-top:12px; }
+.about-left { display:flex; flex-direction:column; gap:20px; }
+
+/* path cards */
+.about-paths { display:flex; flex-direction:column; gap:2px; }
+.about-path-card { background:#fff; border:1px solid #e0dbd4; border-radius:2px; overflow:hidden; }
+.about-path-header {
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+  padding:20px 22px; cursor:pointer; background:none; border:none;
+  text-align:left; gap:16px; transition:background 0.2s;
+}
+.about-path-header:hover { background:#faf8f5; }
+.about-path-label { font-size:9.5px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#a07030; margin-bottom:4px; }
+.about-path-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:#111; line-height:1.1; margin-bottom:5px; }
+.about-path-preview { font-size:11.5px; color:#666; letter-spacing:0.02em; }
+.about-path-arrow { font-size:18px; color:#c8a84b; flex-shrink:0; transition:transform 0.3s ease; display:inline-block; line-height:1; }
+.about-path-arrow.open { transform:rotate(180deg); }
+.about-path-body { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.about-path-body.open { max-height:700px; }
+.about-path-inner { padding:4px 22px 22px; border-top:1px solid #f0ece6; }
+.about-path-story { font-size:13px; color:#555; font-style:italic; line-height:1.75; padding:14px 0 12px; }
+.about-path-items { display:flex; flex-direction:column; gap:13px; }
+.about-path-item { display:flex; align-items:flex-start; gap:11px; }
+.api-dot { width:5px; height:5px; border-radius:50%; background:#c8a84b; flex-shrink:0; margin-top:5px; opacity:0.7; }
+.about-path-item strong { display:block; font-size:12.5px; font-weight:600; color:#1a1a1a; margin-bottom:2px; }
+.about-path-item p { font-size:12.5px; color:#555; line-height:1.6; margin:0; }
+
+/* stats */
+.stat-row { display:flex; gap:24px; padding-top:20px; border-top:1px solid #e0dbd4; flex-wrap:wrap; }
+.stat-item .stat-n { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:600; color:#a07030; line-height:1; }
+.stat-item .stat-l { font-size:10px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#bbb; margin-top:3px; }
+
+/* single paul photo */
+.about-right { position:sticky; top:88px; }
+.about-photo { border-radius:2px; overflow:hidden; border:1px solid #e0dbd4; aspect-ratio:3/4; box-shadow:0 8px 32px rgba(0,0,0,0.08); }
+.about-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+
+@media (max-width:820px) {
+  #about-sf { padding:36px 24px 40px; }
+  .about-layout { grid-template-columns:1fr; gap:28px; }
+  .about-right { position:static; order:-1; }
+  .about-photo { aspect-ratio:4/3; }
+}
+
+/* ── SERVICES / TIERS ── */
+.tier-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:40px; }
+.tier-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-bottom:40px; }
+.tier-grid-wide { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-bottom:40px; }
+.tier { background:var(--charcoal); border:1px solid var(--border); overflow:hidden; display:flex; flex-direction:column; transition:border-color 0.2s,transform 0.2s; }
+.tier:hover { border-color:rgba(200,168,75,0.35); transform:translateY(-2px); }
+.tier.ft { border-color:rgba(200,168,75,0.45); box-shadow:0 0 28px rgba(200,168,75,0.06); }
+.ta-top { height:4px; flex-shrink:0; width:100%; }
+.t1  .ta-top { background:#4a6b7a; }
+.t1b .ta-top { background:#2c4a6e; }
+.t2  .ta-top { background:var(--gold); }
+.t3  .ta-top { background:#b5541a; }
+.tg  .ta-top { background:#2a7a6b; }
+.tr1 .ta-top { background:#4a6b7a; }
+.tr2 .ta-top { background:var(--gold); }
+.tb-card { padding:24px; flex:1; display:flex; flex-direction:column; }
+.t-lbl { font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.58); margin-bottom:6px; }
+.t-name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--white); margin-bottom:8px; }
+.t-desc { font-size:13px; color:rgba(255,255,255,0.68); line-height:1.65; margin-bottom:16px; flex:1; }
+.i-lbl { font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.58); margin-bottom:6px; }
+.i-list { list-style:none; display:flex; flex-direction:column; gap:5px; margin-bottom:20px; }
+.i-list li { font-size:12.5px; color:rgba(255,255,255,0.74); display:flex; align-items:flex-start; gap:8px; line-height:1.4; }
+.i-list li::before { content:'•'; color:var(--gold); opacity:0.9; flex-shrink:0; }
+.card-price-row { display:flex; align-items:flex-end; justify-content:space-between; margin-top:auto; padding-top:16px; border-top:1px solid var(--border); }
+.p-num { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:300; color:var(--white); line-height:1; }
+.p-note { font-size:10.5px; color:rgba(255,255,255,0.58); margin-top:4px; line-height:1.5; }
+.bdg { display:inline-block; font-size:9px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:4px 9px; border-radius:20px; border:1px solid; }
+.b-free  { border-color:rgba(255,255,255,0.25); color:rgba(255,255,255,0.7); }
+.b-pop   { border-color:rgba(200,168,75,0.5);   color:var(--gold); }
+.b-prem  { border-color:rgba(181,84,26,0.5);    color:#d47040; }
+.b-grp   { border-color:rgba(42,122,107,0.5);   color:#3aaa90; }
+.b-cash  { border-color:rgba(255,255,255,0.25); color:rgba(255,255,255,0.7); }
+.b-bank  { border-color:rgba(200,168,75,0.5);   color:var(--gold); }
+@media (max-width:820px) { .tier-grid,.tier-grid-wide,.tier-grid-2 { grid-template-columns:1fr; } }
+
+/* ── DESTINATION GUIDES ── */
+.guides-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:4px; }
+.guide-card { background:var(--charcoal); border:1px solid var(--border); border-radius:2px; overflow:hidden; display:flex; flex-direction:column; transition:border-color 0.25s,transform 0.25s; cursor:pointer; }
+.guide-card:hover { border-color:rgba(200,168,75,0.4); transform:translateY(-3px); }
+.guide-card button { all:unset; display:flex; flex-direction:column; width:100%; height:100%; cursor:pointer; text-align:left; }
+.guide-img { aspect-ratio:16/9; background:var(--mid); background-size:cover; background-position:center; display:flex; align-items:flex-start; justify-content:flex-start; padding:12px; position:relative; overflow:hidden; }
+.guide-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.05) 100%); pointer-events:none; }
+.guide-img-tag { position:relative; z-index:2; font-size:9px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; background:rgba(200,168,75,0.92); color:var(--black); padding:3px 9px; border-radius:20px; }
+.guide-img-bg { position:absolute; inset:0; background-size:cover; background-position:center; }
+.coming-soon-card { pointer-events:none; }
+.coming-soon-card .guide-img-bg { filter:blur(5px); transform:scale(1.1); }
+.guide-cs-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); z-index:3; }
+.cs-badge { font-size:10px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:white; padding:6px 18px; border-radius:20px; border:1px solid rgba(255,255,255,0.45); background:rgba(0,0,0,0.4); }
+.guide-body { padding:18px 18px 20px; flex:1; display:flex; flex-direction:column; }
+.guide-region { font-size:10px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.58); margin-bottom:5px; }
+.guide-title { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--white); margin-bottom:8px; }
+.guide-desc { font-size:12.5px; color:rgba(255,255,255,0.68); line-height:1.65; flex:1; margin-bottom:16px; }
+.guide-cta { font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:gap 0.2s; }
+.guide-card:hover .guide-cta { gap:10px; }
+.sec-light .guide-card { background:#fff; border-color:#e0dbd4; }
+.sec-light .guide-card:hover { border-color:rgba(160,112,48,0.45); }
+.sec-light .guide-region { color:#999; }
+.sec-light .guide-title { color:#111; }
+.sec-light .guide-desc { color:#666; }
+.sec-light .guide-card.coming-soon-card { background:#f5f3ef; }
+.sec-light .guide-cta { color:#a07030; }
+@media (max-width:820px) { .guides-grid { grid-template-columns:1fr; } }
+
+/* ── GUIDE MODAL ── */
+.guide-modal { position:fixed; inset:0; z-index:700; display:none; align-items:center; justify-content:center; padding:28px; background:rgba(5,5,5,0.78); backdrop-filter:blur(18px); }
+.guide-modal.open { display:flex; }
+.guide-modal-panel { width:min(1040px,100%); max-height:92vh; overflow:auto; background:#f7f4ee; color:#111; border-radius:24px; box-shadow:0 28px 90px rgba(0,0,0,0.45); position:relative; }
+.guide-modal-hero-shell { position:relative; border-radius:24px 24px 0 0; overflow:hidden; }
+.guide-modal-close {
+  position:absolute;
+  top:26px;
+  right:30px;
+  z-index:5;
+  margin:0;
+  float:none;
+  background:rgba(8,8,8,0.72);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.22);
+  border-radius:999px;
+  padding:11px 20px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+.guide-modal-close:hover { background:rgba(20,20,20,0.88); border-color:rgba(255,255,255,0.35); }
+.guide-modal-hero { min-height:360px; padding:42px 42px 46px; padding-top:88px; display:flex; flex-direction:column; justify-content:flex-end; background:linear-gradient(to top,rgba(0,0,0,0.82),rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&fit=crop&q=85'); background-size:cover; background-position:center 58%; color:#fff; border-radius:0; }
+.guide-modal-kicker {
+  display:inline-block;
+  align-self:flex-start;
+  max-width:100%;
+  box-sizing:border-box;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:#fdf6dc;
+  margin-bottom:22px;
+  padding:11px 18px;
+  background:rgba(0,0,0,0.58);
+  border:1px solid rgba(200,168,75,0.55);
+  border-radius:3px;
+  backdrop-filter:blur(12px);
+  text-shadow:0 1px 3px rgba(0,0,0,0.75);
+  box-shadow:0 8px 28px rgba(0,0,0,0.35);
+}
+.guide-modal-title { font-family:'Cormorant Garamond',serif; font-size:clamp(56px,9vw,104px); line-height:0.92; font-weight:700; letter-spacing:-0.03em; max-width:680px; text-shadow:0 4px 40px rgba(0,0,0,0.55),0 2px 12px rgba(0,0,0,0.45); }
+.guide-modal-sub { font-size:15px; line-height:1.7; color:rgba(255,255,255,0.9); max-width:560px; margin-top:18px; text-shadow:0 2px 14px rgba(0,0,0,0.45); }
+.guide-modal-actions {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  gap:14px 28px;
+  padding:20px 42px;
+  background:#fff;
+  border-bottom:1px solid #e3ddd2;
+}
+.guide-share-dropdown { position:relative; z-index:8; }
+.guide-share-toggle {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid #d6cbb8;
+  background:#fff;
+  color:#111;
+  border-radius:999px;
+  padding:11px 18px 11px 20px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:border-color 0.2s,color 0.2s,background 0.2s;
+}
+.guide-share-toggle:hover { border-color:#a07030; color:#8a7040; background:#fdfcfa; }
+.guide-share-toggle:focus-visible { outline:2px solid #a07030; outline-offset:2px; }
+.guide-share-toggle .guide-share-chevron {
+  width:16px;
+  height:16px;
+  flex-shrink:0;
+  transition:transform 0.2s ease;
+  opacity:0.75;
+}
+.guide-share-dropdown.open .guide-share-chevron { transform:rotate(180deg); }
+.guide-share-menu {
+  position:absolute;
+  left:0;
+  top:calc(100% + 10px);
+  min-width:240px;
+  padding:8px;
+  margin:0;
+  background:#fdfcfa;
+  border:1px solid #dcd3c4;
+  border-radius:14px;
+  box-shadow:0 18px 50px rgba(30,22,12,0.14),0 4px 14px rgba(0,0,0,0.06);
+}
+.guide-share-menu[hidden] { display:none !important; }
+.guide-share-menu-item {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  width:100%;
+  padding:12px 14px;
+  border:none;
+  border-radius:10px;
+  background:transparent;
+  color:#111;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  text-align:left;
+  text-decoration:none;
+  cursor:pointer;
+  font-family:inherit;
+  transition:background 0.15s,color 0.15s;
+}
+.guide-share-menu-item:hover { background:#f0ebe3; color:#8a7040; }
+.guide-share-menu-item:focus-visible { outline:2px solid #a07030; outline-offset:-2px; }
+.guide-share-menu-icon {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  flex-shrink:0;
+  border-radius:50%;
+  border:1px solid #e4ddd0;
+  background:#fff;
+  color:#111;
+}
+.guide-share-menu-item:hover .guide-share-menu-icon { border-color:#d6cbb8; color:#8a7040; }
+.guide-share-menu-icon svg { width:18px; height:18px; }
+.guide-modal-body { padding:42px; display:grid; grid-template-columns:minmax(0,1.7fr) minmax(260px,0.8fr); gap:42px; }
+.guide-modal-main-col .guide-section {
+  background:#fdfcfa;
+  border:1px solid #d8cfc0;
+  border-radius:2px;
+  padding:26px 26px 22px;
+  margin-bottom:22px;
+  box-shadow:inset 0 3px 0 rgba(200,168,75,0.65), 0 14px 42px rgba(30,22,12,0.06);
+}
+.guide-modal-main-col .guide-section:last-child { margin-bottom:0; }
+.guide-modal-main-col .guide-section h3 {
+  margin-bottom:14px;
+  padding-bottom:14px;
+  border-bottom:1px solid #ebe5dc;
+}
+.guide-section { margin-bottom:34px; }
+.guide-section h3 { font-family:'Cormorant Garamond',serif; font-size:34px; line-height:1; font-weight:600; color:#111; margin-bottom:14px; }
+.guide-section p { font-size:14px; line-height:1.8; color:#444; margin-bottom:12px; }
+.guide-section p:last-child { margin-bottom:0; }
+.guide-pin-grid { display:grid; gap:16px; margin-top:4px; }
+@media (min-width:620px) {
+  .guide-pin-grid.two-col { grid-template-columns:repeat(2,1fr); }
+}
+.guide-pin-card {
+  background:#fff;
+  border:1px solid #e4ddd0;
+  border-radius:2px;
+  overflow:hidden;
+  box-shadow:0 10px 34px rgba(0,0,0,0.07);
+  display:flex;
+  flex-direction:column;
+}
+.guide-pin-img-link {
+  display:block;
+  line-height:0;
+  background:#ece8e2;
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+}
+.guide-pin-card-img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.guide-pin-card-body { padding:18px 18px 22px; flex:1; display:flex; flex-direction:column; }
+.guide-pin-meta { font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#8a7040; margin-bottom:8px; }
+.guide-pin-card-body strong { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:#111; line-height:1.15; margin-bottom:8px; display:block; }
+.guide-pin-card-body strong a { color:inherit; text-decoration:none; }
+.guide-pin-card-body strong a:hover { color:#8a7040; }
+.guide-pin-card-body p { font-size:13.5px; line-height:1.65; color:#444; margin:0 0 14px; flex:1; }
+.guide-pin-links { display:flex; flex-wrap:wrap; gap:12px 18px; margin-top:auto; }
+.guide-pin-links a { font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#8a7040; text-decoration:none; border-bottom:1px solid rgba(138,112,64,0.4); padding-bottom:2px; }
+.guide-pin-links a:hover { color:#a07030; border-bottom-color:#a07030; }
+.guide-list { list-style:none; display:grid; gap:12px; }
+.guide-list li { background:#fff; border:1px solid #e4ddd0; border-radius:14px; padding:14px 16px; font-size:13.5px; line-height:1.65; color:#444; }
+.guide-list strong { display:block; font-family:'Cormorant Garamond',serif; font-size:21px; line-height:1.1; color:#111; margin-bottom:4px; }
+.guide-item-links { display:block; margin-top:12px; padding-top:12px; border-top:1px solid #efebe4; }
+.guide-item-links a { font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#8a7040; text-decoration:none; margin-right:16px; }
+.guide-item-links a:hover { text-decoration:underline; }
+.guide-inline-link { color:#8a7040; font-weight:600; text-decoration:none; border-bottom:1px solid rgba(138,112,64,0.35); }
+.guide-inline-link:hover { color:#a07030; border-bottom-color:#a07030; }
+.guide-side-card { background:#111; color:#fff; border-radius:18px; padding:24px; margin-bottom:18px; }
+.guide-side-card.light { background:#fff; color:#111; border:1px solid #e4ddd0; }
+.guide-side-card h4 { font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+.guide-side-card .guide-inline-link { color:var(--gold); border-bottom-color:rgba(200,168,75,0.45); opacity:1; }
+.guide-side-card.light .guide-inline-link { color:#8a7040; border-bottom-color:rgba(138,112,64,0.35); }
+.guide-side-card.light .guide-inline-link:hover { color:#a07030; border-bottom-color:#a07030; }
+.guide-side-card ul { list-style:none; display:grid; gap:8px; }
+@media (max-width:820px) {
+  .guide-modal { padding:14px; }
+  .guide-modal-hero,.guide-modal-body { padding:28px; }
+  .guide-modal-hero { padding-top:76px; }
+  .guide-modal-close { top:20px; right:22px; padding:10px 16px; }
+  .guide-modal-actions { padding:18px 28px; gap:12px 20px; }
+  .guide-modal-body { grid-template-columns:1fr; gap:28px; }
+}
+@media print {
+  body.guide-printing > *:not(.guide-modal) { display:none !important; }
+  body.guide-printing .guide-modal { position:static; display:block; padding:0; background:#fff; backdrop-filter:none; }
+  body.guide-printing .guide-modal-panel { max-height:none; box-shadow:none; border-radius:0; overflow:visible; }
+  body.guide-printing .guide-modal-close,body.guide-printing .guide-modal-actions { display:none !important; }
+}
+
+/* ── INSTAGRAM ACCOUNTS ── */
+#inspire { background:var(--offblack); padding:100px 48px; }
+#inspire .lbl { color:var(--gold); }
+#inspire .lbl::before { background:var(--gold); }
+#inspire h2.dsp em { color:var(--gold); }
+#inspire .rule { background:var(--gold); }
+.ig-accounts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:4px; }
+.ig-account-card { background:var(--charcoal); border:1px solid var(--border); padding:22px 18px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; text-decoration:none; transition:border-color 0.2s,transform 0.2s; }
+.ig-account-card:hover { border-color:rgba(200,168,75,0.4); transform:translateY(-2px); }
+.ig-avatar { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,var(--gold),#7b6230); border:1px solid rgba(200,168,75,0.45); display:flex; align-items:center; justify-content:center; color:var(--black); flex-shrink:0; overflow:hidden; position:relative; font-size:13px; font-weight:700; letter-spacing:0.08em; }
+.ig-avatar img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:50%; background:#fff; }
+.ig-handle { font-size:12px; font-weight:500; color:var(--gold); letter-spacing:0.04em; }
+.ig-account-name { font-size:12px; color:rgba(255,255,255,0.82); }
+.ig-account-desc { font-size:11.5px; color:rgba(255,255,255,0.66); line-height:1.55; }
+.ig-follow-btn { font-size:10px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; border:1px solid rgba(200,168,75,0.3); color:var(--gold); padding:5px 12px; border-radius:20px; margin-top:4px; transition:background 0.2s; }
+.ig-account-card:hover .ig-follow-btn { background:var(--gold-dim); }
+@media (max-width:820px) { .ig-accounts-grid { grid-template-columns:repeat(2,1fr); } #inspire { padding-left:24px; padding-right:24px; } }
+
+/* ── TESTIMONIALS ── */
+#testimonials { background:var(--offwhite); padding:100px 48px; }
+#testimonials .lbl { color:#8a7040; }
+#testimonials .lbl::before { background:#8a7040; }
+#testimonials h2.dsp { color:#111; }
+#testimonials h2.dsp em { color:#a07030; }
+#testimonials .rule { background:#8a7040; opacity:0.7; }
+.test-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:44px; }
+.test { background:#fff; padding:34px 28px 30px; border:1px solid #e0dbd4; border-radius:22px; position:relative; overflow:hidden; box-shadow:0 18px 44px rgba(40,28,10,0.11); }
+.test:nth-child(1) { transform:rotate(-0.7deg); }
+.test:nth-child(2) { transform:rotate(0.7deg); }
+.test::before { content:''; position:absolute; top:-56px; right:-42px; width:150px; height:150px; border-radius:50%; background:rgba(200,168,75,0.12); }
+.test-stars { display:inline-flex; color:#111; background:#f0dfaa; font-size:13px; letter-spacing:2px; margin-bottom:18px; padding:7px 12px; border-radius:999px; position:relative; z-index:1; }
+.test-q { position:absolute; top:14px; right:22px; font-family:'Cormorant Garamond',serif; font-size:92px; font-weight:600; font-style:italic; color:rgba(160,112,48,0.14); line-height:1; }
+.test-txt { font-family:'Cormorant Garamond',serif; font-size:20px; color:#222; line-height:1.45; margin-bottom:22px; position:relative; z-index:1; }
+.test-auth { font-size:10.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#8a7040; position:relative; z-index:1; }
+@media (max-width:820px) { #testimonials { padding-left:24px; padding-right:24px; } .test-grid { grid-template-columns:1fr; } }
+
+/* ── SCANNER ── */
+#scanner { background:var(--black); padding:100px 48px; border-top:1px solid var(--border); position:relative; overflow:hidden; }
+#scanner::before { content:''; position:absolute; top:-140px; right:-140px; width:640px; height:640px; background:radial-gradient(circle,rgba(200,168,75,0.06) 0%,transparent 65%); pointer-events:none; }
+.scan-layout { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.scan-copy p { font-size:14.5px; color:var(--muted); line-height:1.9; margin-bottom:14px; }
+.scan-feats { list-style:none; margin:22px 0 30px; display:flex; flex-direction:column; gap:10px; }
+.scan-feats li { font-size:13px; color:rgba(255,255,255,0.72); display:flex; align-items:flex-start; gap:10px; line-height:1.5; }
+.scan-feats li::before { content:'•'; color:var(--gold); opacity:0.9; flex-shrink:0; }
+.scan-img { aspect-ratio:3/4; border-radius:2px; overflow:hidden; border:1px solid var(--border); }
+.scan-img img { width:100%; height:100%; object-fit:cover; display:block; }
+@media (max-width:820px) { .scan-layout { grid-template-columns:1fr; gap:36px; } #scanner { padding-left:24px; padding-right:24px; } }
+
+/* ── POLICIES ── */
+.know { display:flex; flex-direction:column; gap:2px; }
+.k-card { display:flex; background:var(--charcoal); border:1px solid var(--border); overflow:hidden; }
+.k-acc { width:4px; flex-shrink:0; background:var(--border); }
+.k-bd { padding:17px 20px; }
+.k-title { font-size:13px; font-weight:500; color:var(--white); margin-bottom:4px; }
+.k-text { font-size:12.5px; color:rgba(255,255,255,0.68); line-height:1.7; }
+.k-expand-header { display:flex; justify-content:space-between; align-items:center; cursor:pointer; user-select:none; }
+.k-expand-header:hover .k-toggle { color:var(--gold); }
+.k-toggle { font-size:11px; font-weight:500; letter-spacing:0.1em; color:rgba(255,255,255,0.55); transition:color 0.2s; white-space:nowrap; margin-left:16px; flex-shrink:0; }
+.k-expand-body { display:none; margin-top:20px; border-top:1px solid var(--border); padding-top:20px; }
+.k-expand-body.open { display:block; }
+.tc-intro { margin-bottom:20px; font-style:italic; }
+.tc-section { margin-bottom:18px; }
+.tc-section:last-child { margin-bottom:0; }
+.tc-heading { font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:6px; }
+.sec-light .k-card { background:#fff; border-color:#e0dbd4; }
+.sec-light .k-acc { background:#e0dbd4; }
+.sec-light .k-title { color:#111; }
+.sec-light .k-text { color:#555; }
+.sec-light .k-toggle { color:#777; }
+.sec-light .know,.sec-light .k-card,.sec-light .k-bd,.sec-light .k-expand-body { text-align:left; }
+.sec-light .k-expand-body { border-color:#e0dbd4; }
+.sec-light .tc-heading { color:#888; }
+.sec-light .lbl { color:#8a7040; }
+.sec-light .lbl::before { background:#8a7040; }
+.sec-light h2.dsp em { color:#a07030; }
+.sec-light .rule { background:#8a7040; }
+
+/* ── CONTACT ── */
+#contact { background:var(--black); padding:120px 48px; text-align:center; position:relative; overflow:hidden; }
+#contact::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(200,168,75,0.07) 0%,transparent 65%); pointer-events:none; }
+.contact-inner { max-width:660px; margin:0 auto; position:relative; z-index:2; }
+.contact-headline { font-family:'Cormorant Garamond',serif; font-size:clamp(48px,7vw,84px); font-weight:300; line-height:1.0; color:var(--white); margin-bottom:16px; }
+.contact-headline em { font-style:italic; color:var(--gold); }
+.contact-sub { font-size:15px; font-weight:300; color:var(--muted); line-height:1.8; margin-bottom:36px; max-width:440px; margin-left:auto; margin-right:auto; }
+.contact-form { display:flex; flex-direction:column; gap:10px; text-align:left; margin-bottom:32px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.contact-form input,.contact-form textarea { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16); color:var(--white); padding:13px 16px; font-size:13.5px; font-family:'Inter',sans-serif; font-weight:400; border-radius:3px; width:100%; transition:border-color 0.2s; }
+.contact-form input::placeholder,.contact-form textarea::placeholder { color:rgba(255,255,255,0.58); }
+.contact-form input:focus,.contact-form textarea:focus { outline:none; border-color:rgba(200,168,75,0.45); background:rgba(255,255,255,0.07); }
+.contact-form textarea { min-height:96px; resize:vertical; }
+.form-submit { width:100%; background:var(--gold); color:var(--black); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; padding:15px 28px; border-radius:40px; border:none; cursor:pointer; font-family:'Inter',sans-serif; transition:background 0.2s; margin-top:4px; }
+.form-submit:hover { background:#b5922e; }
+.form-note { font-size:11px; color:rgba(255,255,255,0.58); text-align:center; margin-top:6px; }
+.contact-divider { display:flex; align-items:center; gap:16px; color:rgba(255,255,255,0.52); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; margin:24px 0; }
+.contact-divider::before,.contact-divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.08); }
+.contact-alt { display:flex; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap; }
+.contact-link { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:400; color:rgba(255,255,255,0.72); text-decoration:none; letter-spacing:0.04em; transition:color 0.2s; }
+.contact-link:hover { color:var(--gold); }
+.contact-link svg { width:14px; height:14px; opacity:0.7; }
+@media (max-width:820px) { #contact { padding:80px 24px; } .form-row { grid-template-columns:1fr; } }
+
+/* ── FOOTER ── */
+footer { background:var(--offblack); border-top:1px solid var(--border); padding:56px 48px 36px; }
+.ft-top { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:48px; margin-bottom:44px; padding-bottom:36px; border-bottom:1px solid var(--border); }
+.ft-brand { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--white); margin-bottom:10px; }
+.ft-brand span { font-style:italic; color:inherit; }
+.ft-tag { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:22px; }
+.ig-btn { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:500; letter-spacing:0.05em; color:var(--gold); text-decoration:none; border:1px solid rgba(200,168,75,0.35); padding:8px 14px; border-radius:2px; transition:all 0.2s; }
+.ig-btn:hover { background:var(--gold-dim); border-color:var(--gold); }
+.ig-btn svg { width:14px; height:14px; }
+.ft-col-t { font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+.ft-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.ft-col a { font-size:13px; color:rgba(255,255,255,0.62); text-decoration:none; transition:color 0.2s; }
+.ft-col a:hover { color:var(--white); }
+.ft-bot { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.ft-copy { font-size:11.5px; color:rgba(255,255,255,0.52); }
+.ft-sot { font-size:10px; color:rgba(255,255,255,0.42); margin-top:4px; line-height:1.6; }
+.ft-legal { display:flex; gap:18px; }
+.ft-legal a { font-size:11px; color:rgba(255,255,255,0.56); text-decoration:none; transition:color 0.2s; }
+.ft-legal a:hover { color:var(--muted); }
+@media (max-width:820px) { .ft-top { grid-template-columns:1fr 1fr; gap:28px; } .ft-bot { flex-direction:column; align-items:flex-start; } footer { padding-left:24px; padding-right:24px; } }
+
+/* ── IG FLOAT ── */
+.ig-float { position:fixed; bottom:24px; right:24px; z-index:150; background:var(--offblack); border:1px solid rgba(200,168,75,0.4); border-radius:40px; padding:10px 16px; display:flex; align-items:center; gap:7px; text-decoration:none; color:var(--gold); font-size:12px; font-weight:500; letter-spacing:0.04em; box-shadow:0 4px 24px rgba(0,0,0,0.55); transition:all 0.2s; }
+.ig-float:hover { background:var(--gold-dim); border-color:var(--gold); transform:translateY(-2px); }
+.ig-float svg { width:15px; height:15px; }
+@media (max-width:820px) { .ig-float { bottom:16px; right:16px; } }
+
+@keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+</style>
+</head>
+<body>
+
+<!-- IG FLOAT -->
+<a href="https://instagram.com/sevenfeettravel" target="_blank" class="ig-float" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  @sevenfeettravel
+</a>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo"><em>Seven <span>Feet</span></em> Travel</a>
+  <div class="nav-right">
+    <a href="https://instagram.com/sevenfeettravel" target="_blank" class="nav-ig-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @sevenfeettravel
+    </a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+      <div class="menu-lines"><span></span><span></span><span></span></div>
+      Menu
+    </button>
+  </div>
+</nav>
+
+<!-- FULL MENU OVERLAY -->
+<div class="menu-overlay" id="main-menu" role="dialog" aria-label="Site navigation">
+  <button class="menu-close" onclick="toggleMenu()"><span class="menu-close-x">✕</span> Close</button>
+
+  <div class="menu-body">
+
+    <div>
+      <p class="menu-col-title">About</p>
+      <ul class="menu-links">
+        <li><a href="#about-sf" onclick="closeMenu()">About Seven Feet</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">Services</p>
+      <ul class="menu-links">
+        <li>
+          <a href="#services" onclick="closeMenu()">Planning Services</a>
+          <button class="menu-acc-toggle" onclick="toggleMenuAcc('acc-services')">
+            View tiers <span class="menu-acc-arrow">↓</span>
+          </button>
+          <ul class="menu-sub" id="acc-services">
+            <li><a href="#services" onclick="closeMenu()">Hotel, Rental Car &amp; Train: Free</a></li>
+            <li><a href="#services" onclick="closeMenu()">Cruise Booking: Free</a></li>
+            <li><a href="#services" onclick="closeMenu()">Custom Itinerary: $125</a></li>
+            <li><a href="#services" onclick="closeMenu()">Full-Service Planning: $300+</a></li>
+            <li><a href="#services" onclick="closeMenu()">Group Bookings: 1%</a></li>
+            <li><a href="#services" onclick="closeMenu()">Referral Program</a></li>
+          </ul>
+        </li>
+        <li><a href="#scanner" onclick="closeMenu()">Hotel Scanner</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">Explore</p>
+      <ul class="menu-links">
+        <li>
+          <a href="#guides" onclick="closeMenu()">Destination Guides</a>
+          <button type="button" class="menu-acc-toggle" onclick="toggleMenuAcc('acc-guides')">
+            View guides <span class="menu-acc-arrow">↓</span>
+          </button>
+          <ul class="menu-sub" id="acc-guides">
+            <li><a href="#guides" onclick="closeMenu(); openSydneyGuide();">Sydney</a></li>
+            <li><a href="#guides" onclick="closeMenu()">London · Coming soon</a></li>
+            <li><a href="#guides" onclick="closeMenu()">New York · Coming soon</a></li>
+          </ul>
+        </li>
+        <li><a href="#inspire" onclick="closeMenu()">Travel Inspiration</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">More</p>
+      <ul class="menu-links">
+        <li><a href="#testimonials" onclick="closeMenu()">Client Reviews</a></li>
+        <li><a href="#policies" onclick="closeMenu()">Policies</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="menu-footer">
+    <a href="https://instagram.com/sevenfeettravel" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @sevenfeettravel
+    </a>
+  </div>
+</div>
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-card">
+    <div class="hero-card-photo"></div>
+    <div class="hero-card-vignette"></div>
+    <div class="hero-card-content">
+      <p class="hero-eyebrow">Global Travel Specialist</p>
+      <h1 class="hero-headline">Travel.<br><em>Planned</em><br>Your Way.</h1>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">View Planning Services</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><div class="scroll-line"></div><span>Scroll</span></div>
+  </div>
+</section>
+
+
+<!-- DESTINATION MOSAIC -->
+<div class="dest-mosaic">
+  <div class="d-photo" style="background-image:url('sydney.avif'); background-position:center 55%;"><span class="d-label">Sydney</span></div>
+  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1681407979872-0a4cbde28391?w=800&fit=crop&q=80');"><span class="d-label">London</span></div>
+  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&fit=crop&q=80');"><span class="d-label">Tokyo</span></div>
+  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&fit=crop&q=80');"><span class="d-label">Hong Kong</span></div>
+  <div class="d-photo" style="background-image:url('paris.jpeg'); background-position:center 40%;"><span class="d-label">Paris</span></div>
+  <div class="d-photo" style="background-image:url('rome.jpeg'); background-position:center 40%;"><span class="d-label">Rome</span></div>
+  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1608640346865-bf28ae68d9ac?w=800&fit=crop&q=80');"><span class="d-label">Queenstown</span></div>
+  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&fit=crop&q=80');"><span class="d-label">Mumbai</span></div>
+  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&fit=crop&q=80');"><span class="d-label">San Francisco</span></div>
+  <div class="d-photo" style="background-image:url('buenos aires.jpeg'); background-position:center 50%;"><span class="d-label">Buenos Aires</span></div>
+</div>
+
+
+<!-- ABOUT SEVEN FEET -->
+<section class="sec sec-light" id="about-sf">
+  <div class="sec-inner">
+    <p class="lbl">The Agency</p>
+    <h2 class="dsp">Thoughtful travel,<br><em>planned around you.</em></h2>
+    <p class="about-intro">Seven Feet Travel helps you plan trips that actually fit how you travel, with the guidance of someone who has spent 25+ years inside the travel and hospitality industry.</p>
+    <div class="rule rule-dk"></div>
+
+    <div class="about-layout">
+
+      <div class="about-left">
+
+        <div class="about-paths">
+
+          <!-- Card 1: About Seven Feet -->
+          <div class="about-path-card">
+            <button class="about-path-header" onclick="toggleAbout('sft')" aria-expanded="false">
+              <div>
+                <p class="about-path-label">The Business</p>
+                <h3 class="about-path-title">About Seven Feet Travel</h3>
+                <p class="about-path-preview">The name · What we help plan · The approach</p>
+              </div>
+              <span class="about-path-arrow" id="sft-arrow">↓</span>
+            </button>
+            <div class="about-path-body" id="sft-body">
+              <div class="about-path-inner">
+                <p class="about-path-story">"Seven feet" is how you translate the Arabic nickname my grandmother gave me, because I could never sit still. It still fits.</p>
+                <div class="about-path-items">
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>Boutique travel planning</strong>
+                      <p>Hotels, restaurants, experiences, and logistics, curated around how you actually like to travel, not a generic itinerary.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>Built around you</strong>
+                      <p>Full day-by-day plan or a loose framework with great picks. Your call every time.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>Fora Travel affiliation</strong>
+                      <p>Preferred rates, room upgrades, and supplier relationships most travelers can't access on their own.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>One point of contact</strong>
+                      <p>Before, during, and after your trip. No handoffs, no hold music.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: About Paul -->
+          <div class="about-path-card">
+            <button class="about-path-header" onclick="toggleAbout('paul')" aria-expanded="false">
+              <div>
+                <p class="about-path-label">The Advisor</p>
+                <h3 class="about-path-title">About Paul</h3>
+                <p class="about-path-preview">Travel planning shaped by 25+ years on the inside.</p>
+              </div>
+              <span class="about-path-arrow" id="paul-arrow">↓</span>
+            </button>
+            <div class="about-path-body" id="paul-body">
+              <div class="about-path-inner">
+                <p class="about-path-story">Travel planning shaped by 25+ years on the inside.</p>
+                <div class="about-path-items">
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>25+ years in travel &amp; hospitality</strong>
+                      <p>From writing paper tickets at STA Travel to building hospitality technology, I have seen the industry from nearly every angle.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>12 hotels, from the inside</strong>
+                      <p>I know what great service looks like because I have helped deliver it, across thousands of guest stays, events, and group experiences.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>Millions booked into hotels</strong>
+                      <p>My background in hotel sales and group travel gives me a practical understanding of rates, value, service expectations, and what happens behind the scenes.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>50+ countries traveled</strong>
+                      <p>I bring firsthand perspective from around the world, not just online research or recycled recommendations.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>A sharper eye for the details</strong>
+                      <p>I think about location, arrival flow, room type, service style, pacing, restaurants, transfers, and the little moments that make a trip feel better.</p>
+                    </div>
+                  </div>
+                  <div class="about-path-item">
+                    <span class="api-dot"></span>
+                    <div>
+                      <strong>Someone in your corner</strong>
+                      <p>My travelers should feel looked after, with thoughtful planning up front and support if something needs attention along the way.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="about-right">
+        <div class="about-photo">
+          <img src="paul.PNG" alt="Paul Totah">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="sec-inner">
+
+    <p class="lbl">Planning Services</p>
+    <h2 class="dsp">Transparent<br><em>fee structure.</em></h2>
+    <div class="rule"></div>
+
+    <div class="tier-grid">
+
+      <div class="tier t1">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 1 · Accommodations &amp; Transport</p>
+          <h3 class="t-name">Hotel, Rental Car &amp; Train</h3>
+          <p class="t-desc">Single reservations for accommodations or transport. Handled with the same attention to detail as any full itinerary.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Single hotel, rental car, or train reservation</li>
+            <li>Entertainment coordination</li>
+            <li>Itinerary confirmation</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$0</div><div class="p-note">No planning fee</div></div>
+            <div class="bdg b-free">Complimentary</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier t1b">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 1B · Cruise</p>
+          <h3 class="t-name">Cruise Booking</h3>
+          <p class="t-desc">Standard cruise reservations for up to 4 guests, covering cabin selection, dining, and shore excursion guidance.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Cruise cabin booking (up to 4 guests)</li>
+            <li>Dining &amp; preference coordination</li>
+            <li>Shore excursion guidance</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$0</div><div class="p-note">No planning fee</div></div>
+            <div class="bdg b-free">Complimentary</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier t2 ft">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 2 · Multi-Destination Trips</p>
+          <h3 class="t-name">Custom Itinerary</h3>
+          <p class="t-desc">Multiple hotels, rental cars, or coordinating several moving parts across destinations. Up to 3 hours of planning work.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Multiple hotel &amp; transport coordination</li>
+            <li>Up to 3 hours of planning</li>
+            <li>Full itinerary build-out</li>
+            <li>Booking confirmations &amp; documentation</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$125</div><div class="p-note">flat fee · up to 3 hrs</div></div>
+            <div class="bdg b-pop">Most Common</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tier-grid-wide">
+
+      <div class="tier t3">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 3 · Expeditions &amp; Complex Journeys</p>
+          <h3 class="t-name">Full-Service Planning</h3>
+          <p class="t-desc">Around-the-world itineraries, safaris, multi-country expeditions requiring deep research, vendor coordination, and ongoing trip support.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Full expedition &amp; itinerary planning</li>
+            <li>Vendor &amp; excursion coordination</li>
+            <li>Ongoing support throughout planning</li>
+            <li>In-trip availability for questions &amp; concerns</li>
+            <li>Emergency &amp; contingency guidance</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$300<span style="font-size:18px">+</span></div><div class="p-note">starting price · varies by scope</div></div>
+            <div class="bdg b-prem">Premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier tg">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Group Travel · Hotel or Cruise</p>
+          <h3 class="t-name">Group Bookings</h3>
+          <p class="t-desc">Room blocks or multiple cruise cabins, hotel or cruise. The fee reflects coordination required across multiple guests and rooms.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Room block or cruise cabin group coordination</li>
+            <li>Per-guest rooming list management</li>
+            <li>Group rate negotiation support</li>
+            <li>Confirmations for all travelers</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">1%</div><div class="p-note">of total value<br>(pre-tax &amp; fees)</div></div>
+            <div class="bdg b-grp">Group Rate</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- REFERRAL -->
+    <p class="lbl" style="margin-top:60px;">Referral Program</p>
+    <h2 class="dsp" style="font-size:clamp(28px,4vw,48px);">Know someone who<br>loves to <em>travel?</em></h2>
+    <div class="rule"></div>
+    <p style="font-size:14.5px; color:var(--muted); line-height:1.8; margin-bottom:28px; max-width:520px;">Refer a friend and choose your thank-you gift when their booking confirms.</p>
+
+    <div class="tier-grid-2">
+      <div class="tier tr1">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Thank You Gift A</p>
+          <h3 class="t-name">Coffee on Me</h3>
+          <p class="t-desc">A $5 gift card to the coffee shop of your choice, sent after your referral's booking confirms.</p>
+          <div class="card-price-row">
+            <div><div class="p-num">$5</div><div class="p-note">gift card · your choice of cafe</div></div>
+            <div class="bdg b-cash">Thank You</div>
+          </div>
+        </div>
+      </div>
+      <div class="tier tr2 ft">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Thank You Gift B · Travel Bank</p>
+          <h3 class="t-name">Travel Bank Credit</h3>
+          <p class="t-desc">$10 added to your Seven Feet Travel Bank, a thank-you that goes toward your next trip or planning fee.</p>
+          <div class="card-price-row">
+            <div><div class="p-num">$10</div><div class="p-note">travel bank · per referral</div></div>
+            <div class="bdg b-bank">Best Value</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- DESTINATION GUIDES -->
+<section class="sec sec-light" id="guides">
+  <div class="sec-inner">
+    <p class="lbl">Destination Guides</p>
+    <h2 class="dsp">Know before<br>you <em>go.</em></h2>
+    <div class="rule"></div>
+
+    <div class="guides-grid">
+
+      <div class="guide-card">
+        <button type="button" onclick="openSydneyGuide()" aria-label="Open Sydney guide">
+          <div class="guide-img" style="background-image:url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&fit=crop&q=85'); background-size:cover; background-position:center;">
+            <div class="guide-img-tag">Featured</div>
+          </div>
+          <div class="guide-body">
+            <p class="guide-region">Australia · Pacific</p>
+            <h3 class="guide-title">Sydney</h3>
+            <p class="guide-desc">Harbour views, world-class dining, and some of the most iconic architecture on earth. Here's everything you need to know before you go.</p>
+            <span class="guide-cta">Read Guide →</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="guide-card coming-soon-card">
+        <div class="guide-img">
+          <div class="guide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&fit=crop&q=85');"></div>
+          <div class="guide-cs-overlay"><span class="cs-badge">Coming Soon</span></div>
+        </div>
+        <div class="guide-body">
+          <p class="guide-region">United Kingdom · Europe</p>
+          <h3 class="guide-title">London</h3>
+          <p class="guide-desc">Royal palaces, world-class museums, and neighborhoods worth getting lost in. Guide coming soon.</p>
+        </div>
+      </div>
+
+      <div class="guide-card coming-soon-card">
+        <div class="guide-img">
+          <div class="guide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&fit=crop&q=85');"></div>
+          <div class="guide-cs-overlay"><span class="cs-badge">Coming Soon</span></div>
+        </div>
+        <div class="guide-body">
+          <p class="guide-region">United States · Northeast</p>
+          <h3 class="guide-title">New York</h3>
+          <p class="guide-desc">The energy, the neighborhoods, the food, and how to make the most of it without wasting a single hour. Guide coming soon.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SYDNEY GUIDE MODAL -->
+<div class="guide-modal" id="sydney-guide-modal" role="dialog" aria-modal="true" aria-labelledby="sydney-guide-title">
+  <div class="guide-modal-panel" id="sydney-guide-content">
+    <div class="guide-modal-hero-shell">
+      <button class="guide-modal-close" type="button" onclick="closeSydneyGuide()">Close</button>
+      <div class="guide-modal-hero">
+        <p class="guide-modal-kicker">Seven Feet Travel Guide</p>
+        <h2 class="guide-modal-title" id="sydney-guide-title">Sydney</h2>
+        <p class="guide-modal-sub">Harbour drama, coastal walks, easy ferries, excellent dining, and neighborhoods that reward a slower look.</p>
+      </div>
+    </div>
+
+    <div class="guide-modal-actions">
+      <div class="guide-share-dropdown" id="sydney-guide-share-dropdown">
+        <button type="button" class="guide-share-toggle" id="sydney-guide-share-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="sydney-guide-share-menu">
+          Share
+          <svg class="guide-share-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="guide-share-menu" id="sydney-guide-share-menu" role="menu" aria-labelledby="sydney-guide-share-toggle" hidden>
+          <a class="guide-share-menu-item" role="menuitem" id="sydney-email-link" href="mailto:?subject=Sydney%20Travel%20Guide&amp;body=Trip%20guide%20from%20Seven%20Feet%20Travel%3A%20">
+            <span class="guide-share-menu-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <span class="guide-share-menu-text">Email guide</span>
+          </a>
+          <button type="button" class="guide-share-menu-item" role="menuitem" id="sydney-print-share-btn">
+            <span class="guide-share-menu-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+            <span class="guide-share-menu-text">Print guide</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-modal-body">
+      <div class="guide-modal-main-col">
+        <section class="guide-section">
+          <h3>Why Go</h3>
+          <p>Sydney mixes harbour icons with ferries, coastal walks, and neighborhoods worth wandering. The CBD and Circular Quay anchor the Opera House, Harbour Bridge, museums, and ferry connections, while beaches like Bondi and Manly balance city energy with ocean air. For official inspiration and trip ideas, browse <a href="https://www.visitnsw.com/destinations/sydney" target="_blank" rel="noopener" class="guide-inline-link">Sydney on Visit NSW</a>.</p>
+          <p>Late summer (February and March) runs hot and humid with intense UV; May through June cools with some rain; July and August stay mild by US standards, with nights rarely far below 10°C (50°F).</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Getting There &amp; Around</h3>
+          <p><strong>Nonstop flights from the US.</strong> <a href="https://www.sydneyairport.com.au/" target="_blank" rel="noopener" class="guide-inline-link">Sydney Kingsford Smith (SYD)</a> has nonstop options including Los Angeles (<a href="https://www.qantas.com/" target="_blank" rel="noopener" class="guide-inline-link">Qantas</a>, <a href="https://www.united.com/" target="_blank" rel="noopener" class="guide-inline-link">United</a>, <a href="https://www.aa.com/" target="_blank" rel="noopener" class="guide-inline-link">American</a> codeshare, <a href="https://www.delta.com/" target="_blank" rel="noopener" class="guide-inline-link">Delta</a>; about 15 to 16 hours), San Francisco (<a href="https://www.qantas.com/" target="_blank" rel="noopener" class="guide-inline-link">Qantas</a>, <a href="https://www.united.com/" target="_blank" rel="noopener" class="guide-inline-link">United</a>; about 16 to 17 hours), Dallas-Fort Worth (<a href="https://www.qantas.com/" target="_blank" rel="noopener" class="guide-inline-link">Qantas</a> A380; about 17 hours), Houston (<a href="https://www.united.com/" target="_blank" rel="noopener" class="guide-inline-link">United</a> seasonal; about 17.5 hours), and Honolulu (<a href="https://www.qantas.com/" target="_blank" rel="noopener" class="guide-inline-link">Qantas</a>; <a href="https://www.alaskaair.com/" target="_blank" rel="noopener" class="guide-inline-link">Alaska</a> for connections). LAX usually offers the most competition on fare; DFW on Qantas works well for a single-carrier trip with mileage earning.</p>
+          <p><strong>Airport to city.</strong> SYD sits about 8 km south of the CBD. The <a href="https://www.airportlink.com.au/" target="_blank" rel="noopener" class="guide-inline-link">Airport Link</a> train reaches Central in about 13 minutes (runs roughly every 10 minutes; expect about AUD $19 to $21 including the airport station surcharge). Taxis or rideshares take 30 to 60 minutes depending on traffic (budget roughly AUD $45 to $65). Book a private transfer if you want a guaranteed pickup after a long haul or an early arrival.</p>
+          <p><strong>Opal and transit.</strong> Pick up an <a href="https://transportnsw.info/tickets-fares/opal" target="_blank" rel="noopener" class="guide-inline-link">Opal</a> card at the airport, convenience stores, or newsagents; tap on and off every ride on trains, buses, light rail, and ferries. Daily caps are near AUD $18.70, weekly near AUD $50, with lower weekend caps on Saturdays and Sundays. Trains on the T-series cover the CBD and inner suburbs (T4 helps for Kings Cross and Bondi Junction). Light rail L2/L3 runs along George Street toward Circular Quay. Ferries are ideal for Manly, Taronga Zoo, and Balmain. Bus 311 connects Oxford Street to Kings Cross in about 10 minutes. Uber and Didi operate citywide. Driving downtown is rarely worth it: parking is pricey and traffic bites, so save a rental car for regional day trips.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Do Not Miss</h3>
+          <ul class="guide-list">
+            <li><strong>Sydney Opera House tour</strong> Even without a performance, the hour-long guided tour adds context behind the sails. Check the performance calendar if you want a show night.<span class="guide-item-links"><a href="https://www.sydneyoperahouse.com/visit" target="_blank" rel="noopener">Tours</a><a href="https://www.sydneyoperahouse.com/" target="_blank" rel="noopener">What's on</a></span></li>
+            <li><strong>Bondi to Coogee coastal walk</strong> One of Sydney's best free experiences along cliffs, beaches, ocean pools, and cafés. Start early in summer for cooler weather and lighter crowds.<span class="guide-item-links"><a href="https://www.australia.com/en-us/places/sydney-and-surrounds/guide-to/bondi-to-coogee-coastal-walk.html" target="_blank" rel="noopener">Walk overview</a></span></li>
+            <li><strong>Manly by ferry</strong> Catch the ferry from Circular Quay for harbour views, then enjoy the beach, a swim, a walk toward Shelly Beach, and time along the corso before heading back.<span class="guide-item-links"><a href="https://transportnsw.info/routes/details/sydney-ferries-network/f1-manly" target="_blank" rel="noopener">F1 Manly ferry</a><a href="https://transportnsw.info/" target="_blank" rel="noopener">Transport for NSW</a></span></li>
+            <li><strong>The Rocks</strong> Wander laneways, pubs, weekend markets when running, and harbour views around Dawes Point as an easy add-on to Circular Quay.<span class="guide-item-links"><a href="https://www.therocks.com/" target="_blank" rel="noopener">The Rocks</a></span></li>
+            <li><strong>Royal Botanic Garden</strong> A calm walk beside the harbour toward Mrs Macquarie's Chair for classic Opera House and Bridge framing.<span class="guide-item-links"><a href="https://www.botanicgardens.org.au/" target="_blank" rel="noopener">Royal Botanic Garden Sydney</a></span></li>
+          </ul>
+        </section>
+
+        <section class="guide-section">
+          <h3>More to Do</h3>
+          <ul class="guide-list">
+            <li><strong>Sydney Harbour BridgeClimb</strong> If heights and budget allow, the Summit climb delivers 360° views; sunrise or twilight slots feel extra special. The Ultimate Climb crosses the full span for maximum bragging rights.<span class="guide-item-links"><a href="https://www.bridgeclimb.com/" target="_blank" rel="noopener">BridgeClimb</a></span></li>
+            <li><strong>Taronga Zoo</strong> Ferry from Circular Quay for skyline drama plus native wildlife and species you rarely see at home. Easy half-day pace.<span class="guide-item-links"><a href="https://taronga.org.au/" target="_blank" rel="noopener">Taronga Zoo Sydney</a></span></li>
+            <li><strong>Blue Mountains day trip</strong> Train from Central toward Katoomba, then Echo Point, Scenic World, or bushwalks around the Three Sisters. Allow roughly two hours each way and start early; do not squeeze this into a half day.<span class="guide-item-links"><a href="https://www.visitnsw.com/destinations/blue-mountains" target="_blank" rel="noopener">Blue Mountains (Visit NSW)</a><a href="https://transportnsw.info/" target="_blank" rel="noopener">Train planning</a></span></li>
+            <li><strong>Sculpture by the Sea</strong> If you visit in October or November, the Bondi to Tamarama walk hosts a major outdoor sculpture show; mornings mean softer light and thinner crowds.<span class="guide-item-links"><a href="https://sculpturebythesea.com/" target="_blank" rel="noopener">Sculpture by the Sea</a></span></li>
+          </ul>
+        </section>
+
+        <section class="guide-section">
+          <h3>How to Spend 3 Days</h3>
+          <ul class="guide-list">
+            <li><strong>Day 1: Harbour icons</strong> Start at <a href="https://www.visitnsw.com/destinations/sydney/sydney-city/circular-quay" target="_blank" rel="noopener" class="guide-inline-link">Circular Quay</a>, photograph or tour the Opera House, stroll the Royal Botanic Garden, and close with dinner in the CBD, The Rocks, or Barangaroo.<span class="guide-item-links"><a href="https://www.sydneyoperahouse.com/" target="_blank" rel="noopener">Opera House</a><a href="https://www.botanicgardens.org.au/" target="_blank" rel="noopener">Botanic Garden</a><a href="https://www.therocks.com/" target="_blank" rel="noopener">The Rocks</a><a href="https://www.barangaroo.com/" target="_blank" rel="noopener">Barangaroo</a></span></li>
+            <li><strong>Day 2: Coast and beaches</strong> Take the T4 train toward Bondi Junction, connect to the beach, then walk the Bondi to Coogee coastal trail with time for a swim or lunch stops.<span class="guide-item-links"><a href="https://transportnsw.info/" target="_blank" rel="noopener">Trip planner</a><a href="https://www.australia.com/en-us/places/sydney-and-surrounds/guide-to/bondi-to-coogee-coastal-walk.html" target="_blank" rel="noopener">Coastal walk</a></span></li>
+            <li><strong>Day 3: Ferry and skyline</strong> Ferry to Manly for a relaxed half day, or pair a Circular Quay ferry with Taronga Zoo if you want wildlife plus skyline views before returning across the water.<span class="guide-item-links"><a href="https://transportnsw.info/routes/details/sydney-ferries-network/f1-manly" target="_blank" rel="noopener">Manly ferry</a><a href="https://taronga.org.au/" target="_blank" rel="noopener">Taronga Zoo</a></span></li>
+          </ul>
+        </section>
+
+        <section class="guide-section">
+          <h3>Where to Stay</h3>
+          <div class="guide-pin-grid two-col">
+            <article class="guide-pin-card">
+              <a href="https://www.hyatt.com/en-US/hotel/australia/caption-by-hyatt-central-sydney/sydcc" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="caption.jpeg" loading="lazy" decoding="async" alt="Caption by Hyatt Central Sydney"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Haymarket · Central</p>
+                <strong><a href="https://www.hyatt.com/en-US/hotel/australia/caption-by-hyatt-central-sydney/sydcc" target="_blank" rel="noopener">Caption by Hyatt Central Sydney</a></strong>
+                <p>Design-forward and walkable to Central Station, Chinatown, Surry Hills, Darling Harbour, and light rail, with Talk Shop as an all-day café and bar.</p>
+                <div class="guide-pin-links"><a href="https://www.hyatt.com/en-US/hotel/australia/caption-by-hyatt-central-sydney/sydcc" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.hyatt.com/en-US/hotel/australia/park-hyatt-sydney/sydph" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="parksyd.jpeg" loading="lazy" decoding="async" alt="Park Hyatt Sydney"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">The Rocks · Harbourfront</p>
+                <strong><a href="https://www.hyatt.com/en-US/hotel/australia/park-hyatt-sydney/sydph" target="_blank" rel="noopener">Park Hyatt Sydney</a></strong>
+                <p>The harbour splurge for Opera House and Bridge views from The Rocks, steps from Circular Quay energy.</p>
+                <div class="guide-pin-links"><a href="https://www.hyatt.com/en-US/hotel/australia/park-hyatt-sydney/sydph" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.capellahotels.com/en/capella-sydney" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="capella.jpeg" loading="lazy" decoding="async" alt="Capella Sydney"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Sandstone Precinct · CBD</p>
+                <strong><a href="https://www.capellahotels.com/en/capella-sydney" target="_blank" rel="noopener">Capella Sydney</a></strong>
+                <p>Heritage architecture with luxury service, wellness, and dining in the CBD.</p>
+                <div class="guide-pin-links"><a href="https://www.capellahotels.com/en/capella-sydney" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.paramounthousehotel.com.au/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="paramount.webp" loading="lazy" decoding="async" alt="Paramount House Hotel Surry Hills"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Surry Hills · Oxford Street edge</p>
+                <strong><a href="https://www.paramounthousehotel.com.au/" target="_blank" rel="noopener">Paramount House Hotel</a></strong>
+                <p>Boutique style, strong coffee, and proximity to Oxford Street dining without a large-chain feel.</p>
+                <div class="guide-pin-links"><a href="https://www.paramounthousehotel.com.au/" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="guide-section">
+          <h3>Where to Eat</h3>
+          <div class="guide-pin-grid two-col">
+            <article class="guide-pin-card">
+              <a href="https://pellegrino2000.com/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="pelligrino2000.jpeg" loading="lazy" decoding="async" alt="Pellegrino 2000 restaurant Surry Hills"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Surry Hills · Italian</p>
+                <strong><a href="https://pellegrino2000.com/" target="_blank" rel="noopener">Pellegrino 2000</a></strong>
+                <p>Trattoria energy: bold Italian plates, neighborhood buzz, and a streetside bar made for a pre-dinner drink. Reserve ahead for prime dinner times.</p>
+                <div class="guide-pin-links"><a href="https://pellegrino2000.com/" target="_blank" rel="noopener">Restaurant</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.aaliarestaurant.com/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="aalia.jpeg" loading="lazy" decoding="async" alt="Aalia restaurant Sydney CBD"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">CBD · Martin Place area</p>
+                <strong><a href="https://www.aaliarestaurant.com/" target="_blank" rel="noopener">Aalia</a></strong>
+                <p>Polished Middle Eastern and North African inspired tasting menu: memorable for a celebration meal or a refined business dinner.</p>
+                <div class="guide-pin-links"><a href="https://www.aaliarestaurant.com/" target="_blank" rel="noopener">Restaurant</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="guide-section">
+          <h3>Events &amp; Nightlife</h3>
+          <ul class="guide-list">
+            <li><strong>Sydney Festival (January)</strong> Citywide theatre, music, dance, public art, and free outdoor programming, ideal if you want Sydney beyond the harbour postcards.<span class="guide-item-links"><a href="https://www.sydneyfestival.org.au/" target="_blank" rel="noopener">Sydney Festival</a></span></li>
+            <li><strong>New Year's Eve (December 31)</strong> Harbour fireworks draw massive crowds; book hotels and dining months ahead and confirm whether your viewing area needs tickets or registration.<span class="guide-item-links"><a href="https://www.cityofsydney.nsw.gov.au/events/new-years-eve" target="_blank" rel="noopener">City of Sydney NYE</a></span></li>
+            <li><strong>Sydney Gay and Lesbian Mardi Gras (late February / early March)</strong> One of the world's largest LGBTQ+ celebrations with the parade along Oxford Street on the final Saturday, plus weeks of ticketed parties; reserve lodging early and note accessible viewing zones where offered.<span class="guide-item-links"><a href="https://www.mardigras.org.au/" target="_blank" rel="noopener">Mardi Gras</a></span></li>
+            <li><strong>Vivid Sydney (May to June)</strong> Light, music, and ideas festival with installations lining the harbour; walking from the Bridge toward the Opera House takes about 1.5 to 2 hours on flat, accessible paths. Use light rail, trains, buses, or ferries into Circular Quay.<span class="guide-item-links"><a href="https://www.vividsydney.com/" target="_blank" rel="noopener">Vivid Sydney</a></span></li>
+            <li><strong>Biennale of Sydney</strong> Contemporary art across multiple venues every two years, perfect if you love museums, installations, and deeper cultural programming.<span class="guide-item-links"><a href="https://www.biennaleofsydney.art/" target="_blank" rel="noopener">Biennale of Sydney</a></span></li>
+          </ul>
+        </section>
+
+        <section class="guide-section">
+          <h3>Health &amp; Safety</h3>
+          <ul class="guide-list">
+            <li><strong>Sun and water</strong> Australian UV is strong even when it looks cloudy; wear SPF 30+, a hat, and sunglasses daily. Tap water is safe to drink across Sydney.<span class="guide-item-links"><a href="https://www.sunsmart.com.au/" target="_blank" rel="noopener">SunSmart</a></span></li>
+            <li><strong>Emergencies</strong> Dial <a href="tel:000" class="guide-inline-link">000</a> for police, fire, or ambulance. For non-urgent police matters call <a href="tel:131444" class="guide-inline-link">131 444</a>.</li>
+            <li><strong>Medical costs</strong> Public hospitals run emergency departments, but bills can add up fast for visitors, so keep travel medical coverage active.<span class="guide-item-links"><a href="https://www.healthdirect.gov.au/" target="_blank" rel="noopener">healthdirect Australia</a></span></li>
+            <li><strong>Staying alert</strong> Sydney is generally safe; still watch bags at Circular Quay and Bondi, stay aware late night around Kings Cross, and stick to well-lit routes along Oxford Street after dark.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside>
+        <div class="guide-side-card">
+          <h4>Best For</h4>
+          <ul>
+            <li>Harbour-first itineraries plus beach time</li>
+            <li>Ferry-heavy exploring (<a href="https://transportnsw.info/routes/details/sydney-ferries-network/f1-manly" target="_blank" rel="noopener" class="guide-inline-link">Manly</a>, <a href="https://taronga.org.au/" target="_blank" rel="noopener" class="guide-inline-link">Taronga</a>, <a href="https://www.visitnsw.com/destinations/sydney/inner-sydney/balmain" target="_blank" rel="noopener" class="guide-inline-link">Balmain</a>)</li>
+            <li>LGBTQ+ travelers and <a href="https://www.mardigras.org.au/" target="_blank" rel="noopener" class="guide-inline-link">Sydney Gay and Lesbian Mardi Gras</a> season (late February / early March)</li>
+            <li><a href="https://www.vividsydney.com/" target="_blank" rel="noopener" class="guide-inline-link">Vivid Sydney</a> visitors (May through June) and summer sculpture crowds along the coast</li>
+          </ul>
+        </div>
+
+        <div class="guide-side-card light">
+          <h4>When to Go</h4>
+          <p><a href="https://www.sydneyfestival.org.au/" target="_blank" rel="noopener" class="guide-inline-link">Sydney Festival</a> lights up January with arts programming citywide. <a href="https://www.cityofsydney.nsw.gov.au/events/new-years-eve" target="_blank" rel="noopener" class="guide-inline-link">New Year's Eve</a> demands early harbour bookings. <a href="https://sculpturebythesea.com/" target="_blank" rel="noopener" class="guide-inline-link">Sculpture by the Sea</a> spans Bondi to Tamarama in October and November. The <a href="https://www.biennaleofsydney.art/" target="_blank" rel="noopener" class="guide-inline-link">Biennale of Sydney</a> runs every two years. Layer February through March for heat and UV; pack layers May through August.</p>
+        </div>
+
+        <div class="guide-side-card light">
+          <h4>Paul's Planning Note</h4>
+          <p>Do not pack every day. Sydney is at its best when you leave space for ferries, coastal walks, long lunches, and a view you did not expect.</p>
+        </div>
+
+        <div class="guide-side-card light">
+          <h4>Good to Know</h4>
+          <p><strong>ETA.</strong> US tourists normally enter on an Electronic Travel Authority (Subclass 601): follow the official <a href="https://immi.homeaffairs.gov.au/visas/getting-and-having-a-visa/explore-visa-options/electronic-travel-authority-601" target="_blank" rel="noopener" class="guide-inline-link">Australian ETA (Subclass 601)</a> guidance before departure (about AUD $20), including the mobile app or web application linked there. Expect quick approval in many cases, and board with a chip-enabled passport valid for your entire stay. Digital confirmation is enough to travel.</p>
+          <p><strong>Passport &amp; backups.</strong> Carry the physical passport that matches your ETA, valid for the full trip. Keep phone photos (or a secure offline copy) of your passport photo page and ETA approval as backup.</p>
+          <p><strong>Insurance.</strong> Medical care for visitors can get expensive; travel insurance is strongly recommended. Already have flights or hotels booked but still need coverage? I can help you place travel insurance as part of planning.</p>
+          <p><strong>Money &amp; etiquette.</strong> GST is included in displayed prices. Tipping is not expected but appreciated for standout hospitality (around 10% at restaurants is a kind gesture when service shines).</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+
+<!-- INSTAGRAM INSPIRATION -->
+<section id="inspire" class="sec">
+  <div class="sec-inner">
+    <p class="lbl">Travel Inspiration</p>
+    <h2 class="dsp">Accounts we <em>love.</em></h2>
+    <div class="rule"></div>
+
+    <div class="ig-accounts-grid">
+
+      <a href="https://instagram.com/foratravel" target="_blank" class="ig-account-card">
+        <div class="ig-avatar">
+          <span>FO</span>
+          <img src="fora.jpeg" alt="Fora Travel" onerror="this.style.display='none'">
+        </div>
+        <p class="ig-handle">@foratravel</p>
+        <p class="ig-account-name">Fora Travel</p>
+        <p class="ig-account-desc">Seven Feet Travel's host agency. A community of modern travel advisors redefining what it means to book a trip.</p>
+        <span class="ig-follow-btn">Follow</span>
+      </a>
+
+      <a href="https://instagram.com/cntraveler" target="_blank" class="ig-account-card">
+        <div class="ig-avatar">
+          <span>CN</span>
+          <img src="cntraveler.jpeg" alt="Conde Nast Traveler" onerror="this.style.display='none'">
+        </div>
+        <p class="ig-handle">@cntraveler</p>
+        <p class="ig-account-name">Conde Nast Traveler</p>
+        <p class="ig-account-desc">The gold standard of travel inspiration. Dream destinations, insider guides, and stunning photography from around the world.</p>
+        <span class="ig-follow-btn">Follow</span>
+      </a>
+
+      <a href="https://instagram.com/natgeotravel" target="_blank" class="ig-account-card">
+        <div class="ig-avatar">
+          <span>NG</span>
+          <img src="natgeotravel.jpeg" alt="National Geographic Travel" onerror="this.style.display='none'">
+        </div>
+        <p class="ig-handle">@natgeotravel</p>
+        <p class="ig-account-name">National Geographic Travel</p>
+        <p class="ig-account-desc">Breathtaking photography and storytelling from every corner of the globe. 30M+ followers can't be wrong.</p>
+        <span class="ig-follow-btn">Follow</span>
+      </a>
+
+      <a href="https://instagram.com/beautifuldestinations" target="_blank" class="ig-account-card">
+        <div class="ig-avatar">
+          <span>BD</span>
+          <img src="beautifuldestinations.jpeg" alt="Beautiful Destinations" onerror="this.style.display='none'">
+        </div>
+        <p class="ig-handle">@beautifuldestinations</p>
+        <p class="ig-account-name">Beautiful Destinations</p>
+        <p class="ig-account-desc">The world's most stunning places curated in one feed. 20M+ followers and still finding new spots worth adding to the list.</p>
+        <span class="ig-follow-btn">Follow</span>
+      </a>
+
+      <a href="https://instagram.com/lonelyplanet" target="_blank" class="ig-account-card">
+        <div class="ig-avatar">
+          <span>LP</span>
+          <img src="lonelyplanet.jpeg" alt="Lonely Planet" onerror="this.style.display='none'">
+        </div>
+        <p class="ig-handle">@lonelyplanet</p>
+        <p class="ig-account-name">Lonely Planet</p>
+        <p class="ig-account-desc">Travel tips, hidden gems, and honest guides from the world's most trusted travel brand. Great for first-time visitors anywhere.</p>
+        <span class="ig-follow-btn">Follow</span>
+      </a>
+
+      <a href="https://www.instagram.com/afarmedia" target="_blank" class="ig-account-card">
+        <div class="ig-avatar">
+          <span>AF</span>
+          <img src="afar.jpeg" alt="AFAR Magazine" onerror="this.style.display='none'">
+        </div>
+        <p class="ig-handle">@afarmedia</p>
+        <p class="ig-account-name">AFAR Magazine</p>
+        <p class="ig-account-desc">Experiential travel journalism at its best. Less tourist traps, more local culture, real stories, and places worth caring about.</p>
+        <span class="ig-follow-btn">Follow</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="sec">
+  <div class="sec-inner">
+    <p class="lbl">Client Reviews</p>
+    <h2 class="dsp">What travelers<br>are <em>saying.</em></h2>
+    <div class="rule"></div>
+    <div class="test-grid">
+      <div class="test">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">"</div>
+        <p class="test-txt">Paul was so helpful in planning and booking my hotel stay. He made sure I got the best offer available and that all of my comfort requirements were met and then some. Planning is the hardest part of travel for me. Paul's knowledge and attention to detail made the process easy, listening to my needs and presenting the best possible options. Flawless vacation. I will be working with him again.</p>
+        <p class="test-auth">James P. · Seattle</p>
+      </div>
+      <div class="test">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">"</div>
+        <p class="test-txt">I had an amazing experience working with Paul from start to finish. Every detail of my trip was handled with care, professionalism, and genuine thoughtfulness. Paul took the time to understand exactly what I wanted and turned it into a seamless, stress-free babymoon that exceeded my expectations. Looking forward to planning my next trip with Paul.</p>
+        <p class="test-auth">Christopher T. · San Francisco</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOTEL SCANNER -->
+<section id="scanner">
+  <div class="sec-inner">
+    <div class="scan-layout">
+      <div class="scan-copy">
+        <p class="lbl">Bougie on a Budget</p>
+        <h2 class="dsp">Hotel <em>Scanner</em></h2>
+        <div class="rule"></div>
+        <p>Use the scanner when you already have a destination, hotel, or date range in mind and want to know whether the price you found is actually the best one.</p>
+        <p>It compares live rates across major booking platforms so you can spot better deals, check different dates, and decide whether to book now or keep looking.</p>
+        <ul class="scan-feats">
+          <li>Compare real-time hotel rates before you commit</li>
+          <li>Search by hotel, destination, or travel dates</li>
+          <li>See whether a different date or booking site saves money</li>
+          <li>Built for travelers who like luxury, but still love a smart deal</li>
+        </ul>
+        <a href="https://hotelscanner.paul-totah.com" target="_blank" class="btn-primary">Open Scanner →</a>
+      </div>
+      <div class="scan-img">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&fit=crop&q=85" alt="Luxury hotel">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- POLICIES -->
+<section class="sec sec-light" id="policies">
+  <div class="sec-inner">
+
+    <p class="lbl" style="margin-top:60px;">Policies</p>
+    <h2 class="dsp" style="font-size:clamp(28px,4vw,48px);">What you should <em>know.</em></h2>
+    <div class="rule"></div>
+
+    <div class="know">
+      <div class="k-card k-expand"><div class="k-acc"></div><div class="k-bd" style="width:100%;"><div class="k-expand-header" onclick="togglePolicy('p1')"><p class="k-title">Planning Fees &amp; Pricing</p><span class="k-toggle" id="p1-toggle">Read more ↓</span></div><div class="k-expand-body" id="p1-body">
+        <p class="k-text" style="margin-bottom:10px;"><strong style="color:#222;">Non-Refundable.</strong> All planning fees are non-refundable, including in the event of a trip cancellation or change. These fees compensate for the time, research, and coordination already performed, regardless of whether travel takes place.</p>
+        <p class="k-text" style="margin-bottom:10px;"><strong style="color:#222;">Billed Separately.</strong> Planning fees are billed separately from your travel costs. Fees are not bundled into or hidden within any booking price.</p>
+        <p class="k-text" style="margin-bottom:10px;"><strong style="color:#222;">Scope-Based.</strong> Your planning fee is agreed upon before any work begins. If your trip changes significantly in complexity, a revised fee will be communicated and confirmed before additional work starts.</p>
+        <p class="k-text"><strong style="color:#222;">Group Bookings.</strong> The 1% group booking fee is calculated on the total pre-tax value including applicable fees, invoiced and collected prior to confirming any reservations.</p>
+      </div></div></div>
+
+      <div class="k-card k-expand"><div class="k-acc"></div><div class="k-bd" style="width:100%;"><div class="k-expand-header" onclick="togglePolicy('p5')"><p class="k-title">Travel Bank Credits</p><span class="k-toggle" id="p5-toggle">Read more ↓</span></div><div class="k-expand-body" id="p5-body"><p class="k-text">Travel bank credits carry no cash value and may only be applied toward future bookings or planning fees with Seven Feet Travel. Credits do not expire but are non-transferable.</p></div></div></div>
+
+      <div class="k-card k-expand" id="tc-card">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleTC()">
+            <p class="k-title">Terms &amp; Conditions</p>
+            <span class="k-toggle" id="tc-toggle">Read full terms ↓</span>
+          </div>
+          <div class="k-expand-body" id="tc-body">
+            <p class="k-text tc-intro">These terms and conditions ("Agreement") govern the relationship between Paul Totah, an independent travel advisor ("Travel Advisor" or "we") and you, the purchaser of travel services or lead traveler ("Client" or "you").</p>
+            <div class="tc-section"><p class="tc-heading">Use of Travel Advisor's Services</p><p class="k-text">You represent and warrant that you are at least 18 years of age and authorized to enter into this Agreement; that all information you provide is true and accurate; and that you will abide by the terms of this Agreement and any applicable supplier terms and conditions.</p></div>
+            <div class="tc-section"><p class="tc-heading">Independent Travel Advisor</p><p class="k-text">Travel Advisor is an independent travel advisor of Fora Travel, Inc. ("Fora") and operates its own separate travel business. Client understands that: (i) Travel Advisor is not an agent, representative, or employee of Fora; (ii) Fora is a technology provider and host agency, not a travel service provider; (iii) Client will have no claim against Fora for losses arising from Travel Advisor's services; and (iv) Fora is not a party to this Agreement. Client expressly waives any claims against Fora arising from or relating to any travel arrangements, advisor services, cancellations, or disputes.</p></div>
+            <div class="tc-section"><p class="tc-heading">Services &amp; Planning Fees</p><p class="k-text">Travel Advisor will provide travel planning services including researching and booking accommodations, transportation, activities, and tours based on Client's preferences and budget. Any planning fees are mutually agreed in writing, are 100% non-refundable, and are due before Travel Advisor begins work on an itinerary.</p></div>
+            <div class="tc-section"><p class="tc-heading">Suppliers &amp; Client's Responsibility</p><p class="k-text">Travel Advisor acts as liaison between Client and travel suppliers. The suppliers named in travel documentation are responsible for providing those services. Client consents to the use of disclosed suppliers and is responsible for due diligence of supplier quality. Travel Advisor makes no guarantee of a supplier's rates, bookings, or quality, and bears no responsibility for changes, delays, cancellations, or modifications made by a supplier or due to force majeure.</p></div>
+            <div class="tc-section"><p class="tc-heading">Travel Bookings</p><p class="k-text">All quoted prices are in USD and subject to change. Many suppliers use dynamic pricing; prices cannot be guaranteed until booked and a deposit is received. Client authorizes Travel Advisor's use of personal information for bookings and related services. Client will pay suppliers directly or as directed by Travel Advisor.</p><p class="k-text" style="margin-top:8px;">YOU AGREE NOT TO FILE ANY DISPUTE WITH YOUR BANK OR CREDIT CARD COMPANY TO AVOID BOOKING TERMS AND CONDITIONS, UNLESS THE PRODUCT OR SERVICES WERE NEVER PROVIDED OR GROSSLY MISREPRESENTED. Client must provide Travel Advisor a minimum of 48 hours' notice by email for any cancellation or modification requests.</p></div>
+            <div class="tc-section"><p class="tc-heading">Travel Insurance</p><p class="k-text">Travel insurance is not included unless expressly purchased. Insurance protects against supplier issues, delays, cancellations, medical emergencies, lost luggage, and more. Without appropriate travel insurance, cancellation penalties from suppliers will apply, potentially resulting in the full loss of monies paid. THE PURCHASE OF TRAVEL INSURANCE IS HIGHLY RECOMMENDED ON ALL TRIPS.</p></div>
+            <div class="tc-section"><p class="tc-heading">Government Identification &amp; Travel Advisories</p><p class="k-text">Travel Advisor is not responsible for denied entry into any country. All guests are responsible for ensuring proper travel documents. Names on documents must match legal photo I.D. Passports are required for international travel and must be valid 6 months after the travel date for many countries. A visa may also be required.</p><p class="k-text" style="margin-top:8px;">Children traveling with one parent or without both parents may require authenticated consent forms. Travel to certain destinations may involve greater risk. Changes in travel advisories do not supersede supplier cancellation and refund policies. CLIENT'S PARTICIPATION IN ANY TRAVEL CONSTITUTES ACCEPTANCE OF SUCH RISK.</p></div>
+            <div class="tc-section"><p class="tc-heading">Liability, Damages &amp; Force Majeure</p><p class="k-text">TRAVEL ADVISOR ACTS SOLELY AS AN AUTHORIZED SELLER FOR DISCLOSED TRAVEL SUPPLIERS AND HAS NO CONTROL OVER THEIR OPERATIONS. TRAVEL ADVISOR IS NOT LIABLE FOR PERSONAL INJURY, PROPERTY DAMAGE, OR ANY ISSUES ARISING FROM SUPPLIERS' SERVICES. ANY RECOVERY FROM TRAVEL ADVISOR IS LIMITED TO THE AMOUNT OF COMMISSION AND FEES ACTUALLY RECEIVED BY TRAVEL ADVISOR.</p><p class="k-text" style="margin-top:8px;">Travel Advisor is not liable for any failure or delay due to causes beyond its control, including natural disasters, civil unrest, war, terrorism, pandemics, government actions, or other unforeseen events.</p></div>
+            <div class="tc-section"><p class="tc-heading">General</p><p class="k-text">This Agreement is governed by the laws of the State of Washington. Disputes shall be resolved exclusively in courts in Bothell, Washington. Any claim against Travel Advisor must be brought within 12 months of trip completion. TRAVEL ADVISOR SHALL NOT BE LIABLE FOR PUNITIVE OR EXEMPLARY DAMAGES. YOU MAY ONLY BRING CLAIMS IN YOUR INDIVIDUAL CAPACITY AND NOT AS PART OF A CLASS ACTION.</p><p class="k-text" style="margin-top:8px;">Travel Advisor reserves the right to amend this Agreement at any time. Updated versions are effective immediately upon provision to Client. This Agreement constitutes the entire agreement between the parties. By engaging Travel Advisor's services, you consent to these terms.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <p class="lbl" style="justify-content:center; margin-bottom:20px;">Get in Touch</p>
+    <h2 class="contact-headline">Ready to go<br><em>somewhere?</em></h2>
+    <p class="contact-sub">Tell me where you want to go, when you are thinking of traveling, and what kind of trip actually feels like you.</p>
+
+    <form class="contact-form" action="https://formsubmit.co/paul.totah@fora.travel" method="POST">
+      <input type="hidden" name="_subject" value="New Travel Inquiry: Seven Feet Travel">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <input type="text" name="destination" placeholder="Where do you want to go?">
+      <input type="text" name="dates" placeholder="Approximate travel dates">
+      <input type="text" name="budget" placeholder="Approximate budget or comfort zone">
+      <textarea name="message" placeholder="What kind of traveler are you? Tell me what you love doing, how you like to spend your days, your travel style, group size, and any must-haves."></textarea>
+      <button type="submit" class="form-submit">Send Message</button>
+      <p class="form-note">I'll be in touch within 1 to 2 business days.</p>
+    </form>
+
+    <div class="contact-divider">or reach me directly</div>
+
+    <div class="contact-alt">
+      <a href="https://instagram.com/sevenfeettravel" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        DM on Instagram
+      </a>
+      <a href="mailto:paul.totah@fora.travel" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        paul.totah@fora.travel
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">Seven <span>Feet</span> Travel</div>
+      <p class="ft-tag">Personalized international travel planning, from a single stay to an around-the-world expedition.</p>
+      <a href="https://instagram.com/sevenfeettravel" target="_blank" class="ig-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @sevenfeettravel
+      </a>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Navigate</p>
+      <ul>
+        <li><a href="#about-sf">About Seven Feet</a></li>
+        <li><a href="#services">Planning Services</a></li>
+        <li><a href="#scanner">Hotel Scanner</a></li>
+        <li><a href="#guides">Destination Guides</a></li>
+        <li><a href="#inspire">Travel Inspiration</a></li>
+        <li><a href="#testimonials">Client Reviews</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Services</p>
+      <ul>
+        <li><a href="#services">Hotel &amp; Car</a></li>
+        <li><a href="#services">Cruise Bookings</a></li>
+        <li><a href="#services">Custom Itinerary</a></li>
+        <li><a href="#services">Full-Service Planning</a></li>
+        <li><a href="#services">Group Travel</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Connect</p>
+      <ul>
+        <li><a href="https://instagram.com/sevenfeettravel" target="_blank">Instagram</a></li>
+        <li><a href="mailto:paul.totah@fora.travel">paul.totah@fora.travel</a></li>
+        <li><a href="#policies">Policies</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div>
+      <p class="ft-copy">© 2026 Seven Feet Travel. All rights reserved.</p>
+      <p class="ft-sot">State of Washington Seller of Travel (SOT) · UBI 605329242 &nbsp;·&nbsp; Paul Totah, Independent Fora Travel Advisor d/b/a Seven Feet Travel · UBI 606147086</p>
+    </div>
+    <div class="ft-legal">
+      <a href="#policies">Policies</a>
+      <a href="#services">Fee Structure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+
+  // Full menu overlay
+  const menuOverlay = document.getElementById('main-menu');
+  let menuOpen = false;
+
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    menuOverlay.classList.toggle('open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    menuOpen = false;
+    menuOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (menuOpen) {
+      closeMenu();
+      return;
+    }
+    const shareMenu = document.getElementById('sydney-guide-share-menu');
+    if (shareMenu && !shareMenu.hidden) {
+      closeSydneyShareMenu();
+      e.preventDefault();
+      return;
+    }
+    closeSydneyGuide();
+  });
+
+  // Accordion sub-items in menu
+  function toggleMenuAcc(id) {
+    const sub = document.getElementById(id);
+    const btn = sub.previousElementSibling;
+    const isOpen = sub.classList.toggle('open');
+    btn.classList.toggle('is-open', isOpen);
+  }
+
+  // About section expandable cards
+  function toggleAbout(id) {
+    const body = document.getElementById(id + '-body');
+    const arrow = document.getElementById(id + '-arrow');
+    const header = arrow.closest('.about-path-header');
+    const isOpen = body.classList.toggle('open');
+    arrow.classList.toggle('open', isOpen);
+    header.setAttribute('aria-expanded', isOpen);
+  }
+
+  // Policies expand/collapse
+  function toggleTC() {
+    const body = document.getElementById('tc-body');
+    const toggle = document.getElementById('tc-toggle');
+    const open = body.classList.toggle('open');
+    toggle.textContent = open ? 'Collapse ↑' : 'Read full terms ↓';
+  }
+
+  function togglePolicy(id) {
+    const body = document.getElementById(id + '-body');
+    const toggle = document.getElementById(id + '-toggle');
+    const open = body.classList.toggle('open');
+    toggle.textContent = open ? 'Collapse ↑' : 'Read more ↓';
+  }
+
+  // Sydney guide popup
+  const sydneyGuideModal = document.getElementById('sydney-guide-modal');
+  const sydneyEmailLink = document.getElementById('sydney-email-link');
+
+  function getSydneyGuideUrl() {
+    return window.location.href.split('#')[0] + '#sydney-guide';
+  }
+
+  function closeSydneyShareMenu() {
+    const toggle = document.getElementById('sydney-guide-share-toggle');
+    const menu = document.getElementById('sydney-guide-share-menu');
+    const dd = document.getElementById('sydney-guide-share-dropdown');
+    if (!toggle || !menu || !dd) return;
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    dd.classList.remove('open');
+  }
+
+  function toggleSydneyShareMenu() {
+    const toggle = document.getElementById('sydney-guide-share-toggle');
+    const menu = document.getElementById('sydney-guide-share-menu');
+    const dd = document.getElementById('sydney-guide-share-dropdown');
+    if (!toggle || !menu || !dd) return;
+    if (menu.hidden) {
+      menu.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      dd.classList.add('open');
+    } else {
+      closeSydneyShareMenu();
+    }
+  }
+
+  function openSydneyGuide() {
+    sydneyGuideModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (window.location.hash !== '#sydney-guide') {
+      history.replaceState(null, '', '#sydney-guide');
+    }
+  }
+
+  function closeSydneyGuide() {
+    if (!sydneyGuideModal || !sydneyGuideModal.classList.contains('open')) return;
+    closeSydneyShareMenu();
+    sydneyGuideModal.classList.remove('open');
+    document.body.classList.remove('guide-printing');
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    if (window.location.hash === '#sydney-guide') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  function printSydneyGuide() {
+    document.body.classList.add('guide-printing');
+    window.print();
+  }
+
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('guide-printing');
+  });
+
+  sydneyGuideModal.addEventListener('click', (e) => {
+    if (e.target === sydneyGuideModal) closeSydneyGuide();
+  });
+
+  const sydneyShareToggle = document.getElementById('sydney-guide-share-toggle');
+  const sydneyShareDropdown = document.getElementById('sydney-guide-share-dropdown');
+  const sydneyPrintShareBtn = document.getElementById('sydney-print-share-btn');
+
+  if (sydneyShareToggle) {
+    sydneyShareToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleSydneyShareMenu();
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!sydneyShareDropdown || !sydneyGuideModal || !sydneyGuideModal.classList.contains('open')) return;
+    if (!sydneyShareDropdown.contains(e.target)) closeSydneyShareMenu();
+  });
+
+  if (sydneyEmailLink) {
+    sydneyEmailLink.addEventListener('click', () => closeSydneyShareMenu());
+    sydneyEmailLink.href = 'mailto:?subject=' + encodeURIComponent('Sydney Travel Guide') + '&body=' + encodeURIComponent('Trip guide from Seven Feet Travel: ' + getSydneyGuideUrl());
+  }
+
+  if (sydneyPrintShareBtn) {
+    sydneyPrintShareBtn.addEventListener('click', () => {
+      closeSydneyShareMenu();
+      printSydneyGuide();
+    });
+  }
+
+  if (window.location.hash === '#sydney-guide') {
+    openSydneyGuide();
+  }
+</script>
+</body>
+</html>
