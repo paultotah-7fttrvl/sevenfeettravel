@@ -36,7 +36,7 @@
   --gold-dim: rgba(200,168,75,0.15);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; scroll-padding-top:84px; }
 body { background:var(--black); color:var(--white); font-family:'Inter',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
 
 /* ── NAV ── */
@@ -189,6 +189,10 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 #about-sf h2.dsp { margin-bottom:12px; color:#111; }
 #about-sf .rule-dk { margin-top:16px; margin-bottom:16px; }
 .about-intro { font-size:15px; font-weight:300; color:#555; line-height:1.75; max-width:580px; margin-top:0; }
+.ideal-fit {
+  font-size:14.5px; font-weight:400; color:#4a4540; line-height:1.8; max-width:640px; margin-top:22px;
+  padding:18px 22px 18px 24px; border-left:3px solid #c8a84b; background:rgba(200,168,75,0.07); border-radius:0 2px 2px 0;
+}
 .about-layout { display:grid; grid-template-columns:1fr 340px; gap:42px; align-items:start; margin-top:12px; }
 .about-left { display:flex; flex-direction:column; gap:20px; }
 
@@ -232,6 +236,41 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   .about-right { position:static; order:-1; }
   .about-photo { aspect-ratio:4/3; }
 }
+
+/* ── HOW IT WORKS ── */
+#how-it-works { padding:72px 48px 88px; background:var(--offwhite); border-top:1px solid #e8e4dc; border-bottom:1px solid #e8e4dc; }
+#how-it-works .lbl { color:#8a7040; }
+#how-it-works .lbl::before { background:#8a7040; }
+#how-it-works h2.dsp { color:#111; margin-bottom:28px; }
+#how-it-works h2.dsp em { color:#a07030; }
+#how-it-works .rule-dk { margin-bottom:36px; }
+.hiw-intro { font-size:15px; font-weight:400; color:#555; line-height:1.85; max-width:760px; margin-bottom:44px; }
+.hiw-steps { display:flex; flex-direction:column; gap:30px; max-width:860px; }
+.hiw-step { display:grid; grid-template-columns:56px 1fr; gap:8px 28px; align-items:start; }
+.hiw-num {
+  font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; line-height:1; color:#a07030;
+  letter-spacing:-0.03em; padding-top:2px;
+}
+.hiw-step-body h3 { font-size:15px; font-weight:600; color:#111; letter-spacing:0.02em; margin-bottom:8px; line-height:1.35; }
+.hiw-step-body p { font-size:14.5px; font-weight:400; color:#555; line-height:1.78; margin:0; }
+@media (max-width:820px) {
+  #how-it-works { padding-left:24px; padding-right:24px; }
+  .hiw-step { grid-template-columns:44px 1fr; gap:8px 18px; }
+  .hiw-num { font-size:32px; }
+}
+
+/* ── FAQ ── */
+#faq { border-top:1px solid #e8e4dc; }
+#faq .rule-dk { margin-bottom:28px; opacity:0.75; }
+.faq-know { margin-top:8px; }
+.faq-know .k-expand-header { align-items:flex-start; gap:16px; }
+.faq-know .k-toggle { margin-top:2px; }
+.faq-q { font-size:14px; font-weight:600; color:#111; line-height:1.35; margin-bottom:0; padding-right:12px; }
+.faq-a { font-size:13.5px; color:#555; line-height:1.75; margin-top:14px; }
+.faq-a p + p { margin-top:10px; }
+.faq-tier-line { margin-bottom:10px; }
+.faq-tier-line:last-child { margin-bottom:0; }
+.services-fit-line { font-size:14px; color:var(--muted); line-height:1.75; max-width:600px; margin-bottom:32px; font-weight:400; }
 
 /* ── SERVICES / TIERS ── */
 .tier-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:40px; }
@@ -645,8 +684,21 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 .contact-form input::placeholder,.contact-form textarea::placeholder { color:rgba(255,255,255,0.58); }
 .contact-form input:focus,.contact-form textarea:focus { outline:none; border-color:rgba(200,168,75,0.45); background:rgba(255,255,255,0.07); }
 .contact-form textarea { min-height:96px; resize:vertical; }
+.hp-field { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
+.contact-form-wrap { position:relative; }
+.form-banner {
+  font-size:13.5px; line-height:1.65; padding:14px 18px; border-radius:4px; margin-bottom:14px; text-align:left;
+}
+.form-banner[hidden] { display:none !important; }
+.form-banner.success {
+  background:rgba(200,168,75,0.12); border:1px solid rgba(200,168,75,0.4); color:rgba(255,250,235,0.95);
+}
+.form-banner.error {
+  background:rgba(90,28,22,0.35); border:1px solid rgba(220,120,100,0.45); color:rgba(255,230,225,0.96);
+}
 .form-submit { width:100%; background:var(--gold); color:var(--black); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; padding:15px 28px; border-radius:40px; border:none; cursor:pointer; font-family:'Inter',sans-serif; transition:background 0.2s; margin-top:4px; }
-.form-submit:hover { background:#b5922e; }
+.form-submit:hover:not(:disabled) { background:#b5922e; }
+.form-submit:disabled { opacity:0.55; cursor:not-allowed; }
 .form-note { font-size:11px; color:rgba(255,255,255,0.58); text-align:center; margin-top:6px; }
 .contact-divider { display:flex; align-items:center; gap:16px; color:rgba(255,255,255,0.52); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; margin:24px 0; }
 .contact-divider::before,.contact-divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.08); }
@@ -719,6 +771,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       <p class="menu-col-title">About</p>
       <ul class="menu-links">
         <li><a href="#about-sf" onclick="closeMenu()">About Seven Feet</a></li>
+        <li><a href="#how-it-works" onclick="closeMenu()">How It Works</a></li>
       </ul>
     </div>
 
@@ -740,6 +793,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
           </ul>
         </li>
         <li><a href="#scanner" onclick="closeMenu()">Hotel Scanner</a></li>
+        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
       </ul>
     </div>
 
@@ -808,7 +862,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1608640346865-bf28ae68d9ac?w=800&fit=crop&q=80');"><span class="d-label">Queenstown</span></div>
   <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&fit=crop&q=80');"><span class="d-label">Mumbai</span></div>
   <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&fit=crop&q=80');"><span class="d-label">San Francisco</span></div>
-  <div class="d-photo" style="background-image:url('buenos aires.jpeg'); background-position:center 50%;"><span class="d-label">Buenos Aires</span></div>
+  <div class="d-photo" style="background-image:url('buenos-aires.jpeg'); background-position:center 50%;"><span class="d-label">Buenos Aires</span></div>
 </div>
 
 
@@ -818,6 +872,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     <p class="lbl">The Agency</p>
     <h2 class="dsp">Thoughtful travel,<br><em>planned around you.</em></h2>
     <p class="about-intro">Seven Feet Travel helps you plan trips that actually fit how you travel, with the guidance of someone who has spent 25+ years inside the travel and hospitality industry.</p>
+    <p class="ideal-fit">Best fit for travelers who want to give themselves back their time, whether they&rsquo;re planning a hotel stay, cruise, group trip, or custom itinerary that deserves thoughtful care and a few extra touches.</p>
     <div class="rule rule-dk"></div>
 
     <div class="about-layout">
@@ -949,6 +1004,54 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 </section>
 
 
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="sec-inner">
+    <p class="lbl">Planning Process</p>
+    <h2 class="dsp">How It <em>Works</em></h2>
+    <div class="rule rule-dk"></div>
+    <p class="hiw-intro">Travel planning should feel exciting, not overwhelming. Whether you need a single hotel, a cruise, a multi-stop itinerary, or support for a more complex trip, I help turn the moving pieces into a plan that feels thoughtful, personal, and easy to follow.</p>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num" aria-hidden="true">1</div>
+        <div class="hiw-step-body">
+          <h3>Tell me what you&rsquo;re dreaming up</h3>
+          <p>Share where you want to go, who&rsquo;s traveling, your timing, budget, and what you want the trip to feel like.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num" aria-hidden="true">2</div>
+        <div class="hiw-step-body">
+          <h3>We&rsquo;ll choose the right level of support</h3>
+          <p>Some trips only need a great hotel or cruise booking. Others need more detailed planning, research, coordination, and support.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num" aria-hidden="true">3</div>
+        <div class="hiw-step-body">
+          <h3>I&rsquo;ll shape the options</h3>
+          <p>I research hotels, routes, cruises, transportation, experiences, and the details that can make the trip smoother, smarter, and more memorable.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num" aria-hidden="true">4</div>
+        <div class="hiw-step-body">
+          <h3>You review and decide</h3>
+          <p>I&rsquo;ll share recommendations, talk through options, and adjust the plan based on what feels right for you.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num" aria-hidden="true">5</div>
+        <div class="hiw-step-body">
+          <h3>I stay connected</h3>
+          <p>Once the key pieces are booked, I help keep the details organized and stay available for questions, changes, and support before and during travel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- SERVICES -->
 <section class="sec" id="services">
   <div class="sec-inner">
@@ -956,6 +1059,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     <p class="lbl">Planning Services</p>
     <h2 class="dsp">Transparent<br><em>fee structure.</em></h2>
     <div class="rule"></div>
+    <p class="services-fit-line">Best fit for travelers who want their time back and a trip that feels thoughtful, personal, and well cared for.</p>
 
     <div class="tier-grid">
 
@@ -1455,6 +1559,145 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 </section>
 
 
+<!-- FAQ -->
+<section id="faq" class="sec sec-light">
+  <div class="sec-inner">
+    <p class="lbl">FAQ</p>
+    <h2 class="dsp">Answers that <em>help.</em></h2>
+    <div class="rule rule-dk"></div>
+
+    <div class="know faq-know">
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq1')">
+            <p class="faq-q">How long does planning take?</p>
+            <span class="k-toggle" id="faq1-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq1-body">
+            <div class="faq-a">
+              <p>Most trips take anywhere from a few days to a few weeks to plan, depending on the complexity, destination, number of travelers, and how quickly decisions are made. If your trip is time-sensitive, share that in the inquiry form and I&rsquo;ll be upfront about what is realistic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq2')">
+            <p class="faq-q">What is the difference between the planning tiers?</p>
+            <span class="k-toggle" id="faq2-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq2-body">
+            <div class="faq-a">
+              <p>Seven Feet Travel offers several levels of planning support depending on how much help your trip needs.</p>
+              <p class="faq-tier-line"><strong>Tier 1 · Accommodations &amp; Transport</strong> is for single hotel, rental car, or train reservations. There is no planning fee for this tier.</p>
+              <p class="faq-tier-line"><strong>Tier 1B · Cruise</strong> is for standard cruise bookings for up to 4 guests, including cabin selection, dining and preference coordination, and shore excursion guidance. There is no planning fee for this tier.</p>
+              <p class="faq-tier-line"><strong>Tier 2 · Multi-Destination Trips</strong> is for custom itineraries with multiple hotels, rental cars, trains, or several moving parts across destinations. This includes up to 3 hours of planning work and has a flat planning fee of $125.</p>
+              <p class="faq-tier-line"><strong>Tier 3 · Expeditions &amp; Complex Journeys</strong> is for full-service planning, including around-the-world itineraries, safaris, multi-country expeditions, or trips requiring deeper research, vendor coordination, and ongoing support. Pricing starts at $300 and varies by scope.</p>
+              <p class="faq-tier-line"><strong>Group Travel · Hotel or Cruise</strong> is for room blocks, multiple cruise cabins, or coordination across multiple guests and rooms. The planning fee is 1% of the total value before taxes and fees.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq3')">
+            <p class="faq-q">Are planning fees refundable?</p>
+            <span class="k-toggle" id="faq3-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq3-body">
+            <div class="faq-a">
+              <p>Planning fees cover the time, research, coordination, and care that go into building your trip and are generally non-refundable once planning has started. If something changes, I&rsquo;ll do my best to adjust the plan where possible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq4')">
+            <p class="faq-q">How many revisions are included?</p>
+            <span class="k-toggle" id="faq4-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq4-body">
+            <div class="faq-a">
+              <p>Each planning fee includes a reasonable round of refinements so we can make sure the trip feels right. If the trip direction changes significantly, such as a new destination, new dates, or a different style of trip, an additional planning fee may apply.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq5')">
+            <p class="faq-q">Who pays hotels, tours, cruises, or suppliers?</p>
+            <span class="k-toggle" id="faq5-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq5-body">
+            <div class="faq-a">
+              <p>Travelers pay hotels, cruise lines, tour operators, and other suppliers directly. Seven Feet Travel helps with recommendations, planning, booking support, and coordination where applicable, but supplier payments, deposits, cancellation terms, and final balances are handled according to each supplier&rsquo;s policies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq6')">
+            <p class="faq-q">What happens if my dates change?</p>
+            <span class="k-toggle" id="faq6-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq6-body">
+            <div class="faq-a">
+              <p>Date changes happen. I&rsquo;ll help adjust the plan where possible, but pricing, availability, perks, and cancellation terms may change depending on the hotel, cruise line, supplier, or timing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq7')">
+            <p class="faq-q">Do you book flights?</p>
+            <span class="k-toggle" id="faq7-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq7-body">
+            <div class="faq-a">
+              <p>In some cases, I can help with air travel, especially when it is part of a larger itinerary. For straightforward domestic flights on major carriers, travelers are usually best served booking directly. I&rsquo;m happy to talk through what makes the most sense based on the trip.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k-card k-expand">
+        <div class="k-acc"></div>
+        <div class="k-bd" style="width:100%;">
+          <div class="k-expand-header" onclick="toggleFaq('faq8')">
+            <p class="faq-q">Do you plan cruises?</p>
+            <span class="k-toggle" id="faq8-toggle">Read answer ↓</span>
+          </div>
+          <div class="k-expand-body" id="faq8-body">
+            <div class="faq-a">
+              <p>Yes. Cruises are a core offering at Seven Feet Travel. I can help with cruise line selection, ship choice, itinerary, cabin type, dining preferences, shore excursion guidance, and pre- or post-cruise hotel stays.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- HOTEL SCANNER -->
 <section id="scanner">
   <div class="sec-inner">
@@ -1533,20 +1776,24 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     <h2 class="contact-headline">Ready to go<br><em>somewhere?</em></h2>
     <p class="contact-sub">Tell me where you want to go, when you are thinking of traveling, and what kind of trip actually feels like you.</p>
 
-    <form class="contact-form" action="https://formsubmit.co/paul.totah@fora.travel" method="POST">
-      <input type="hidden" name="_subject" value="New Travel Inquiry: Seven Feet Travel">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+    <!-- Contact form uses Web3Forms (reliable on custom domains). Replace ACCESS_KEY below: https://web3forms.com — add www.sevenfeettravel.com under Allowed Domains. FormSubmit returned repeated 522 timeouts from production tests. -->
+    <form id="travel-inquiry-form" class="contact-form">
+      <input type="hidden" name="access_key" value="ACCESS_KEY_ADD_FROM_WEB3FORMS_DASHBOARD" id="web3forms-access-key">
+      <input type="hidden" name="subject" value="New Travel Inquiry: Seven Feet Travel">
+      <p id="contact-form-config-note" class="form-banner error" hidden>If you are the site owner: add your Web3Forms access key in this form&rsquo;s hidden field (see comment in the HTML). The form cannot send until the key is set.</p>
+      <p id="contact-form-success" class="form-banner success" hidden>Thank you. Your note is on its way. I&rsquo;ll reply within 1 to 2 business days.</p>
+      <p id="contact-form-error" class="form-banner error" hidden></p>
+      <input type="text" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-row">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
+        <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
       </div>
-      <input type="text" name="destination" placeholder="Where do you want to go?">
-      <input type="text" name="dates" placeholder="Approximate travel dates">
-      <input type="text" name="budget" placeholder="Approximate budget or comfort zone">
+      <input type="text" name="destination" placeholder="Where do you want to go?" autocomplete="off">
+      <input type="text" name="dates" placeholder="Approximate travel dates" autocomplete="off">
+      <input type="text" name="budget" placeholder="Approximate budget or comfort zone" autocomplete="off">
       <textarea name="message" placeholder="What kind of traveler are you? Tell me what you love doing, how you like to spend your days, your travel style, group size, and any must-haves."></textarea>
-      <button type="submit" class="form-submit">Send Message</button>
-      <p class="form-note">I'll be in touch within 1 to 2 business days.</p>
+      <button type="submit" class="form-submit" id="contact-submit-btn">Send Message</button>
+      <p class="form-note">I&rsquo;ll be in touch within 1 to 2 business days.</p>
     </form>
 
     <div class="contact-divider">or reach me directly</div>
@@ -1580,7 +1827,9 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       <p class="ft-col-t">Navigate</p>
       <ul>
         <li><a href="#about-sf">About Seven Feet</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#services">Planning Services</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#scanner">Hotel Scanner</a></li>
         <li><a href="#guides">Destination Guides</a></li>
         <li><a href="#inspire">Travel Inspiration</a></li>
@@ -1601,8 +1850,9 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       <p class="ft-col-t">Connect</p>
       <ul>
         <li><a href="https://instagram.com/sevenfeettravel" target="_blank">Instagram</a></li>
-        <li><a href="#policies">Policies</a></li>
-        <li><a href="#contact">Get in Touch</a></li>
+        <li><a href="mailto:paul.totah@fora.travel">Email</a></li>
+        <li><a href="#contact">Start Planning</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
@@ -1612,6 +1862,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       <p class="ft-sot">State of Washington Seller of Travel (SOT) · UBI 605329242 &nbsp;·&nbsp; Paul Totah, Independent Fora Travel Advisor d/b/a Seven Feet Travel · UBI 606147086</p>
     </div>
     <div class="ft-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
       <a href="#policies">Policies</a>
       <a href="#services">Fee Structure</a>
     </div>
@@ -1686,6 +1937,86 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     const toggle = document.getElementById(id + '-toggle');
     const open = body.classList.toggle('open');
     toggle.textContent = open ? 'Collapse ↑' : 'Read more ↓';
+  }
+
+  function toggleFaq(id) {
+    const body = document.getElementById(id + '-body');
+    const toggle = document.getElementById(id + '-toggle');
+    if (!body || !toggle) return;
+    const open = body.classList.toggle('open');
+    toggle.textContent = open ? 'Collapse ↑' : 'Read answer ↓';
+  }
+
+  // Web3Forms contact (see HTML comment + FORMS.md). FormSubmit timed out with HTTP 522 from production checks.
+  function web3FormsConfigured() {
+    const el = document.getElementById('web3forms-access-key');
+    if (!el || !el.value || !el.value.trim()) return false;
+    return !el.value.includes('ACCESS_KEY_ADD_FROM_WEB3FORMS_DASHBOARD');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cfgNote = document.getElementById('contact-form-config-note');
+    if (cfgNote && !web3FormsConfigured()) cfgNote.hidden = false;
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('thanks') === '1') {
+      const ok = document.getElementById('contact-form-success');
+      if (ok) ok.hidden = false;
+      const contactSec = document.getElementById('contact');
+      if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const clean = window.location.pathname + '#contact';
+      window.history.replaceState({}, '', clean);
+    }
+  });
+
+  const travelInquiryForm = document.getElementById('travel-inquiry-form');
+  if (travelInquiryForm) {
+    travelInquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errEl = document.getElementById('contact-form-error');
+      const okEl = document.getElementById('contact-form-success');
+      const cfgNote = document.getElementById('contact-form-config-note');
+      const btn = document.getElementById('contact-submit-btn');
+      if (!errEl || !okEl || !btn) return;
+      errEl.hidden = true;
+      okEl.hidden = true;
+
+      if (!web3FormsConfigured()) {
+        cfgNote.hidden = false;
+        errEl.textContent = 'The form is not configured yet.';
+        errEl.hidden = false;
+        return;
+      }
+
+      const honeypot = travelInquiryForm.querySelector('[name="botcheck"]');
+      if (honeypot && honeypot.value) return;
+
+      const fd = new FormData(travelInquiryForm);
+      fd.delete('botcheck');
+      const payload = Object.fromEntries(fd.entries());
+
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (data.success) {
+          travelInquiryForm.reset();
+          okEl.hidden = false;
+        } else {
+          errEl.textContent = data.message || 'Something went wrong sending your message. Please try again or email directly.';
+          errEl.hidden = false;
+        }
+      } catch (err) {
+        errEl.textContent = 'Could not reach the form service. Check your connection and try again, or use email below.';
+        errEl.hidden = false;
+      } finally {
+        btn.disabled = false;
+      }
+    });
   }
 
   // Sydney guide popup
