@@ -1956,7 +1956,8 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 
   document.addEventListener('DOMContentLoaded', () => {
     const cfgNote = document.getElementById('contact-form-config-note');
-    if (cfgNote && !web3FormsConfigured()) cfgNote.hidden = false;
+    const isLocalDev = /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname);
+    if (cfgNote && !web3FormsConfigured()) cfgNote.hidden = !isLocalDev;
 
     const params = new URLSearchParams(window.location.search);
     if (params.get('thanks') === '1') {
@@ -1982,8 +1983,9 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       okEl.hidden = true;
 
       if (!web3FormsConfigured()) {
-        cfgNote.hidden = false;
-        errEl.textContent = 'The form is not configured yet.';
+        const isLocalDev = /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname);
+        if (cfgNote) cfgNote.hidden = !isLocalDev;
+        errEl.textContent = 'This form isn\'t connected yet. Please reach out via email or Instagram below—I\'d love to hear from you.';
         errEl.hidden = false;
         return;
       }
