@@ -1,18 +1,31 @@
-# Contact form setup
+# Contact form setup (Web3Forms)
 
-Form submissions previously used **FormSubmit**. Repeated tests returned **HTTP 522** (connection timeout) from FormSubmit’s servers, which is outside this static site’s DNS or hosting configuration.
+The inquiry form posts from the browser to **Web3Forms**. The access key is **not committed** to git: it is injected during deploy from a secret environment variable.
 
-The site now submits to **Web3Forms** from the visitor’s browser instead.
+## Production (Render)
 
-## One-time setup
+1. In [Render](https://dashboard.render.com) open your **static site** → **Environment**.
+2. Add **`WEB3FORMS_ACCESS_KEY`** with your Web3Forms access key. Mark it **Secret**.
+3. Set **Build Command** to:  
+   `npm run build`  
+   (runs `node scripts/inject-web3forms-key.js`; no npm packages required.)
+4. Keep **Publish Directory** as `.` (repository root), unless you already use a different layout.
+5. In the [Web3Forms dashboard](https://web3forms.com), restrict **allowed domains** to `www.sevenfeettravel.com`.
 
-1. Create a free access key at [https://web3forms.com](https://web3forms.com).
-2. In `index.html`, find the hidden input `name="access_key"` inside the contact form.
-3. Replace the placeholder value `ACCESS_KEY_ADD_FROM_WEB3FORMS_DASHBOARD` with your real access key.
-4. In the Web3Forms dashboard, restrict **allowed domains** to `www.sevenfeettravel.com` (and optionally `localhost` for local testing).
+Each deploy runs the build step, which replaces the placeholder `__WEB3FORMS_ACCESS_KEY__` inside `index.html` with the secret value. The repo copy of `index.html` always keeps the placeholder.
 
-After the key is set, the yellow configuration banner on the contact section hides automatically and the form sends JSON to `https://api.web3forms.com/submit`.
+## Local preview with a working form
+
+1. Copy `.env.example` to `.env` and set `WEB3FORMS_ACCESS_KEY=...` (`.env` is gitignored).
+2. Run `npm run build`, then serve the folder (for example `python3 -m http.server`).
+
+Without `.env` or env vars, the contact section shows the configuration notice and submissions stay disabled.
+
+## Security notes
+
+- Anyone can still see the key in **View Source** or **Network** on the **live** site after injection—that is normal for browser-based form APIs. Keeping it out of **GitHub** stops bots from scraping the repo and avoids leaking keys in PRs and clones.
+- Because a key was previously committed to git history, **rotate it** in Web3Forms and store only the new value in Render’s environment.
 
 ## Fallback
 
-If someone cannot use the form, the contact section still lists **Instagram** and **email**.
+If the form fails, the contact section still lists **Instagram** and **email**.

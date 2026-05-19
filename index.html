@@ -1776,11 +1776,11 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     <h2 class="contact-headline">Ready to go<br><em>somewhere?</em></h2>
     <p class="contact-sub">Tell me where you want to go, when you are thinking of traveling, and what kind of trip actually feels like you.</p>
 
-    <!-- Contact form uses Web3Forms (reliable on custom domains). Replace ACCESS_KEY below: https://web3forms.com — add www.sevenfeettravel.com under Allowed Domains. FormSubmit returned repeated 522 timeouts from production tests. -->
+    <!-- Web3Forms: access_key placeholder is replaced at deploy — see FORMS.md (never commit the real key). -->
     <form id="travel-inquiry-form" class="contact-form">
-      <input type="hidden" name="access_key" value="1f3d91aa-d361-4a8e-86b1-fe2d04f9a005" id="web3forms-access-key">
+      <input type="hidden" name="access_key" value="__WEB3FORMS_ACCESS_KEY__" id="web3forms-access-key">
       <input type="hidden" name="subject" value="New Travel Inquiry: Seven Feet Travel">
-      <p id="contact-form-config-note" class="form-banner error" hidden>If you are the site owner: add your Web3Forms access key in this form&rsquo;s hidden field (see comment in the HTML). The form cannot send until the key is set.</p>
+      <p id="contact-form-config-note" class="form-banner error" hidden>If you are the site owner: set the <strong>WEB3FORMS_ACCESS_KEY</strong> secret on your host and run the build step so the key is injected (see FORMS.md).</p>
       <p id="contact-form-success" class="form-banner success" hidden>Thank you. Your note is on its way. I&rsquo;ll reply within 1 to 2 business days.</p>
       <p id="contact-form-error" class="form-banner error" hidden></p>
       <input type="text" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1951,7 +1951,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   function web3FormsConfigured() {
     const el = document.getElementById('web3forms-access-key');
     if (!el || !el.value || !el.value.trim()) return false;
-    return !el.value.includes('ACCESS_KEY_ADD_FROM_WEB3FORMS_DASHBOARD');
+    return !el.value.includes('__WEB3FORMS_ACCESS_KEY__');
   }
 
   document.addEventListener('DOMContentLoaded', () => {

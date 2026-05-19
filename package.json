@@ -1,0 +1,7 @@
+{
+  "name": "seven-feet-travel",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/inject-web3forms-key.js"
+  }
+}
