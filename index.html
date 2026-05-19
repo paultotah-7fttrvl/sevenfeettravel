@@ -160,8 +160,9 @@ nav.scrolled { background:rgba(13,13,13,0.96); backdrop-filter:blur(14px); borde
 
 /* ── DESTINATION MOSAIC ── */
 .dest-mosaic { display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:repeat(2,200px); gap:3px; }
-.d-photo { background-size:cover; background-position:center; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:12px; transition:transform 0.4s; }
+.d-photo { background-size:cover; background-position:center; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:12px; transition:transform 0.4s; text-decoration:none; color:inherit; cursor:pointer; min-height:0; }
 .d-photo:hover { transform:scale(1.02); z-index:2; }
+.d-photo:focus-visible { outline:2px solid var(--gold); outline-offset:-2px; z-index:3; }
 .d-photo::before { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 55%); }
 .d-label { position:relative; z-index:1; font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.9); }
 @media (max-width:820px) { .dest-mosaic { grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(5,160px); } }
@@ -851,18 +852,18 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 </section>
 
 
-<!-- DESTINATION MOSAIC -->
+<!-- DESTINATION MOSAIC — tiles link to official / primary destination tourism sites -->
 <div class="dest-mosaic">
-  <div class="d-photo" style="background-image:url('sydney.avif'); background-position:center 55%;"><span class="d-label">Sydney</span></div>
-  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1681407979872-0a4cbde28391?w=800&fit=crop&q=80');"><span class="d-label">London</span></div>
-  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&fit=crop&q=80');"><span class="d-label">Tokyo</span></div>
-  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&fit=crop&q=80');"><span class="d-label">Hong Kong</span></div>
-  <div class="d-photo" style="background-image:url('paris.jpeg'); background-position:center 40%;"><span class="d-label">Paris</span></div>
-  <div class="d-photo" style="background-image:url('rome.jpeg'); background-position:center 40%;"><span class="d-label">Rome</span></div>
-  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1608640346865-bf28ae68d9ac?w=800&fit=crop&q=80');"><span class="d-label">Queenstown</span></div>
-  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&fit=crop&q=80');"><span class="d-label">Mumbai</span></div>
-  <div class="d-photo" style="background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&fit=crop&q=80');"><span class="d-label">San Francisco</span></div>
-  <div class="d-photo" style="background-image:url('buenos-aires.jpeg'); background-position:center 50%;"><span class="d-label">Buenos Aires</span></div>
+  <a class="d-photo" href="https://www.sydney.com/" target="_blank" rel="noopener noreferrer" aria-label="Sydney official tourism (opens in new tab)" style="background-image:url('sydney.avif'); background-position:center 55%;"><span class="d-label">Sydney</span></a>
+  <a class="d-photo" href="https://www.visitlondon.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit London official tourism (opens in new tab)" style="background-image:url('https://images.unsplash.com/photo-1681407979872-0a4cbde28391?w=800&fit=crop&q=80');"><span class="d-label">London</span></a>
+  <a class="d-photo" href="https://www.gotokyo.org/en/" target="_blank" rel="noopener noreferrer" aria-label="Tokyo official tourism — Tokyo Tokyo (opens in new tab)" style="background-image:url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&fit=crop&q=80');"><span class="d-label">Tokyo</span></a>
+  <a class="d-photo" href="https://www.discoverhongkong.com/" target="_blank" rel="noopener noreferrer" aria-label="Hong Kong tourism board (opens in new tab)" style="background-image:url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&fit=crop&q=80');"><span class="d-label">Hong Kong</span></a>
+  <a class="d-photo" href="https://www.parisjetaime.com/en" target="_blank" rel="noopener noreferrer" aria-label="Paris tourist office — Paris je t’aime (opens in new tab)" style="background-image:url('paris.jpeg'); background-position:center 40%;"><span class="d-label">Paris</span></a>
+  <a class="d-photo" href="https://www.turismoroma.it/en" target="_blank" rel="noopener noreferrer" aria-label="Roma tourism board (opens in new tab)" style="background-image:url('rome.jpeg'); background-position:center 40%;"><span class="d-label">Rome</span></a>
+  <a class="d-photo" href="https://www.queenstownnz.co.nz/" target="_blank" rel="noopener noreferrer" aria-label="Queenstown official tourism (opens in new tab)" style="background-image:url('https://images.unsplash.com/photo-1608640346865-bf28ae68d9ac?w=800&fit=crop&q=80');"><span class="d-label">Queenstown</span></a>
+  <a class="d-photo" href="https://www.maharashtratourism.gov.in/destinations/mumbai" target="_blank" rel="noopener noreferrer" aria-label="Mumbai — Maharashtra tourism (opens in new tab)" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&fit=crop&q=80');"><span class="d-label">Mumbai</span></a>
+  <a class="d-photo" href="https://www.sftravel.com/" target="_blank" rel="noopener noreferrer" aria-label="San Francisco Travel Association (opens in new tab)" style="background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&fit=crop&q=80');"><span class="d-label">San Francisco</span></a>
+  <a class="d-photo" href="https://turismo.buenosaires.gob.ar/en" target="_blank" rel="noopener noreferrer" aria-label="Buenos Aires official tourism (opens in new tab)" style="background-image:url('buenos-aires.jpeg'); background-position:center 50%;"><span class="d-label">Buenos Aires</span></a>
 </div>
 
 
