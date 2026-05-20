@@ -643,6 +643,104 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 .scan-img img { width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:820px) { .scan-layout { grid-template-columns:1fr; gap:36px; } #scanner { padding-left:24px; padding-right:24px; } }
 
+/* ── TRAVEL DEALS (floating + modal) · update month in `.deals-float-month` & `#deals-modal-title` ── */
+.deals-float {
+  position:fixed; bottom:24px; left:24px; z-index:158;
+  display:flex; align-items:center; gap:14px;
+  padding:12px 20px 12px 18px;
+  border-radius:999px;
+  border:1px solid rgba(200,168,75,0.5);
+  background:rgba(20,20,20,0.94);
+  backdrop-filter:blur(14px);
+  box-shadow:0 8px 32px rgba(0,0,0,0.45);
+  cursor:pointer; text-align:left;
+  font-family:'Inter',sans-serif;
+  transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;
+  max-width:min(320px,calc(100vw - 40px));
+}
+.deals-float:hover { transform:translateY(-2px); border-color:var(--gold); box-shadow:0 12px 40px rgba(0,0,0,0.5); }
+.deals-float:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.deals-float-lines { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.deals-float-kicker {
+  font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.62);
+  line-height:1.2;
+}
+.deals-float-month { font-size:13px; font-weight:600; color:rgba(255,255,255,0.93); letter-spacing:0.02em; line-height:1.3; }
+.deals-float-chevron { font-size:15px; color:var(--gold); flex-shrink:0; line-height:1; opacity:0.9; }
+@media (max-width:820px) { .deals-float { left:16px; bottom:20px; padding:10px 16px; max-width:min(280px,calc(100vw - 32px)); } }
+
+#deals-modal.deals-modal { position:fixed; inset:0; z-index:750; display:none; align-items:center; justify-content:center; padding:24px; }
+#deals-modal.deals-modal.open { display:flex; }
+.deals-modal-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); }
+.deals-modal-panel {
+  position:relative; z-index:1;
+  width:100%; max-width:1040px; max-height:min(90vh,900px);
+  background:var(--offwhite); color:#111;
+  border-radius:16px; border:1px solid #e5e0d8;
+  box-shadow:0 28px 80px rgba(0,0,0,0.35);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+.deals-modal-head {
+  flex-shrink:0; padding:22px 24px 18px;
+  border-bottom:1px solid #e0dbd4;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+}
+.deals-modal-head h2 {
+  font-family:'Cormorant Garamond',serif; font-size:clamp(26px,4vw,38px); font-weight:600; line-height:1.1; color:#111; margin:0;
+}
+.deals-modal-head h2 em { font-style:italic; color:#a07030; }
+.deals-modal-close {
+  flex-shrink:0; background:rgba(255,255,255,0.92); border:1px solid #e0dbd4; border-radius:999px;
+  padding:8px 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+  color:#555; cursor:pointer; font-family:'Inter',sans-serif;
+  transition:background 0.2s,border-color 0.2s;
+}
+.deals-modal-close:hover { border-color:#c8a84b; color:#111; }
+.deals-modal-body { overflow-y:auto; padding:24px 24px 20px; -webkit-overflow-scrolling:touch; }
+.deals-modal-intro { font-size:14.5px; color:#555; line-height:1.75; max-width:720px; margin:0 0 24px; }
+.travel-deals-region { margin-bottom:36px; }
+.travel-deals-region:last-of-type { margin-bottom:24px; }
+.travel-deals-region-h {
+  font-family:'Cormorant Garamond',serif; font-size:clamp(22px,3.2vw,32px); font-weight:600; letter-spacing:-0.02em; color:#111;
+  margin:0 0 14px; padding-bottom:10px; border-bottom:1px solid #e0dbd4;
+}
+.travel-deals-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; align-items:start; }
+.deal-card {
+  background:#fff; border:1px solid #ebe6df; border-radius:12px; padding:16px 16px 17px;
+  display:flex; flex-direction:column; gap:8px;
+  box-shadow:0 6px 24px rgba(40,28,10,0.05);
+  transition:border-color 0.2s,box-shadow 0.2s;
+}
+.deal-card:hover { border-color:rgba(160,112,48,0.22); box-shadow:0 10px 30px rgba(40,28,10,0.08); }
+.deal-card-name { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:600; color:#111; line-height:1.25; margin:0; }
+.deal-card-dest {
+  font-size:9.5px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#8a7040;
+  margin:0;
+}
+.deal-card-desc { font-size:13px; color:#555; line-height:1.62; margin:0; }
+.deal-card-when { font-size:11.5px; font-weight:500; color:#444; line-height:1.45; margin:0; padding-top:2px; }
+.deal-card-when strong { color:#111; font-weight:600; }
+.travel-deals-disclaimer { font-size:11px; color:#888; line-height:1.7; margin:0; padding-top:18px; border-top:1px solid #e0dbd4; }
+.deals-modal-footer {
+  flex-shrink:0; padding:14px 24px 20px; border-top:1px solid #e0dbd4;
+  background:linear-gradient(to top,#f2f0ec, var(--offwhite));
+  display:flex; justify-content:center;
+}
+.deals-modal-mailto {
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--gold); color:var(--black); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+  padding:14px 28px; border-radius:40px; text-decoration:none; transition:background 0.2s,transform 0.2s;
+}
+.deals-modal-mailto:hover { background:#b5922e; transform:translateY(-1px); }
+@media (max-width:1100px) { .travel-deals-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (max-width:820px) {
+  .travel-deals-grid { grid-template-columns:1fr; }
+  #deals-modal.deals-modal { padding:10px 10px 0; align-items:flex-end; }
+  .deals-modal-panel { max-height:92vh; border-radius:16px 16px 0 0; }
+  .deals-modal-head { padding:18px 18px 14px; }
+  .deals-modal-body { padding:18px 18px 18px; }
+}
+
 /* ── POLICIES ── */
 .know { display:flex; flex-direction:column; gap:2px; }
 .k-card { display:flex; background:var(--charcoal); border:1px solid var(--border); overflow:hidden; }
@@ -747,6 +845,164 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   @sevenfeettravel
 </a>
 
+<!-- TRAVEL DEALS FLOAT + MODAL (update month copy in launcher, modal heading, mailto subject) -->
+<button type="button" id="travel-deals-launcher" class="deals-float" onclick="openDealsModal()" aria-expanded="false" aria-controls="deals-modal-panel">
+  <span class="deals-float-lines">
+    <span class="deals-float-kicker">Deals worth knowing about</span>
+    <span class="deals-float-month" id="travel-deals-month-inline">May 2026</span>
+  </span>
+  <span class="deals-float-chevron" aria-hidden="true">↓</span>
+</button>
+
+<div id="deals-modal" class="deals-modal" role="dialog" aria-modal="true" aria-labelledby="deals-modal-title">
+  <div class="deals-modal-backdrop" onclick="closeDealsModal()" aria-hidden="true"></div>
+  <div id="deals-modal-panel" class="deals-modal-panel" tabindex="-1">
+    <header class="deals-modal-head">
+      <div>
+        <p class="lbl" style="justify-content:flex-start;color:#8a7040;margin:0 0 8px;">Featured offers</p>
+        <h2 id="deals-modal-title" class="dsp" style="font-size:clamp(24px,3.8vw,36px); margin:0; line-height:1.08;">Travel deals — <span id="deals-modal-month-h2">May 2026</span></h2>
+      </div>
+      <button type="button" class="deals-modal-close" onclick="closeDealsModal()">Close</button>
+    </header>
+    <div class="deals-modal-body">
+
+    <p class="deals-modal-intro">Complimentary nights, resort credits, upgrades, and limited-time savings grouped by region. Details change often—tell me where you want to go and I&rsquo;ll match you to current offers.</p>
+
+    <div class="travel-deals-region">
+      <h3 class="travel-deals-region-h">Mexico &amp; Caribbean</h3>
+      <div class="travel-deals-grid">
+        <article class="deal-card">
+          <p class="deal-card-name">InterContinental Presidente Cozumel Resort Spa</p>
+          <p class="deal-card-dest">Cozumel, Mexico</p>
+          <p class="deal-card-desc">5th night free on stays of 7+ nights, plus daily breakfast for two, resort credit, room upgrade opportunities, and flexible check-in/check-out perks.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> August 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Conrad Tulum Riviera Maya</p>
+          <p class="deal-card-dest">Riviera Maya, Mexico</p>
+          <p class="deal-card-desc">20% savings plus round-trip ground transportation.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> October 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">The Riviera Maya EDITION at Kanai</p>
+          <p class="deal-card-dest">Riviera Maya, Mexico</p>
+          <p class="deal-card-desc">Guaranteed Plunge Pool Room upgrade, 20% off food and beverage, hydrotherapy access, and resort credit.</p>
+          <p class="deal-card-when"><strong>Travel:</strong> May 26 – October 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">The St. Regis Kanai Resort, Riviera Maya</p>
+          <p class="deal-card-dest">Riviera Maya, Mexico</p>
+          <p class="deal-card-desc">Family-friendly offer with complimentary dining for up to two children, a guaranteed upgrade, and resort credit on stays of 2+ nights.</p>
+          <p class="deal-card-when"><strong>Travel:</strong> May 26 – October 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Tortuga Bay Punta Cana Resort &amp; Club</p>
+          <p class="deal-card-dest">Punta Cana, Dominican Republic</p>
+          <p class="deal-card-desc">Stay 4, pay 3 or stay 7, pay 5.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> March 20, 2027</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">The Ritz-Carlton, Grand Cayman</p>
+          <p class="deal-card-dest">Grand Cayman</p>
+          <p class="deal-card-desc">Stay longer and save with special rates on stays of 4+ nights.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> March 31, 2027</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="travel-deals-region">
+      <h3 class="travel-deals-region-h">United States</h3>
+      <div class="travel-deals-grid">
+        <article class="deal-card">
+          <p class="deal-card-name">The Ritz-Carlton, Sarasota</p>
+          <p class="deal-card-dest">Sarasota, Florida</p>
+          <p class="deal-card-desc">Save up to 20% on stays of 4+ nights.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> September 30, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">The Tampa EDITION</p>
+          <p class="deal-card-dest">Tampa, Florida</p>
+          <p class="deal-card-desc">Upgrade to Premier Room, subject to availability.</p>
+          <p class="deal-card-when"><strong>Travel:</strong> June 1 – September 30, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Waldorf Astoria Washington DC</p>
+          <p class="deal-card-dest">Washington, D.C.</p>
+          <p class="deal-card-desc">25% off luxury stays.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Parker Palm Springs</p>
+          <p class="deal-card-dest">Palm Springs, California</p>
+          <p class="deal-card-desc">A celestial-inspired desert escape with private stargazing, a themed picnic, and Dom P&eacute;rignon.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Arizona Biltmore, LXR Hotels &amp; Resorts</p>
+          <p class="deal-card-dest">Phoenix, Arizona</p>
+          <p class="deal-card-desc">15% off best available rates, with additional resort credit on qualifying suite stays.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Fairmont Sonoma Mission Inn &amp; Spa</p>
+          <p class="deal-card-dest">Sonoma, California</p>
+          <p class="deal-card-desc">3rd night free for more time to relax, explore, and indulge.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 31, 2026</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="travel-deals-region">
+      <h3 class="travel-deals-region-h">Europe &amp; Beyond</h3>
+      <div class="travel-deals-grid">
+        <article class="deal-card">
+          <p class="deal-card-name">Regent Hong Kong</p>
+          <p class="deal-card-dest">Hong Kong SAR</p>
+          <p class="deal-card-desc">30% savings on qualifying suite stays of 5+ nights with Regent Club access for two.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> June 30, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Hotel Vier Jahreszeiten Kempinski M&uuml;nchen</p>
+          <p class="deal-card-dest">Munich, Germany</p>
+          <p class="deal-card-desc">Upgrade benefits on qualifying stays at this classic Munich luxury hotel.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Raffles Istanbul</p>
+          <p class="deal-card-dest">Istanbul, T&uuml;rkiye</p>
+          <p class="deal-card-desc">3rd night free on qualifying stays.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 25, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">One Aldwych, London</p>
+          <p class="deal-card-dest">London, United Kingdom</p>
+          <p class="deal-card-desc">4th night free, plus in-room mini-bar and Health Club &amp; Spa access.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 31, 2026</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">Shangri-La Paris</p>
+          <p class="deal-card-dest">Paris, France</p>
+          <p class="deal-card-desc">Complimentary upgrade to select Eiffel View categories on qualifying stays.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> December 31, 2027</p>
+        </article>
+        <article class="deal-card">
+          <p class="deal-card-name">InterContinental Halong Bay Resort</p>
+          <p class="deal-card-dest">Halong Bay, Vietnam</p>
+          <p class="deal-card-desc">3rd night free, daily breakfast, upgrade priority, resort amenity, early check-in/late check-out priority, and welcome touches.</p>
+          <p class="deal-card-when"><strong>Travel by:</strong> September 30, 2026</p>
+        </article>
+      </div>
+    </div>
+
+    <p class="travel-deals-disclaimer">Offers are subject to availability and may change or sell out without notice. Some perks depend on room type, travel dates, minimum stay, and property-specific terms. I&rsquo;ll confirm the latest details before you book.</p>
+
+    </div>
+    <footer class="deals-modal-footer">
+      <a id="deals-modal-mailto" class="deals-modal-mailto" href="mailto:paul.totah@fora.travel?subject=Travel%20deals%20%E2%80%94%20May%202026">Ask me about an offer</a>
+    </footer>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav id="main-nav">
   <a href="#hero" class="nav-logo"><em>Seven <span>Feet</span></em> Travel</a>
@@ -794,6 +1050,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
           </ul>
         </li>
         <li><a href="#scanner" onclick="closeMenu()">Hotel Scanner</a></li>
+        <li><a href="#travel-deals" onclick="event.preventDefault(); closeMenu(); openDealsModal();">Travel Deals</a></li>
         <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
       </ul>
     </div>
@@ -1832,6 +2089,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
         <li><a href="#services">Planning Services</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#scanner">Hotel Scanner</a></li>
+        <li><a href="#travel-deals" onclick="event.preventDefault(); openDealsModal();">Travel Deals</a></li>
         <li><a href="#guides">Destination Guides</a></li>
         <li><a href="#inspire">Travel Inspiration</a></li>
         <li><a href="#testimonials">Client Reviews</a></li>
@@ -1896,6 +2154,11 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     if (e.key !== 'Escape') return;
     if (menuOpen) {
       closeMenu();
+      return;
+    }
+    const dealsMd = document.getElementById('deals-modal');
+    if (dealsMd && dealsMd.classList.contains('open')) {
+      closeDealsModal();
       return;
     }
     const shareMenu = document.getElementById('sydney-guide-share-menu');
@@ -2022,6 +2285,49 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     });
   }
 
+  const dealsModal = document.getElementById('deals-modal');
+  const dealsLauncher = document.getElementById('travel-deals-launcher');
+
+  function restoreBodyOverflowAfterDealsClose() {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    const sg = document.getElementById('sydney-guide-modal');
+    document.body.style.overflow = sg && sg.classList.contains('open') ? 'hidden' : '';
+  }
+
+  function closeDealsModal() {
+    if (!dealsModal || !dealsModal.classList.contains('open')) return;
+    dealsModal.classList.remove('open');
+    if (dealsLauncher) dealsLauncher.setAttribute('aria-expanded', 'false');
+    if (window.location.hash === '#travel-deals') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    restoreBodyOverflowAfterDealsClose();
+  }
+
+  function openDealsModal() {
+    if (!dealsModal) return;
+    closeSydneyGuide();
+    dealsModal.classList.add('open');
+    if (dealsLauncher) dealsLauncher.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    if (window.location.hash !== '#travel-deals') {
+      history.replaceState(null, '', window.location.pathname + window.location.search + '#travel-deals');
+    }
+    const dealsPanel = document.getElementById('deals-modal-panel');
+    if (dealsPanel && typeof dealsPanel.focus === 'function') {
+      dealsPanel.focus({ preventScroll: true });
+    }
+  }
+
+  if (dealsModal) {
+    dealsModal.addEventListener('click', (e) => {
+      if (e.target === dealsModal) closeDealsModal();
+    });
+  }
+
   // Sydney guide popup
   const sydneyGuideModal = document.getElementById('sydney-guide-modal');
   const sydneyEmailLink = document.getElementById('sydney-email-link');
@@ -2055,6 +2361,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   }
 
   function openSydneyGuide() {
+    closeDealsModal();
     sydneyGuideModal.classList.add('open');
     document.body.style.overflow = 'hidden';
     if (window.location.hash !== '#sydney-guide') {
@@ -2114,6 +2421,9 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     });
   }
 
+  if (window.location.hash === '#travel-deals') {
+    openDealsModal();
+  }
   if (window.location.hash === '#sydney-guide') {
     openSydneyGuide();
   }
