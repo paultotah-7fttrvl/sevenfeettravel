@@ -238,26 +238,38 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   .about-photo { aspect-ratio:4/3; }
 }
 
-/* ── HOW IT WORKS ── */
+/* ── HOW IT WORKS (step cards — all copy always visible; no flip) ── */
 #how-it-works { padding:72px 48px 88px; background:var(--offwhite); border-top:1px solid #e8e4dc; border-bottom:1px solid #e8e4dc; }
 #how-it-works .lbl { color:#8a7040; }
 #how-it-works .lbl::before { background:#8a7040; }
 #how-it-works h2.dsp { color:#111; margin-bottom:28px; }
 #how-it-works h2.dsp em { color:#a07030; }
 #how-it-works .rule-dk { margin-bottom:36px; }
-.hiw-intro { font-size:15px; font-weight:400; color:#555; line-height:1.85; max-width:760px; margin-bottom:44px; }
-.hiw-steps { display:flex; flex-direction:column; gap:30px; max-width:860px; }
-.hiw-step { display:grid; grid-template-columns:56px 1fr; gap:8px 28px; align-items:start; }
-.hiw-num {
-  font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; line-height:1; color:#a07030;
-  letter-spacing:-0.03em; padding-top:2px;
+.hiw-intro { font-size:15px; font-weight:400; color:#555; line-height:1.85; max-width:760px; margin-bottom:40px; }
+.hiw-grid {
+  display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; max-width:980px;
 }
-.hiw-step-body h3 { font-size:15px; font-weight:600; color:#111; letter-spacing:0.02em; margin-bottom:8px; line-height:1.35; }
-.hiw-step-body p { font-size:14.5px; font-weight:400; color:#555; line-height:1.78; margin:0; }
+.hiw-card-span { grid-column:1 / -1; }
+.hiw-card {
+  background:#fff; color:#111;
+  border:1px solid #ebe6df; border-radius:14px; padding:22px 24px 24px;
+  box-shadow:0 8px 32px rgba(40,28,10,0.06);
+  display:grid; grid-template-columns:52px 1fr; gap:6px 20px; align-items:start;
+  transition:box-shadow 0.25s, border-color 0.25s;
+}
+.hiw-card:hover { border-color:rgba(160,112,48,0.22); box-shadow:0 12px 40px rgba(40,28,10,0.09); }
+.hiw-num {
+  font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; line-height:1; color:#a07030;
+  letter-spacing:-0.03em; padding-top:4px;
+}
+.hiw-card-copy { min-width:0; }
+.hiw-card-title { font-size:16px; font-weight:700; color:#111; line-height:1.35; margin:0 0 12px; letter-spacing:0.01em; }
+.hiw-card-copy > p { font-size:14.5px; font-weight:400; color:#555; line-height:1.78; margin:0; }
 @media (max-width:820px) {
   #how-it-works { padding-left:24px; padding-right:24px; }
-  .hiw-step { grid-template-columns:44px 1fr; gap:8px 18px; }
-  .hiw-num { font-size:32px; }
+  .hiw-grid { grid-template-columns:1fr; gap:14px; }
+  .hiw-card { grid-template-columns:44px 1fr; padding:18px 18px 20px; gap:6px 16px; }
+  .hiw-num { font-size:34px; }
 }
 
 /* ── FAQ ── */
@@ -1269,42 +1281,42 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     <h2 class="dsp">How It <em>Works</em></h2>
     <div class="rule rule-dk"></div>
     <p class="hiw-intro">Travel planning should feel exciting, not overwhelming. Whether you need a single hotel, a cruise, a multi-stop itinerary, or support for a more complex trip, I help turn the moving pieces into a plan that feels thoughtful, personal, and easy to follow.</p>
-    <div class="hiw-steps">
-      <div class="hiw-step">
+    <div class="hiw-grid">
+      <article class="hiw-card">
         <div class="hiw-num" aria-hidden="true">1</div>
-        <div class="hiw-step-body">
-          <h3>Tell me what you&rsquo;re dreaming up</h3>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">Tell me what you&rsquo;re dreaming up</h3>
           <p>Share where you want to go, who&rsquo;s traveling, your timing, budget, and what you want the trip to feel like.</p>
         </div>
-      </div>
-      <div class="hiw-step">
+      </article>
+      <article class="hiw-card">
         <div class="hiw-num" aria-hidden="true">2</div>
-        <div class="hiw-step-body">
-          <h3>We&rsquo;ll choose the right level of support</h3>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">We&rsquo;ll choose the right level of support</h3>
           <p>Some trips only need a great hotel or cruise booking. Others need more detailed planning, research, coordination, and support.</p>
         </div>
-      </div>
-      <div class="hiw-step">
+      </article>
+      <article class="hiw-card">
         <div class="hiw-num" aria-hidden="true">3</div>
-        <div class="hiw-step-body">
-          <h3>I&rsquo;ll shape the options</h3>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">I&rsquo;ll shape the options</h3>
           <p>I research hotels, routes, cruises, transportation, experiences, and the details that can make the trip smoother, smarter, and more memorable.</p>
         </div>
-      </div>
-      <div class="hiw-step">
+      </article>
+      <article class="hiw-card">
         <div class="hiw-num" aria-hidden="true">4</div>
-        <div class="hiw-step-body">
-          <h3>You review and decide</h3>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">You review and decide</h3>
           <p>I&rsquo;ll share recommendations, talk through options, and adjust the plan based on what feels right for you.</p>
         </div>
-      </div>
-      <div class="hiw-step">
+      </article>
+      <article class="hiw-card hiw-card-span">
         <div class="hiw-num" aria-hidden="true">5</div>
-        <div class="hiw-step-body">
-          <h3>I stay connected</h3>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">I stay connected</h3>
           <p>Once the key pieces are booked, I help keep the details organized and stay available for questions, changes, and support before and during travel.</p>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
