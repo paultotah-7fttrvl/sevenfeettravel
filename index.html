@@ -695,20 +695,30 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 .deals-modal-head {
   flex-shrink:0; padding:22px 24px 18px;
   border-bottom:1px solid #e0dbd4;
-  display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
 }
+.deals-modal-head > div:first-child { min-width:0; flex:1; }
 .deals-modal-head h2 {
   font-family:'Cormorant Garamond',serif; font-size:clamp(26px,4vw,38px); font-weight:600; line-height:1.1; color:#111; margin:0;
 }
 .deals-modal-head h2 em { font-style:italic; color:#a07030; }
 .deals-modal-close {
-  flex-shrink:0; background:rgba(255,255,255,0.92); border:1px solid #e0dbd4; border-radius:999px;
-  padding:8px 16px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
-  color:#555; cursor:pointer; font-family:'Inter',sans-serif;
-  transition:background 0.2s,border-color 0.2s;
+  flex-shrink:0;
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:44px; min-height:44px; margin:-6px -4px -6px 0; padding:0 10px;
+  background:rgba(255,255,255,0.96); border:1px solid #e0dbd4; border-radius:999px;
+  font-size:20px; font-weight:500; line-height:1; color:#333;
+  cursor:pointer; font-family:system-ui,-apple-system,sans-serif;
+  transition:background 0.2s,border-color 0.2s,color 0.2s;
 }
-.deals-modal-close:hover { border-color:#c8a84b; color:#111; }
-.deals-modal-body { overflow-y:auto; padding:24px 24px 20px; -webkit-overflow-scrolling:touch; }
+.deals-modal-close:hover { border-color:#c8a84b; color:#111; background:#fff; }
+.deals-modal-body {
+  flex:1;
+  min-height:0;
+  overflow-y:auto;
+  padding:24px 24px 20px;
+  -webkit-overflow-scrolling:touch;
+}
 .deals-modal-intro { font-size:14.5px; color:#555; line-height:1.75; max-width:720px; margin:0 0 24px; }
 .travel-deals-region { margin-bottom:36px; }
 .travel-deals-region:last-of-type { margin-bottom:24px; }
@@ -747,10 +757,20 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 @media (max-width:1100px) { .travel-deals-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 @media (max-width:820px) {
   .travel-deals-grid { grid-template-columns:1fr; }
-  #deals-modal.deals-modal { padding:10px 10px 0; align-items:flex-end; }
-  .deals-modal-panel { max-height:92vh; border-radius:16px 16px 0 0; }
-  .deals-modal-head { padding:18px 18px 14px; }
-  .deals-modal-body { padding:18px 18px 18px; }
+  #deals-modal.deals-modal {
+    padding:max(8px, env(safe-area-inset-top, 0px)) 10px max(10px, env(safe-area-inset-bottom, 0px)) 10px;
+    align-items:flex-end;
+  }
+  .deals-modal-panel {
+    max-height:min(92vh, calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px));
+    border-radius:16px 16px 0 0;
+  }
+  .deals-modal-head {
+    padding:14px 14px 12px;
+  }
+  .deals-modal-head h2 { font-size:clamp(20px,5.2vw,28px) !important; }
+  .deals-modal-body { padding:18px 16px 18px; }
+  .deals-modal-footer { padding-bottom:max(14px, env(safe-area-inset-bottom, 0px)); }
 }
 
 /* ── POLICIES ── */
@@ -874,7 +894,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
         <p class="lbl" style="justify-content:flex-start;color:#8a7040;margin:0 0 8px;">Featured offers</p>
         <h2 id="deals-modal-title" class="dsp" style="font-size:clamp(24px,3.8vw,36px); margin:0; line-height:1.08;">Travel deals — <span id="deals-modal-month-h2">May 2026</span></h2>
       </div>
-      <button type="button" class="deals-modal-close" onclick="closeDealsModal()">Close</button>
+      <button type="button" class="deals-modal-close" onclick="closeDealsModal()" aria-label="Close">×</button>
     </header>
     <div class="deals-modal-body">
 
