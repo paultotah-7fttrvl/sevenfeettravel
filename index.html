@@ -679,7 +679,6 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 }
 .deals-float-month { font-size:13px; font-weight:600; color:rgba(255,255,255,0.93); letter-spacing:0.02em; line-height:1.3; }
 .deals-float-chevron { font-size:15px; color:var(--gold); flex-shrink:0; line-height:1; opacity:0.9; }
-@media (max-width:820px) { .deals-float { left:16px; bottom:20px; padding:10px 16px; max-width:min(280px,calc(100vw - 32px)); } }
 
 #deals-modal.deals-modal { position:fixed; inset:0; z-index:750; display:none; align-items:center; justify-content:center; padding:24px; }
 #deals-modal.deals-modal.open { display:flex; }
@@ -861,10 +860,29 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 @media (max-width:820px) { .ft-top { grid-template-columns:1fr 1fr; gap:28px; } .ft-bot { flex-direction:column; align-items:flex-start; } footer { padding-left:24px; padding-right:24px; } }
 
 /* ── IG FLOAT ── */
-.ig-float { position:fixed; bottom:24px; right:24px; z-index:150; background:var(--offblack); border:1px solid rgba(200,168,75,0.4); border-radius:40px; padding:10px 16px; display:flex; align-items:center; gap:7px; text-decoration:none; color:var(--gold); font-size:12px; font-weight:500; letter-spacing:0.04em; box-shadow:0 4px 24px rgba(0,0,0,0.55); transition:all 0.2s; }
+.ig-float { position:fixed; bottom:24px; right:24px; z-index:150; background:var(--offblack); border:1px solid rgba(200,168,75,0.4); border-radius:40px; padding:10px 16px; display:inline-flex; align-items:center; gap:7px; text-decoration:none; color:var(--gold); font-size:12px; font-weight:500; letter-spacing:0.04em; box-shadow:0 4px 24px rgba(0,0,0,0.55); transition:all 0.2s; }
 .ig-float:hover { background:var(--gold-dim); border-color:var(--gold); transform:translateY(-2px); }
-.ig-float svg { width:15px; height:15px; }
-@media (max-width:820px) { .ig-float { bottom:16px; right:16px; } }
+.ig-float svg { width:15px; height:15px; flex-shrink:0; }
+.ig-float-handle { white-space:nowrap; }
+
+@media (max-width:820px) {
+  .ig-float-handle {
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip-path:inset(50%); white-space:nowrap; border:0;
+  }
+  .ig-float {
+    bottom:max(14px, env(safe-area-inset-bottom)); right:max(14px, env(safe-area-inset-right));
+    padding:12px 13px; border-radius:999px; gap:0; justify-content:center; align-items:center;
+    min-width:48px; min-height:48px;
+  }
+  .deals-float {
+    left:max(12px, env(safe-area-inset-left));
+    bottom:max(14px, env(safe-area-inset-bottom));
+    padding:10px 14px;
+    max-width:min(258px, calc(100vw - 108px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)));
+    z-index:151;
+  }
+}
 
 @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
 </style>
@@ -872,9 +890,9 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 <body>
 
 <!-- IG FLOAT -->
-<a href="https://instagram.com/sevenfeettravel" target="_blank" class="ig-float" aria-label="Instagram">
+<a href="https://instagram.com/sevenfeettravel" target="_blank" class="ig-float" aria-label="Instagram @sevenfeettravel">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-  @sevenfeettravel
+  <span class="ig-float-handle">@sevenfeettravel</span>
 </a>
 
 <!-- TRAVEL DEALS FLOAT + MODAL (update month copy in launcher, modal heading, mailto subject) -->
