@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seven Feet Travel | Boutique Travel Planning by Paul Totah</title>
-<meta name="description" content="Seven Feet Travel plans personalized international trips: boutique itineraries, hotels and dining, Sydney guides, hotel rate scanning, and transparent fees. Independent travel advisor Paul Totah, Washington (Fora Travel).">
+<meta name="description" content="Seven Feet Travel plans personalized international trips: boutique itineraries, hotels and dining, Sydney and London guides, hotel rate scanning, and transparent fees. Independent travel advisor Paul Totah, Washington (Fora Travel).">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Paul Totah">
 <meta property="og:title" content="Seven Feet Travel | Boutique Travel Planning">
-<meta property="og:description" content="Personalized international travel planning from Paul Totah: curated stays, dining, Sydney destination guides, transparent fees, and the Hotel Scanner tool.">
+<meta property="og:description" content="Personalized international travel planning from Paul Totah: curated stays, dining, Sydney and London destination guides, transparent fees, and the Hotel Scanner tool.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Seven Feet Travel">
-<meta name="twitter:description" content="Boutique travel planning for trips that fit how you travel. Sydney guides, transparent fees, Hotel Scanner.">
+<meta name="twitter:description" content="Boutique travel planning for trips that fit how you travel. Sydney and London guides, transparent fees, Hotel Scanner.">
 <meta property="og:url" content="https://www.sevenfeettravel.com/">
 <meta property="og:image" content="https://www.sevenfeettravel.com/paul.PNG">
 <meta name="twitter:image" content="https://www.sevenfeettravel.com/paul.PNG">
 <link rel="canonical" href="https://www.sevenfeettravel.com/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TravelAgency","name":"Seven Feet Travel","url":"https://www.sevenfeettravel.com/","description":"Boutique international travel planning, itineraries, hotels, and Sydney destination guides.","email":"paul.totah@fora.travel","founder":{"@type":"Person","name":"Paul Totah"},"areaServed":{"@type":"Place","name":"Worldwide"},"sameAs":["https://www.instagram.com/sevenfeettravel/"]}
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Seven Feet Travel","url":"https://www.sevenfeettravel.com/","description":"Boutique international travel planning, itineraries, hotels, and Sydney and London destination guides.","email":"paul.totah@fora.travel","founder":{"@type":"Person","name":"Paul Totah"},"areaServed":{"@type":"Place","name":"Worldwide"},"sameAs":["https://www.instagram.com/sevenfeettravel/"]}
 </script>
 <style>
 :root {
@@ -374,7 +374,37 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 .guide-modal-close:hover { background:rgba(20,20,20,0.88); border-color:rgba(255,255,255,0.35); }
-.guide-modal-hero { min-height:360px; padding:42px 42px 46px; padding-top:88px; display:flex; flex-direction:column; justify-content:flex-end; background:linear-gradient(to top,rgba(0,0,0,0.82),rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&fit=crop&q=85'); background-size:cover; background-position:center 58%; color:#fff; border-radius:0; }
+.guide-modal-hero {
+  min-height:360px; padding:42px 42px 46px; padding-top:88px; display:flex; flex-direction:column; justify-content:flex-end;
+  background-size:cover; color:#fff; border-radius:0;
+}
+#sydney-guide-modal .guide-modal-hero {
+  background-image:linear-gradient(to top,rgba(0,0,0,0.82),rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&fit=crop&q=85');
+  background-position:center 58%;
+}
+#london-guide-modal .guide-modal-hero {
+  background-image:linear-gradient(to top,rgba(0,0,0,0.82),rgba(0,0,0,0.22)),url('https://images.unsplash.com/photo-1681407979872-0a4cbde28391?w=2400&fit=max&q=90&auto=format');
+  background-position:center 38%;
+  background-size:cover;
+}
+
+.guide-photo-break { margin:4px 0 22px; }
+.guide-photo-break-inner {
+  overflow:hidden;
+  border:1px solid #e4ddd0;
+  border-radius:2px;
+  box-shadow:0 10px 34px rgba(0,0,0,0.06);
+}
+.guide-photo-break-img-wrap { position:relative; aspect-ratio:16/10; overflow:hidden; background:#ece8e2; }
+.guide-photo-break-img-wrap img {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
+}
+.guide-photo-break-caption {
+  padding:13px 16px;
+  font-size:12.5px; line-height:1.62; color:#555;
+  background:#fdfcfa;
+  border-top:1px solid #efebe4;
+}
 .guide-modal-kicker {
   font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   display:inline-block;
@@ -592,6 +622,89 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 #sydney-guide-modal .guide-modal-panel .guide-list li {
   font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
 }
+
+#london-guide-modal .guide-modal-panel .guide-section h3 {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:-0.02em;
+}
+#london-guide-modal .guide-modal-panel .guide-list strong {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15px;
+  font-weight:600;
+  line-height:1.25;
+}
+#london-guide-modal .guide-modal-panel .guide-pin-card-body strong {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:17px;
+  font-weight:600;
+  line-height:1.2;
+}
+#london-guide-modal .guide-modal-panel .guide-pin-meta {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+#london-guide-modal .guide-modal-panel .guide-side-card h4 {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+#london-guide-modal .guide-modal-panel .guide-side-card p,
+#london-guide-modal .guide-modal-panel .guide-side-card li {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.75;
+}
+#london-guide-modal .guide-modal-panel .guide-section p {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+#london-guide-modal .guide-modal-panel .guide-list li {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+#london-guide-modal .guide-modal-panel .guide-photo-break-caption {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+/* London guide: tighter vertical rhythm inside section boxes + spaced eat tiers */
+#london-guide-modal .guide-modal-main-col > .guide-section {
+  margin-bottom: 30px;
+  padding-bottom: 28px;
+}
+#london-guide-modal .guide-modal-main-col > .guide-section:last-child {
+  margin-bottom: 0;
+}
+#london-guide-modal .guide-photo-break {
+  margin: 14px 0 30px;
+}
+#london-guide-modal section.london-where-eat .guide-lead {
+  margin-bottom: 18px;
+}
+#london-guide-modal section.london-where-eat .guide-eat-category {
+  margin: 36px 0 16px;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#8a7040;
+}
+#london-guide-modal section.london-where-eat .guide-eat-category:first-of-type {
+  margin-top: 22px;
+}
+#london-guide-modal section.london-where-eat ul.guide-list {
+  gap: 18px;
+}
+#london-guide-modal section.london-where-eat .guide-eat-category + .guide-pin-grid {
+  margin-top: 14px;
+}
+/* Inline bold in list body (first strong is the venue headline) */
+#london-guide-modal .guide-modal-panel .guide-list li strong:not(:first-of-type) {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  margin-bottom: 0;
+}
 @media (max-width:820px) {
   .guide-modal { padding:14px; }
   .guide-modal-hero,.guide-modal-body { padding:28px; }
@@ -605,6 +718,7 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   body.guide-printing .guide-modal { position:static; display:block; padding:0; background:#fff; backdrop-filter:none; }
   body.guide-printing .guide-modal-panel { max-height:none; box-shadow:none; border-radius:0; overflow:visible; }
   body.guide-printing .guide-modal-close,body.guide-printing .guide-modal-actions { display:none !important; }
+  body.guide-printing .guide-modal:not(.open) { display:none !important; }
 }
 
 /* ── INSTAGRAM ACCOUNTS ── */
@@ -1115,7 +1229,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
           </button>
           <ul class="menu-sub" id="acc-guides">
             <li><a href="#guides" onclick="closeMenu(); openSydneyGuide();">Sydney</a></li>
-            <li><a href="#guides" onclick="closeMenu()">London · Coming soon</a></li>
+            <li><a href="#guides" onclick="closeMenu(); openLondonGuide();">London</a></li>
             <li><a href="#guides" onclick="closeMenu()">New York · Coming soon</a></li>
           </ul>
         </li>
@@ -1536,16 +1650,18 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
         </button>
       </div>
 
-      <div class="guide-card coming-soon-card">
-        <div class="guide-img">
-          <div class="guide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&fit=crop&q=85');"></div>
-          <div class="guide-cs-overlay"><span class="cs-badge">Coming Soon</span></div>
-        </div>
-        <div class="guide-body">
-          <p class="guide-region">United Kingdom · Europe</p>
-          <h3 class="guide-title">London</h3>
-          <p class="guide-desc">Royal palaces, world-class museums, and neighborhoods worth getting lost in. Guide coming soon.</p>
-        </div>
+      <div class="guide-card">
+        <button type="button" onclick="openLondonGuide()" aria-label="Open London guide">
+          <div class="guide-img" style="background-image:url('https://images.unsplash.com/photo-1681407979872-0a4cbde28391?w=800&fit=crop&q=85'); background-size:cover; background-position:center;">
+            <div class="guide-img-tag">Featured</div>
+          </div>
+          <div class="guide-body">
+            <p class="guide-region">United Kingdom · Europe</p>
+            <h3 class="guide-title">London</h3>
+            <p class="guide-desc">Classic London, neighbourhoods, pubs, Theatre, markets, cocktails, and smart bases to explore from. Pulled straight from Paul&rsquo;s destination guide.</p>
+            <span class="guide-cta">Read Guide →</span>
+          </div>
+        </button>
       </div>
 
       <div class="guide-card coming-soon-card">
@@ -1761,6 +1877,316 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     </div>
   </div>
 </div>
+
+
+<!-- LONDON GUIDE MODAL -->
+<div class="guide-modal" id="london-guide-modal" role="dialog" aria-modal="true" aria-labelledby="london-guide-title">
+  <div class="guide-modal-panel" id="london-guide-content">
+    <div class="guide-modal-hero-shell">
+      <button class="guide-modal-close" type="button" onclick="closeLondonGuide()">Close</button>
+      <div class="guide-modal-hero">
+        <p class="guide-modal-kicker">Seven Feet Travel Guide</p>
+        <h2 class="guide-modal-title" id="london-guide-title">London</h2>
+        <p class="guide-modal-sub">Classic icons, neighbourhoods, pubs, Theatre, markets, cocktails, and the hotels that make London feel easy.</p>
+      </div>
+    </div>
+
+    <div class="guide-modal-actions">
+      <div class="guide-share-dropdown" id="london-guide-share-dropdown">
+        <button type="button" class="guide-share-toggle" id="london-guide-share-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="london-guide-share-menu">
+          Share
+          <svg class="guide-share-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="guide-share-menu" id="london-guide-share-menu" role="menu" aria-labelledby="london-guide-share-toggle" hidden>
+          <a class="guide-share-menu-item" role="menuitem" id="london-email-link" href="mailto:?subject=London%20Travel%20Guide&amp;body=Trip%20guide%20from%20Seven%20Feet%20Travel%3A%20">
+            <span class="guide-share-menu-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <span class="guide-share-menu-text">Email guide</span>
+          </a>
+          <button type="button" class="guide-share-menu-item" role="menuitem" id="london-print-share-btn">
+            <span class="guide-share-menu-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+            <span class="guide-share-menu-text">Print guide</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-modal-body">
+      <div class="guide-modal-main-col">
+        <section class="guide-section">
+          <h3>Why Go</h3>
+          <p>London is one of those cities that rewards repeat visits. The first trip can be Big Ben, Buckingham Palace, and the Tower of London, but the better version of London is found by walking neighborhoods, lingering in pubs, booking a great dinner, seeing a show, wandering a market, and finding a hotel that makes the city feel easy.</p>
+          <p>This guide is not meant to be every possible thing to do in London. It is the version I would send someone who wants a mix of classic London, stylish hotels, excellent food, smart neighborhoods, pubs, Theatre, cocktails, markets, and a few places I personally love.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Before You Go</h3>
+          <p>U.S. travelers and many other visa-free visitors usually need a UK Electronic Travel Authorisation, known as an ETA, before traveling. Follow the official <a href="https://www.gov.uk/guidance/prepare-to-enter-the-uk-before-you-travel" target="_blank" rel="noopener" class="guide-inline-link">GOV.UK entry guidance</a> for who needs an ETA, how long you can stay, and the current fee (officially £20 at time of writing in the doc). Each traveler needs their own ETA, including children.</p>
+          <p>London is best approached with a little planning, but not too much. Book the meals, afternoon tea, cocktail bars, and Theatre you care about most. Leave room for wandering. Some of the best London days are built around one anchor plan and a lot of walking before and after.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Getting There</h3>
+          <p>Most travelers arrive through <a href="https://www.heathrow.com/" target="_blank" rel="noopener" class="guide-inline-link">Heathrow</a> or <a href="https://www.gatwickairport.com/" target="_blank" rel="noopener" class="guide-inline-link">Gatwick</a>. Heathrow is the easiest airport for central London if you are staying in areas like Mayfair, Marylebone, Soho, Covent Garden, or the City. The <a href="https://www.heathrowexpress.com/" target="_blank" rel="noopener" class="guide-inline-link">Heathrow Express</a> runs to Paddington in about 15 minutes from Heathrow Central, while the <a href="https://tfl.gov.uk/modes/elizabeth-line/" target="_blank" rel="noopener" class="guide-inline-link">Elizabeth line</a> is slower but often more practical because it continues across central London.</p>
+          <p>Gatwick works well too, especially if the fare is better. Trains connect Gatwick with London Victoria and other central stations. I would choose based on flight price, arrival time, and where you are staying.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Getting Around</h3>
+          <p>Use contactless payment or an <a href="https://tfl.gov.uk/fares/how-to-pay-and-where-to-buy-tickets-and-oyster/pay-as-you-go" target="_blank" rel="noopener" class="guide-inline-link">Oyster card</a>. <a href="https://tfl.gov.uk/" target="_blank" rel="noopener" class="guide-inline-link">Transport for London</a> says pay as you go works across the Tube, buses, DLR, London Overground, most Elizabeth line services, Thames Clippers river buses, and most National Rail services within London zones. Contactless is usually easiest, but use the same card or device when tapping in and out so you are charged correctly.</p>
+          <p>The Tube is excellent, but London is also a walking city. The best days often combine the Tube with long walks through neighborhoods. Taxis and rideshare are useful late at night or when dressed up, but traffic can make them painfully slow.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Money &amp; Practicalities</h3>
+          <p>London is very card-friendly. Keep a little cash if you like, but you can do most of the city with a card or mobile wallet. For transit, do not overthink it. Tap in, tap out, and keep moving.</p>
+          <p>Weather changes quickly. Bring layers, a small umbrella, and comfortable shoes that still look decent. London is not the place for a day built around &ldquo;just one quick walk.&rdquo; That walk becomes 18,000 steps.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Where to Stay</h3>
+          <!-- TODO: Verify each property has public aggregate rating 4.0+ on Google Reviews or TripAdvisor before publishing (hotel scores move). -->
+          <p>These are the hotels I&rsquo;d include for a traveler who wants reliable locations, strong public ratings, and a good base for exploring.</p>
+          <div class="guide-pin-grid two-col">
+            <article class="guide-pin-card">
+              <a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/hyatt-regency-london-the-churchill/lonch" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="churchill.jpg" width="300" height="168" loading="lazy" decoding="async" alt="Hyatt Regency London The Churchill"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Marylebone · Mayfair · Hyde Park · shopping</p>
+                <strong><a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/hyatt-regency-london-the-churchill/lonch" target="_blank" rel="noopener">Hyatt Regency London The Churchill</a></strong>
+                <p>Polished, grown-up London without the Soho crush. Near Oxford Street, Marylebone, Hyde Park, and Mayfair, with easy access to the rest of town.</p>
+                <div class="guide-pin-links"><a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/hyatt-regency-london-the-churchill/lonch" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/andaz-london-liverpool-street/lonaz" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="andaz%20liverpool.jpg" width="275" height="183" loading="lazy" decoding="async" alt="Andaz London Liverpool Street"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Shoreditch · Spitalfields · the City · Liverpool Street</p>
+                <strong><a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/andaz-london-liverpool-street/lonaz" target="_blank" rel="noopener">Andaz London Liverpool Street</a></strong>
+                <p>A great east London base beside Liverpool Street for transit, markets, restaurants, and Shoreditch wandering, with design layered over history.</p>
+                <div class="guide-pin-links"><a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/andaz-london-liverpool-street/lonaz" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.citizenm.com/london/tower-of-london-hotel" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="citizenmlondon.jpg" width="300" height="168" loading="lazy" decoding="async" alt="citizenM Tower of London"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Tower Bridge · the City · smart value</p>
+                <strong><a href="https://www.citizenm.com/london/tower-of-london-hotel" target="_blank" rel="noopener">citizenM Tower of London</a></strong>
+                <p>Style and efficiency with a central base without full luxury pricing. Compact rooms, strong public spaces, ideal if you are out all day.</p>
+                <div class="guide-pin-links"><a href="https://www.citizenm.com/london/tower-of-london-hotel" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://parklane.intercontinental.com/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="intercon.jpg" width="259" height="194" loading="lazy" decoding="async" alt="InterContinental London Park Lane"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Mayfair · Park Lane · Knightsbridge · Royal Parks</p>
+                <strong><a href="https://parklane.intercontinental.com/" target="_blank" rel="noopener">InterContinental London Park Lane</a></strong>
+                <p>Flagship address where Park Lane meets Mayfair: park-and-palace views, serious spa and dining rooms, and a concierge desk built for last-minute West End tickets. Ideal when you want Hyde Park Corner or Green Park walks before black-tie reservations.</p>
+                <div class="guide-pin-links"><a href="https://parklane.intercontinental.com/" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.thenomadhotel.com/london/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="nomad.jpg" width="300" height="168" loading="lazy" decoding="async" alt="NoMad London"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Covent Garden · Bow Street · Theatre · dining in-house</p>
+                <strong><a href="https://www.thenomadhotel.com/london/" target="_blank" rel="noopener">NoMad London</a></strong>
+                <p>The old Bow Street courthouse reimagined as velvet, marble, and atrium-height drama steps from the Royal Opera House. Treat the NoMad Restaurant and bars as part of the stay: this is the pick when you want curtain times and late rooms on the same short walk.</p>
+                <div class="guide-pin-links"><a href="https://www.thenomadhotel.com/london/" target="_blank" rel="noopener">Hotel website</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="guide-section">
+          <h3>Neighborhoods to Know</h3>
+          <p><strong>Soho.</strong> This is compressed London energy: queer nightlife strips, cramped cocktail bars, late kitchens, Chinatown edges, and the spillover crowds from Leicester Square Theatres. Nights run long here, so anchor one reservation and leave room for a second spontaneous stop.</p>
+          <p><strong>Covent Garden and Seven Dials.</strong> Yes, performers and tourists pack the Piazza, but Seven Dials and the quieter fingers of Neal&rsquo;s Yard reward slow turns. Shops stay fun even if you buy nothing; pre-Theatre wine bars and snug restaurants make this one of the easiest first-night bases.</p>
+          <p><strong>Camden Town.</strong> Music mythology, sprawling markets, canals, louder street-food pitches. Brilliant if you crave volume and grit; tougher if overstimulation already peaked earlier in the day.</p>
+          <figure class="guide-photo-break" role="presentation">
+            <div class="guide-photo-break-inner">
+              <div class="guide-photo-break-img-wrap">
+                <img src="camdenhd.jpg" width="612" height="407" loading="lazy" decoding="async" alt="Camden Town streets, market bustle, and canalside colour">
+              </div>
+              <figcaption class="guide-photo-break-caption">Camden is the loudest shorthand for north London market energy: stalls, canals, gigs, and street-food smoke signals that signal you have left porcelain Marylebone behind.</figcaption>
+            </div>
+          </figure>
+          <p><strong>Marylebone.</strong> Feels quieter than Oxford Street hysteria without leaving central. Smart cafés, small galleries, boutiques, and locals&rsquo; pubs read more residential than postcard. Hyde Park sits a few streets south for resetting your steps.</p>
+          <p><strong>Mayfair.</strong> Heavier wallets, immaculate tailoring, discreet hotel bars, and private-club echoes even when you never step inside one. Dip in for a serious drink or polished shopping rather than pretending you will crisscross it daily.</p>
+          <p><strong>Shoreditch and Spitalfields.</strong> Murals bleed into arches under the railway lines, Vietnamese on Kingsland Road competes with Sunday markets, cocktail bars tuck into basements. It is louder and messier than Mayfair but ideal when you crave creative eats and wandering without a plotted route.</p>
+          <p><strong>South Bank.</strong> The Thames walkway strings Tate Modern to Borough, the river breeze keeps summer tolerable, and St Paul&rsquo;s reads like a postcard from the Millennium Bridge. Pair it when you already want mileage and intermittent coffee stops rather than boutiques.</p>
+          <p><strong>Notting Hill.</strong> Pastel terraces, antiques on Portobello Road when stalls open Saturday, quieter cafés on weekday mornings. Best when schedules allow drifting without ticking every door.</p>
+          <p><strong>King&rsquo;s Cross.</strong> Regenerated around the station throat: Coal Drops Yard for design-led shopping, canals for low-stress strolling, and train links when you dart out toward Cambridge or Brighton for a breath.</p>
+          <p><strong>Greenwich.</strong> Take the Thames Clipper if time allows so the Dome and masts creep into frame slowly. Observatory views, Maritime Museum pacing, markets for lunch feel like a deliberate exhale compared to frantic West End turnarounds.</p>
+          <p><strong>Richmond.</strong> Leaves core London behind for riverside paths, grassy Richmond Park glimpses (deer if luck holds), pubs that skew local. Anchor a slow brunch and let the timetable loosen.</p>
+          <p><strong>Kensington.</strong> Museum rows, Kensington Palace lawns, quieter residential streets branching toward Hyde Park. Ideal when you pair serious gallery time with a west London stroll rather than cramming monuments.</p>
+        </section>
+
+        <section class="guide-section london-where-eat">
+          <h3>Where to Eat</h3>
+          <p class="guide-lead">London rewards planning one showpiece meal without turning the rest of the week into spreadsheets. Rotate fine counter seats with casual rooms you can tumble into sweaty from the Tube and one or two food-hall afternoons when grazing beats a seated lunch.</p>
+          <p class="guide-eat-category">Fine dining</p>
+          <div class="guide-pin-grid">
+            <article class="guide-pin-card">
+              <a href="https://www.theblueposts.co.uk/evelyns-table/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="evelynstableHD.jpg" width="1400" height="800" loading="lazy" decoding="async" alt="Evelyn&rsquo;s Table chef&rsquo;s counter"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Soho · chef&rsquo;s counter · Michelin</p>
+                <strong><a href="https://www.theblueposts.co.uk/evelyns-table/" target="_blank" rel="noopener">Evelyn&rsquo;s Table</a></strong>
+                <p>Twelve seats around a cellar counter below <a href="https://www.theblueposts.co.uk/" target="_blank" rel="noopener" class="guide-inline-link">The Blue Posts</a> in Soho: Michelin-led modern British menus served in timed sittings. Book as early as itineraries allow and treat punctuality seriously; snag an upstairs drink at The Blue Posts if you arrive early.</p>
+                <div class="guide-pin-links"><a href="https://www.theblueposts.co.uk/evelyns-table/" target="_blank" rel="noopener">Evelyn&rsquo;s Table</a><a href="https://www.theblueposts.co.uk/" target="_blank" rel="noopener">The Blue Posts</a></div>
+              </div>
+            </article>
+          </div>
+          <p class="guide-eat-category">Upscale</p>
+          <div class="guide-pin-grid two-col">
+            <article class="guide-pin-card">
+              <a href="https://www.bigmamma.co.uk/ave-mario" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="ave%20mario.jpg" width="275" height="183" loading="lazy" decoding="async" alt="Ave Mario restaurant"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Covent Garden · Big Mamma · Italian</p>
+                <strong><a href="https://www.bigmamma.co.uk/ave-mario" target="_blank" rel="noopener">Ave Mario</a></strong>
+                <p>Neon Big Mamma energy: towering pastas, roaring rooms, birthdays at neighboring tables almost guaranteed. Loud and fun by design.</p>
+                <div class="guide-pin-links"><a href="https://www.bigmamma.co.uk/ave-mario" target="_blank" rel="noopener">Restaurant</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.sushisamba.com/locations/london-covent-garden" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="sushi-samba-covent-garden.jpg" width="300" height="168" loading="lazy" decoding="async" alt="SushiSamba Covent Garden"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Covent Garden · Opera Terrace · Peruvian-Japanese</p>
+                <strong><a href="https://www.sushisamba.com/locations/london-covent-garden" target="_blank" rel="noopener">SushiSamba Covent Garden</a></strong>
+                <p>On the Opera Terrace above Covent Garden Market: glass roof, Peruvian-Japanese fire, and Piazza people-watching. The choice for upscale Theatre nights in WC2; book <a href="https://www.sushisamba.com/locations/heron-tower-co-london-city" target="_blank" rel="noopener" class="guide-inline-link">Heron Tower</a> when you want skyline drama instead.</p>
+                <div class="guide-pin-links"><a href="https://www.sushisamba.com/locations/london-covent-garden" target="_blank" rel="noopener">Covent Garden</a><a href="https://www.sushisamba.com/locations/heron-tower-co-london-city" target="_blank" rel="noopener">Heron Tower</a><a href="https://www.sushisamba.com/" target="_blank" rel="noopener">SushiSamba</a></div>
+              </div>
+            </article>
+          </div>
+          <p class="guide-eat-category">Casual</p>
+          <ul class="guide-list">
+            <li><strong>Wagamama</strong> Noodle-forward reset when crews need carbs fast or kids need predictable menus across town.<span class="guide-item-links"><a href="https://www.wagamama.com/" target="_blank" rel="noopener">Wagamama</a></span></li>
+            <li><strong>Cafe Pacifico</strong> Colourful Covent Garden Mexican and easy margarita energy wedged among Theatre exits.<span class="guide-item-links"><a href="https://www.cafepacifico.co.uk/" target="_blank" rel="noopener">Cafe Pacifico</a></span></li>
+            <li><strong>Comptoir Libanais</strong> Bright Lebanese comfort: mezze platters that share well when nobody wants tasting-menu tension.<span class="guide-item-links"><a href="https://comptoirlibanais.co.uk/" target="_blank" rel="noopener">Comptoir Libanais</a></span></li>
+          </ul>
+          <p class="guide-eat-category">Takeaway</p>
+          <ul class="guide-list">
+            <li><strong>Dal Fiorentino</strong> Hot Florentine schiacciata for a walking lunch; queue culture can be half the vibe.<span class="guide-item-links"><a href="https://www.dalfiorentino.london/" target="_blank" rel="noopener">Dal Fiorentino</a></span></li>
+            <li><strong>Hash Hut</strong> Loaded hash-brown boxes from the Hash Hut counter at <a href="https://www.sevendialsmarket.com/" target="_blank" rel="noopener" class="guide-inline-link">Seven Dials Market</a> (Covent Garden) or from their Old Spitalfields pitch when you are east for the day.<span class="guide-item-links"><a href="https://www.hashhut.co.uk/" target="_blank" rel="noopener">Hash Hut</a><a href="https://www.sevendialsmarket.com/" target="_blank" rel="noopener">Seven Dials Market</a><a href="https://old.spitalfieldsmarket.com/" target="_blank" rel="noopener">Old Spitalfields</a></span></li>
+          </ul>
+          <p class="guide-eat-category">Afternoon Tea</p>
+          <ul class="guide-list">
+            <li><strong>The Rubens at the Palace</strong> Classic gilt-and-tea grandeur near Buckingham Palace. Schedule it after Westminster or St James&rsquo;s Park wanders before swinging back toward Theatreland.<span class="guide-item-links"><a href="https://rubenshotel.com/" target="_blank" rel="noopener">The Rubens at the Palace</a><a href="https://rubenshotel.com/dining-and-drinks/afternoon-tea" target="_blank" rel="noopener">Royal afternoon tea</a></span></li>
+          </ul>
+        </section>
+
+        <section class="guide-section">
+          <h3>Food Halls</h3>
+          <p>When you crave variety without juggling reservations, halls let everyone split off, reconvene, and keep moving. Arrive hungry, snag high tops early on weekends, and treat these as grazing missions rather than one-plate lunches.</p>
+          <figure class="guide-photo-break" role="presentation">
+            <div class="guide-photo-break-inner">
+              <div class="guide-photo-break-img-wrap">
+                <img src="borough-market.jpg" width="5712" height="4284" loading="lazy" decoding="async" alt="Stalls and arches at Borough Market London">
+              </div>
+              <figcaption class="guide-photo-break-caption">Borough Market rewards slow loops: arches of cheese scent, coffees between bites, Thames views when you stroll out afterward.</figcaption>
+            </div>
+          </figure>
+          <ul class="guide-list">
+            <li><strong>Shoreditch &amp; East End Halls</strong> Follow traders under railway arches toward Spitalfields and Brick Lane, grab boxes from rotating vendors around Boxpark, or stitch together Old Spitalfields with a Brick Lane crawl. Loud, smoky, endlessly snackable afternoons when jackets pick up cumin and hops by nightfall.<span class="guide-item-links"><a href="https://old.spitalfieldsmarket.com/" target="_blank" rel="noopener">Old Spitalfields Market</a><a href="https://www.boxpark.co.uk/" target="_blank" rel="noopener">Boxpark</a></span></li>
+            <li><strong>Borough Market</strong> London&rsquo;s flagship produce and street-food maze south of the river. Thursdays and Fridays skew serious eaters before weekend Instagram density hits; pair with South Bank pacing or Tate Modern afternoons.<span class="guide-item-links"><a href="https://boroughmarket.org.uk/" target="_blank" rel="noopener">Borough Market</a></span></li>
+            <li><strong>Seven Dials Market</strong> Set just off Seven Dials in a former banana warehouse, this is Covent Garden&rsquo;s purpose-built food hall: produce and speciality traders on the ground floor, with the upper hall given over to street-food counters where cult favorites <strong>Pick &amp; Cheese</strong> and <strong>Yum Bun</strong> sit among the rest of the lineup (cheese conveyor, hirata buns, and enough distraction to justify one more lap before curtain).<span class="guide-item-links"><a href="https://www.sevendialsmarket.com/" target="_blank" rel="noopener">Seven Dials Market</a><a href="https://www.pickandcheese.co.uk/" target="_blank" rel="noopener">Pick &amp; Cheese</a><a href="https://www.yum-bun.com/" target="_blank" rel="noopener">Yum Bun</a></span></li>
+          </ul>
+          <p>Want department-store glamour? <a href="https://www.selfridges.com/" target="_blank" rel="noopener" class="guide-inline-link">Selfridges Foodhall</a> beside Marylebone and <a href="https://www.harrods.com/en-gb/food-and-wine" target="_blank" rel="noopener" class="guide-inline-link">Harrods food halls</a> in Knightsbridge still deliver cinematic spreads when you crave air conditioning and tastings under chandeliers.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Bars, Pubs &amp; Nightlife</h3>
+          <p>Alternate intensity: one night anchored in a witty cocktail salon, another that ends leaning on varnish-scuffed Victorian wood with a respectable pint glass. Booking the theatrical bars earns its drama; pubs benefit from forgiving timing when stage times slip.</p>
+          <ul class="guide-list">
+            <li><strong>The Shakespeare's Head</strong> A proper Soho local with dram-and-bard lore (and a playwright bust guarding the façade), roaring pre-Theatre foot traffic, and enough cask and craft pulls to pacify picky drinkers between shows. Anchor here when Blind Spot waits feel long or wallets need softer prices before a marquee cocktail sprint.<span class="guide-item-links"><a href="https://www.greeneking.co.uk/pubs/greater-london/shakespeares-head" target="_blank" rel="noopener">The Shakespeare&rsquo;s Head</a></span></li>
+            <li><strong>Mr Fogg&rsquo;s</strong> Jules Verne fantasies shaken into glass: thematic rooms across town, witty garnishes, and staff who narrate pours with straight faces. Start with Mayfair Residence for polish, Gin Tavern near St Martin&rsquo;s Lane when theatres let out.<span class="guide-item-links"><a href="https://www.mr-foggs.com/" target="_blank" rel="noopener">Mr Fogg&rsquo;s</a></span></li>
+            <li><strong>Blind Spot at St Martins Lane</strong> Speakeasy energy behind disguised cupboards: theatrical lighting, cocktail globes spun from tea-trade romance, DJs late Friday and Saturday. Ideal post-curtain when you crave glam without crossing into Mayfair prices.<span class="guide-item-links"><a href="https://morgansoriginals.com/st-martins-lane/restaurants-bars/blind-spot/" target="_blank" rel="noopener">Blind Spot</a></span></li>
+            <li><strong>Cato</strong> Covent Garden&rsquo;s multi-room playbook: downstairs colour-coded menus, upstairs julep garden energy. Reservation-smart nights when you still want theatrical interiors without losing Soho stumble distance.<span class="guide-item-links"><a href="https://catobar.co.uk/" target="_blank" rel="noopener">Cato</a></span></li>
+            <li><strong>Engel at The Royal Exchange</strong> 1920s Berlin glamour beneath the colonnades of <a href="https://www.theroyalexchange.co.uk/" target="_blank" rel="noopener" class="guide-inline-link">The Royal Exchange</a> near Bank: cabaret flirtation, bubbly by the glass on the terrace weather permitting, oysters when you crave City polish.<span class="guide-item-links"><a href="https://engelbar.co.uk/" target="_blank" rel="noopener">Engel Bar</a><a href="https://www.theroyalexchange.co.uk/" target="_blank" rel="noopener">The Royal Exchange</a></span></li>
+          </ul>
+          <p>Still thirsty for cider trails and historic taps? Dig into <a href="https://www.camra.org.uk/" target="_blank" rel="noopener" class="guide-inline-link">CAMRA</a> maps for heritage pubs beyond this short list.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Things to Do</h3>
+          <p>London is dense enough that you do not need to invent drama. Pick one anchor per half day, let walking do the connective tissue, and save the &ldquo;icons only&rdquo; sprint for when energy is high.</p>
+          <figure class="guide-photo-break" role="presentation">
+            <div class="guide-photo-break-inner">
+              <div class="guide-photo-break-img-wrap">
+                <img src="piccadilly-circus-38un8pf4g1rb39l1.jpg" width="1920" height="1080" loading="lazy" decoding="async" alt="Piccadilly Circus neon and West End crowds at dusk">
+              </div>
+              <figcaption class="guide-photo-break-caption">Piccadilly Circus is the postcard pivot between Soho nights, Theatre bookings, and Shaftesbury Avenue spillover; use it as your compass when you are threading shows with late reservations.</figcaption>
+            </div>
+          </figure>
+          <ul class="guide-list">
+            <li><strong>West End Theatre</strong> Whether you want a long-runner or something sharp and new, lock tickets early for busy weeks and read the running time before booking a 9:30 table after. Day-of queues exist for some houses, but do not bank on them for a splurge night.<span class="guide-item-links"><a href="https://www.officiallondontheatre.co.uk/" target="_blank" rel="noopener">Official London Theatre</a><a href="https://www.nationaltheatre.org.uk/" target="_blank" rel="noopener">National Theatre</a></span></li>
+            <li><strong>Covent Garden &amp; Seven Dials</strong> Yes, the Piazza packs buskers and shoppers, but the side streets still deliver: tiny wine bars, Theatre pubs, craft stalls, and quieter cut-throughs toward Soho. Treat it as atmosphere and people-watching, not a checklist of every shop window.<span class="guide-item-links"><a href="https://www.coventgarden.london/" target="_blank" rel="noopener">Covent Garden</a></span></li>
+            <li><strong>Camden Town</strong> Canal-side paths, lock-side colour, and market sprawl that sells both vintage finds and tourist tat with equal conviction. Go when you want loud energy and grazing street food rather than whisper-quiet galleries; mornings are thinner than midday crush.<span class="guide-item-links"><a href="https://www.camdenmarket.com/" target="_blank" rel="noopener">Camden Market</a></span></li>
+            <li><strong>Portobello Road Market &amp; Notting Hill</strong> Saturday brings the blockbuster antiques and flea scrum along Portobello while pastel terraces provide the backdrop travel albums expect; weekday mornings skew sleepier antiques and quieter cafés. Pair a market loop with Hyde Park escapes or Kensington museum rows depending on stamina.<span class="guide-item-links"><a href="https://www.visitlondon.com/things-to-do/shop-and-market/portobello-road-market" target="_blank" rel="noopener">Portobello Road (Visit London)</a><a href="https://www.rbkc.gov.uk/special-events/events-in-the-borough/markets-and-shopping/portobello-road-market" target="_blank" rel="noopener">RBKC · Portobello</a><a href="https://www.visitlondon.com/places/neighbourhoods/notting-hill" target="_blank" rel="noopener">Notting Hill</a></span></li>
+            <li><strong>Thames by boat</strong> A river angle reframes landmarks you have already snapped from bridges: Parliament, St Paul&rsquo;s, the Dome sliding into view downstream. Thames Clippers work as commuter hop-on-hop-off transit; sightseeing sailings skew slower commentary and narration.<span class="guide-item-links"><a href="https://www.thamesclippers.com/" target="_blank" rel="noopener">Uber Boat by Thames Clippers</a><a href="https://www.cityexperiences.com/london/city-cruises/" target="_blank" rel="noopener">City Cruises</a></span></li>
+            <li><strong>Tate Modern &amp; the South Bank</strong> turbine-hall installs hit at scale you cannot get on a phone screen, and the collection hopscotches eras without marathon wall text fatigue. Stitch it with Millennium Bridge crossings, Borough grazing, or a National Theatre peek if a show fits.<span class="guide-item-links"><a href="https://www.tate.org.uk/visit/tate-modern" target="_blank" rel="noopener">Tate Modern</a><a href="https://www.nationaltheatre.org.uk/" target="_blank" rel="noopener">National Theatre</a></span></li>
+            <li><strong>V&amp;A</strong> Fashion, metalwork, ceramics, and temporary blockbusters in a building that feels like part of the exhibit. Reserve timed tickets when a featured show runs hot; otherwise wander until your feet complain, then recover in the courtyard.<span class="guide-item-links"><a href="https://www.vam.ac.uk/" target="_blank" rel="noopener">V&amp;A</a></span></li>
+            <li><strong>Kensington Palace</strong> Royal apartments and gardens read more intimate than the Tower crowd scenes: good when you want history with breathing room, especially paired with <a href="https://www.royalparks.org.uk/parks/kensington-gardens" target="_blank" rel="noopener" class="guide-inline-link">Kensington Gardens</a> sweeps or nearby museum rows.<span class="guide-item-links"><a href="https://www.hrp.org.uk/kensington-palace/" target="_blank" rel="noopener">Kensington Palace</a><a href="https://www.royalparks.org.uk/parks/kensington-gardens" target="_blank" rel="noopener">Kensington Gardens</a></span></li>
+            <li><strong>Hampstead Heath</strong> Pond swims for the brave, Parliament Hill views for everyone else, and woodland paths that genuinely feel removed from Zone 1. Pack a layer; breezes on the ridge outperform phone weather apps.<span class="guide-item-links"><a href="https://www.cityoflondon.gov.uk/things-to-do/green-spaces/hampstead-heath" target="_blank" rel="noopener">Hampstead Heath</a></span></li>
+            <li><strong>Columbia Road Flower Market</strong> East London tradition: stalls loud with color, elbows at peak Sunday mid-morning, cafés absorbing the overflow. Arrive earlier for blooms without rugby-scrum aisles; stay for Brick Lane fumes if appetite returns.<span class="guide-item-links"><a href="https://www.columbiaroad.info/" target="_blank" rel="noopener">Columbia Road</a></span></li>
+            <li><strong>Liberty London</strong> The timber Tudor revival facade is half the thrill; haberdashery floors and scarves make dangerous souvenirs. Fine as a tactile shopping hour between Soho resets, not necessarily a haul day unless packing space allows.<span class="guide-item-links"><a href="https://www.libertylondon.com/" target="_blank" rel="noopener">Liberty</a></span></li>
+            <li><strong>Fortnum &amp; Mason</strong> Marble stairs, hamper fantasy, champagne afternoon tea upstairs when you crave ceremony without leaving Piccadilly. Even a short browse delivers scent and tinsel-tier packaging if a full reservation is not the mood.<span class="guide-item-links"><a href="https://www.fortnumandmason.com/" target="_blank" rel="noopener">Fortnum &amp; Mason</a></span></li>
+            <li><strong>Greenwich</strong> Clipper approach if tides and timetables align, then Observatory longitude nerdery, Cutty Sark planks, markets for lunch. The Thames curve from the terrace still feels like a different city than Westminster.<span class="guide-item-links"><a href="https://www.rmg.co.uk/royal-observatory" target="_blank" rel="noopener">Royal Observatory</a><a href="https://www.visitgreenwich.org.uk/" target="_blank" rel="noopener">Visit Greenwich</a></span></li>
+            <li><strong>Richmond</strong> Slow brunch, towpath strolls, terraced pubs, and Richmond Park expanses where deer herds surprise first-timers. Trains beat driving; let a west London afternoon expand without a tight schedule.<span class="guide-item-links"><a href="https://www.royalparks.org.uk/parks/richmond-park" target="_blank" rel="noopener">Richmond Park</a></span></li>
+            <li><strong>Themed walks &amp; pub routes</strong> London Walks schedules Jack the Ripper haunts, legal London, Dickens corners, Christmas lights, or bespoke private groups. Even a brisk two-hour stroll reframes neighbourhoods you thought you understood.<span class="guide-item-links"><a href="https://www.londonwalks.com/" target="_blank" rel="noopener">London Walks</a></span></li>
+          </ul>
+        </section>
+
+        <section class="guide-section">
+          <h3>Suggested London Days</h3>
+          <ul class="guide-list">
+            <li><strong>Classic first-day London</strong> <a href="https://www.coventgarden.london/" target="_blank" rel="noopener" class="guide-inline-link">Covent Garden</a>, Seven Dials, <a href="https://www.libertylondon.com/" target="_blank" rel="noopener" class="guide-inline-link">Liberty</a>, Soho bites, a <a href="https://www.officiallondontheatre.co.uk/" target="_blank" rel="noopener" class="guide-inline-link">West End show</a>, a brisk pint at <a href="https://www.greeneking.co.uk/pubs/greater-london/shakespeares-head" target="_blank" rel="noopener" class="guide-inline-link">The Shakespeare&rsquo;s Head</a>, then cocktails at <a href="https://www.mr-foggs.com/" target="_blank" rel="noopener" class="guide-inline-link">Mr Fogg&rsquo;s</a> or <a href="https://morgansoriginals.com/st-martins-lane/restaurants-bars/blind-spot/" target="_blank" rel="noopener" class="guide-inline-link">Blind Spot</a>.</li>
+            <li><strong>Food lover day</strong> <a href="https://boroughmarket.org.uk/" target="_blank" rel="noopener" class="guide-inline-link">Borough Market</a>, <a href="https://southbank.london/" target="_blank" rel="noopener" class="guide-inline-link">South Bank</a>, <a href="https://www.tate.org.uk/visit/tate-modern" target="_blank" rel="noopener" class="guide-inline-link">Tate Modern</a>, <a href="https://www.stpauls.co.uk/" target="_blank" rel="noopener" class="guide-inline-link">St Paul&rsquo;s</a> drift, <a href="https://old.spitalfieldsmarket.com/" target="_blank" rel="noopener" class="guide-inline-link">Spitalfields</a> or Shoreditch dinner.</li>
+            <li><strong>Stylish west London day</strong> Near <a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/hyatt-regency-london-the-churchill/lonch" target="_blank" rel="noopener" class="guide-inline-link">The Churchill</a>, Marylebone, <a href="https://www.selfridges.com/" target="_blank" rel="noopener" class="guide-inline-link">Selfridges Foodhall</a>, Hyde Park, afternoon tea at <a href="https://rubenshotel.com/dining-and-drinks/afternoon-tea" target="_blank" rel="noopener" class="guide-inline-link">The Rubens</a>, Mayfair drinks.</li>
+            <li><strong>East London day</strong> Near <a href="https://www.hyatt.com/en-US/hotel/england-united-kingdom/andaz-london-liverpool-street/lonaz" target="_blank" rel="noopener" class="guide-inline-link">Andaz Liverpool Street</a>, Spitalfields, Shoreditch, Brick Lane, <a href="https://engelbar.co.uk/" target="_blank" rel="noopener" class="guide-inline-link">Engel</a> or nearby dinner.</li>
+            <li><strong>Classic royal London day</strong> <a href="https://www.rct.uk/visit/buckingham-palace" target="_blank" rel="noopener" class="guide-inline-link">Buckingham Palace</a>, <a href="https://www.royalparks.org.uk/parks/st-jamess-park" target="_blank" rel="noopener" class="guide-inline-link">St James&rsquo;s Park</a>, <a href="https://www.parliament.uk/visiting/" target="_blank" rel="noopener" class="guide-inline-link">Parliament &amp; Westminster</a>, <a href="https://rubenshotel.com/dining-and-drinks/afternoon-tea" target="_blank" rel="noopener" class="guide-inline-link">Rubens afternoon tea</a>, Theatre or <a href="https://www.coventgarden.london/" target="_blank" rel="noopener" class="guide-inline-link">Covent Garden</a> cocktails.</li>
+            <li><strong>Slow London day</strong> <a href="https://www.visitrichmond.co.uk/" target="_blank" rel="noopener" class="guide-inline-link">Richmond</a>, riverside pub, <a href="https://www.royalparks.org.uk/parks/richmond-park" target="_blank" rel="noopener" class="guide-inline-link">Richmond Park</a>, let the pace drop.</li>
+          </ul>
+        </section>
+
+        <section class="guide-section">
+          <h3>Events &amp; Nightlife</h3>
+          <p>For Theatre, book ahead if a specific show matters. For comedy, live recordings, cabaret, drag, smaller shows: good options scatter across the city, so planning helps.</p>
+          <p>Soho works as an easy queer-friendly nightlife starting point. Cocktails orbit Mayfair, Covent Garden, Soho, Shoreditch, and the City; when velvet-curtain bars feel precious, tuck in a grounding pint first at Soho staples like The Shakespeare&rsquo;s Head, then escalate into the marquee reservations.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>Health &amp; Safety</h3>
+          <p>London is generally easy to navigate, but use normal city awareness. Watch phones near station entrances, busy sidewalks, and nightlife. On the Tube, keep bags zipped and respect rush-hour crush. Late at night, a black cab or rideshare beats a gritty walk home when energy is gone.</p>
+        </section>
+      </div>
+
+      <aside>
+        <div class="guide-side-card">
+          <h4>Best For</h4>
+          <ul>
+            <li>Travelers mixing Big Ben pacing with neighbourhoods and pubs</li>
+            <li>Theatre-forward trips with deliberate dinner &amp; bar routing</li>
+            <li>Food lovers layering markets with afternoon tea plans</li>
+            <li>Anyone ready to wear comfortable shoes everywhere</li>
+          </ul>
+        </div>
+        <div class="guide-side-card light">
+          <h4>When to Go</h4>
+          <p>Packs change fast in London; bring layers, a small umbrella, and shoes you can happily walk eight miles in. Shoulder-season Theatre energy is forgiving; midsummer afternoons can feel crowded around markets.</p>
+        </div>
+        <div class="guide-side-card light">
+          <h4>Paul&rsquo;s Planning Note</h4>
+          <p>&ldquo;London is best when you stop treating it like a checklist. See the icons, absolutely. But leave space for the city to do what it does best: a great pub, a perfect Theatre night, a neighborhood walk, a market lunch, a cocktail bar that feels hidden, and one meal you keep thinking about after you leave.&rdquo;</p>
+        </div>
+        <div class="guide-side-card light">
+          <h4>Good to Know</h4>
+          <p><strong>Entry docs.</strong> Confirm passports, ETA, or visa rules on <a href="https://www.gov.uk/guidance/prepare-to-enter-the-uk-before-you-travel" target="_blank" rel="noopener" class="guide-inline-link">official GOV.UK entry guidance</a> before you ticket.</p>
+          <p><strong>Insurance.</strong> Medical costs for tourists add up quickly; comprehensive travel coverage is strongly recommended.</p>
+          <p><strong>Tipping.</strong> Service charges often appear automatically on polished bills (commonly toward 12.5%). Double-check before adding again.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
 
 
 <!-- INSTAGRAM INSPIRATION -->
@@ -2211,13 +2637,27 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       closeDealsModal();
       return;
     }
-    const shareMenu = document.getElementById('sydney-guide-share-menu');
-    if (shareMenu && !shareMenu.hidden) {
+    const londonMd = document.getElementById('london-guide-modal');
+    const sydneyMd = document.getElementById('sydney-guide-modal');
+    const londonShare = document.getElementById('london-guide-share-menu');
+    const sydneyShare = document.getElementById('sydney-guide-share-menu');
+    if (londonMd && londonMd.classList.contains('open') && londonShare && !londonShare.hidden) {
+      closeLondonShareMenu();
+      e.preventDefault();
+      return;
+    }
+    if (sydneyMd && sydneyMd.classList.contains('open') && sydneyShare && !sydneyShare.hidden) {
       closeSydneyShareMenu();
       e.preventDefault();
       return;
     }
-    closeSydneyGuide();
+    if (londonMd && londonMd.classList.contains('open')) {
+      closeLondonGuide();
+      return;
+    }
+    if (sydneyMd && sydneyMd.classList.contains('open')) {
+      closeSydneyGuide();
+    }
   });
 
   // Accordion sub-items in menu
@@ -2344,7 +2784,10 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       return;
     }
     const sg = document.getElementById('sydney-guide-modal');
-    document.body.style.overflow = sg && sg.classList.contains('open') ? 'hidden' : '';
+    const lg = document.getElementById('london-guide-modal');
+    const guideOpen =
+      (sg && sg.classList.contains('open')) || (lg && lg.classList.contains('open'));
+    document.body.style.overflow = guideOpen ? 'hidden' : '';
   }
 
   function closeDealsModal() {
@@ -2360,6 +2803,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   function openDealsModal() {
     if (!dealsModal) return;
     closeSydneyGuide();
+    closeLondonGuide();
     dealsModal.classList.add('open');
     if (dealsLauncher) dealsLauncher.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
@@ -2412,6 +2856,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 
   function openSydneyGuide() {
     closeDealsModal();
+    closeLondonGuide();
     sydneyGuideModal.classList.add('open');
     document.body.style.overflow = 'hidden';
     if (window.location.hash !== '#sydney-guide') {
@@ -2471,10 +2916,106 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     });
   }
 
+  // London guide popup
+  const londonGuideModal = document.getElementById('london-guide-modal');
+  const londonEmailLink = document.getElementById('london-email-link');
+
+  function getLondonGuideUrl() {
+    return window.location.href.split('#')[0] + '#london-guide';
+  }
+
+  function closeLondonShareMenu() {
+    const toggle = document.getElementById('london-guide-share-toggle');
+    const menu = document.getElementById('london-guide-share-menu');
+    const dd = document.getElementById('london-guide-share-dropdown');
+    if (!toggle || !menu || !dd) return;
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    dd.classList.remove('open');
+  }
+
+  function toggleLondonShareMenu() {
+    const toggle = document.getElementById('london-guide-share-toggle');
+    const menu = document.getElementById('london-guide-share-menu');
+    const dd = document.getElementById('london-guide-share-dropdown');
+    if (!toggle || !menu || !dd) return;
+    if (menu.hidden) {
+      menu.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      dd.classList.add('open');
+    } else {
+      closeLondonShareMenu();
+    }
+  }
+
+  function openLondonGuide() {
+    closeDealsModal();
+    closeSydneyGuide();
+    if (!londonGuideModal) return;
+    londonGuideModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (window.location.hash !== '#london-guide') {
+      history.replaceState(null, '', '#london-guide');
+    }
+  }
+
+  function closeLondonGuide() {
+    if (!londonGuideModal || !londonGuideModal.classList.contains('open')) return;
+    closeLondonShareMenu();
+    londonGuideModal.classList.remove('open');
+    document.body.classList.remove('guide-printing');
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    if (window.location.hash === '#london-guide') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  function printLondonGuide() {
+    document.body.classList.add('guide-printing');
+    window.print();
+  }
+
+  if (londonGuideModal) {
+    londonGuideModal.addEventListener('click', (e) => {
+      if (e.target === londonGuideModal) closeLondonGuide();
+    });
+  }
+
+  const londonShareToggle = document.getElementById('london-guide-share-toggle');
+  const londonShareDropdown = document.getElementById('london-guide-share-dropdown');
+  const londonPrintShareBtn = document.getElementById('london-print-share-btn');
+
+  if (londonShareToggle) {
+    londonShareToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleLondonShareMenu();
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!londonShareDropdown || !londonGuideModal || !londonGuideModal.classList.contains('open')) return;
+    if (!londonShareDropdown.contains(e.target)) closeLondonShareMenu();
+  });
+
+  if (londonEmailLink) {
+    londonEmailLink.addEventListener('click', () => closeLondonShareMenu());
+    londonEmailLink.href = 'mailto:?subject=' + encodeURIComponent('London Travel Guide') + '&body=' + encodeURIComponent('Trip guide from Seven Feet Travel: ' + getLondonGuideUrl());
+  }
+
+  if (londonPrintShareBtn) {
+    londonPrintShareBtn.addEventListener('click', () => {
+      closeLondonShareMenu();
+      printLondonGuide();
+    });
+  }
+
   if (window.location.hash === '#travel-deals') {
     openDealsModal();
   }
-  if (window.location.hash === '#sydney-guide') {
+  else if (window.location.hash === '#london-guide') {
+    openLondonGuide();
+  }
+  else if (window.location.hash === '#sydney-guide') {
     openSydneyGuide();
   }
 </script>
