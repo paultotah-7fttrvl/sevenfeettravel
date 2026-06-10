@@ -3031,7 +3031,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   // Hide floating buttons when footer is visible
   (function() {
     const floats = [document.querySelector('.ig-float'), document.querySelector('.deals-float')];
-    const footer = document.querySelector('footer');
+    const footer = document.querySelector('body > footer');
     function updateFloats() {
       const nearFooter = footer.getBoundingClientRect().top <= window.innerHeight + 80;
       floats.forEach(el => el && el.classList.toggle('float-hidden', nearFooter));
