@@ -789,7 +789,7 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   box-shadow:0 8px 32px rgba(0,0,0,0.45);
   cursor:pointer; text-align:left;
   font-family:'Inter',sans-serif;
-  transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;
+  transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s,opacity 0.2s;
   max-width:min(320px,calc(100vw - 40px));
 }
 .deals-float:hover { transform:translateY(-2px); border-color:var(--gold); box-shadow:0 12px 40px rgba(0,0,0,0.5); }
@@ -3032,7 +3032,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   const floats = [document.querySelector('.ig-float'), document.querySelector('.deals-float')];
   new IntersectionObserver(([entry]) => {
     floats.forEach(el => el && el.classList.toggle('float-hidden', entry.isIntersecting));
-  }, { threshold: 0.1 }).observe(document.querySelector('footer'));
+  }, { threshold: 0, rootMargin: '0px 0px 80px 0px' }).observe(document.querySelector('footer'));
 </script>
 </body>
 </html>
