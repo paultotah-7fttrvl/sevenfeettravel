@@ -3033,7 +3033,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     const floats = [document.querySelector('.ig-float'), document.querySelector('.deals-float')];
     const footer = document.querySelector('footer');
     function updateFloats() {
-      const nearFooter = window.scrollY + window.innerHeight >= footer.offsetTop - 80;
+      const nearFooter = footer.getBoundingClientRect().top <= window.innerHeight + 80;
       floats.forEach(el => el && el.classList.toggle('float-hidden', nearFooter));
     }
     window.addEventListener('scroll', updateFloats, { passive: true });
