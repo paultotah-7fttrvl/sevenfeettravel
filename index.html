@@ -986,6 +986,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 .ig-float:hover { background:var(--gold-dim); border-color:var(--gold); transform:translateY(-2px); }
 .ig-float svg { width:15px; height:15px; flex-shrink:0; }
 .ig-float-handle { white-space:nowrap; }
+.ig-float.float-hidden, .deals-float.float-hidden { opacity:0; pointer-events:none; transform:translateY(8px); }
 
 @media (max-width:820px) {
   .ig-float-handle {
@@ -3026,6 +3027,12 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   else if (window.location.hash === '#sydney-guide') {
     openSydneyGuide();
   }
+
+  // Hide floating buttons when footer is visible
+  const floats = [document.querySelector('.ig-float'), document.querySelector('.deals-float')];
+  new IntersectionObserver(([entry]) => {
+    floats.forEach(el => el && el.classList.toggle('float-hidden', entry.isIntersecting));
+  }, { threshold: 0.1 }).observe(document.querySelector('footer'));
 </script>
 </body>
 </html>
