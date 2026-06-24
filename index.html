@@ -397,6 +397,11 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   background-position:center 38%;
   background-size:cover;
 }
+#nyc-shortlist-modal .guide-modal-hero {
+  background-image:linear-gradient(to top,rgba(0,0,0,0.82),rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=2400&fit=max&q=90&auto=format');
+  background-position:center 45%;
+  background-size:cover;
+}
 
 .guide-photo-break { margin:4px 0 22px; }
 .guide-photo-break-inner {
@@ -673,6 +678,49 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 }
 #london-guide-modal .guide-modal-panel .guide-photo-break-caption {
   font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+#nyc-shortlist-modal .guide-modal-panel {
+  width:min(900px,100%);
+}
+#nyc-shortlist-modal .guide-modal-panel .guide-section h3 {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:-0.02em;
+}
+#nyc-shortlist-modal .guide-modal-panel .guide-list strong {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15px;
+  font-weight:600;
+  line-height:1.25;
+}
+#nyc-shortlist-modal .guide-modal-panel .guide-side-card h4,
+#nyc-shortlist-modal .guide-modal-panel .guide-pin-meta {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+#nyc-shortlist-modal .guide-modal-panel .guide-section p,
+#nyc-shortlist-modal .guide-modal-panel .guide-list li,
+#nyc-shortlist-modal .guide-modal-panel .guide-side-card p,
+#nyc-shortlist-modal .guide-modal-panel .guide-side-card li {
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+#nyc-shortlist-modal .guide-modal-body {
+  grid-template-columns:minmax(0,1.4fr) minmax(240px,0.7fr);
+}
+.guide-shortlist-note {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:16px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#f0ebe3;
+  color:#5b4a2e;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
 }
 
 /* London guide: tighter vertical rhythm inside section boxes + spaced eat tiers */
@@ -1241,7 +1289,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
           <ul class="menu-sub" id="acc-guides">
             <li><a href="#guides" onclick="closeMenu(); openSydneyGuide();">Sydney</a></li>
             <li><a href="#guides" onclick="closeMenu(); openLondonGuide();">London</a></li>
-            <li><a href="#guides" onclick="closeMenu()">New York · Coming soon</a></li>
+            <li><a href="#guides" onclick="closeMenu(); openNycShortlist();">Paul's NYC Shortlist</a></li>
           </ul>
         </li>
         <li><a href="#inspire" onclick="closeMenu()">Travel Inspiration</a></li>
@@ -1675,16 +1723,18 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
         </button>
       </div>
 
-      <div class="guide-card coming-soon-card">
-        <div class="guide-img">
-          <div class="guide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&fit=crop&q=85');"></div>
-          <div class="guide-cs-overlay"><span class="cs-badge">Coming Soon</span></div>
-        </div>
-        <div class="guide-body">
-          <p class="guide-region">United States · Northeast</p>
-          <h3 class="guide-title">New York</h3>
-          <p class="guide-desc">The energy, the neighborhoods, the food, and how to make the most of it without wasting a single hour. Guide coming soon.</p>
-        </div>
+      <div class="guide-card">
+        <button type="button" onclick="openNycShortlist()" aria-label="Open Paul's NYC Shortlist">
+          <div class="guide-img" style="background-image:url('nyc-hero.png'); background-size:cover; background-position:center 45%;">
+            <div class="guide-img-tag">Shortlist</div>
+          </div>
+          <div class="guide-body">
+            <p class="guide-region">United States · Quick Picks</p>
+            <h3 class="guide-title">Paul's NYC Shortlist</h3>
+            <p class="guide-desc">Not a full destination guide: just the stays, tables, cocktails, studios, and Broadway tricks I actually send people to.</p>
+            <span class="guide-cta">View Shortlist →</span>
+          </div>
+        </button>
       </div>
 
     </div>
@@ -1942,6 +1992,120 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
           <p><strong>Passport &amp; backups.</strong> Carry the physical passport that matches your ETA, valid for the full trip. Keep phone photos (or a secure offline copy) of your passport photo page and ETA approval as backup.</p>
           <p><strong>Insurance.</strong> Medical care for visitors can get expensive; travel insurance is strongly recommended. Already have flights or hotels booked but still need coverage? I can help you place travel insurance as part of planning.</p>
           <p><strong>Money &amp; etiquette.</strong> GST is included in displayed prices. Tipping is not expected but appreciated for standout hospitality (around 10% at restaurants is a kind gesture when service shines).</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+
+<!-- NYC SHORTLIST MODAL -->
+<div class="guide-modal" id="nyc-shortlist-modal" role="dialog" aria-modal="true" aria-labelledby="nyc-shortlist-title">
+  <div class="guide-modal-panel" id="nyc-shortlist-content">
+    <div class="guide-modal-hero-shell">
+      <button class="guide-modal-close" type="button" onclick="closeNycShortlist()">Close</button>
+      <div class="guide-modal-hero">
+        <p class="guide-modal-kicker">Seven Feet Travel Shortlist</p>
+        <h2 class="guide-modal-title" id="nyc-shortlist-title">Paul's NYC Shortlist</h2>
+      </div>
+    </div>
+
+    <div class="guide-modal-actions">
+      <div class="guide-share-dropdown" id="nyc-shortlist-share-dropdown">
+        <button type="button" class="guide-share-toggle" id="nyc-shortlist-share-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nyc-shortlist-share-menu">
+          Share
+          <svg class="guide-share-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="guide-share-menu" id="nyc-shortlist-share-menu" role="menu" aria-labelledby="nyc-shortlist-share-toggle" hidden>
+          <a class="guide-share-menu-item" role="menuitem" id="nyc-shortlist-email-link" href="mailto:?subject=Paul%27s%20NYC%20Shortlist&amp;body=NYC%20shortlist%20from%20Seven%20Feet%20Travel%3A%20">
+            <span class="guide-share-menu-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <span class="guide-share-menu-text">Email shortlist</span>
+          </a>
+          <button type="button" class="guide-share-menu-item" role="menuitem" id="nyc-shortlist-print-share-btn">
+            <span class="guide-share-menu-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+            <span class="guide-share-menu-text">Print shortlist</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-modal-body">
+      <div class="guide-modal-main-col">
+        <section class="guide-section">
+          <h3>Where to Sleep, Eat &amp; Play</h3>
+          <p><strong>A Few NYC Favorites</strong></p>
+          <p>Think of this less as a guide and more as the answer I give friends when they text me &quot;what should I do in NYC.&quot;</p>
+          <p>It's a tighter edit on purpose: a few places I have actually enjoyed, booked, or recommended when someone wants the city to feel a little more dialed-in from the start. I wouldn&rsquo;t send you somewhere I didn&rsquo;t love myself.</p>
+          <p>Use it when you need a good hotel base, a real-occasion dinner, a bakery stop worth detouring for, a cocktail night with personality, a workout that feels very New York, or a smarter way into Broadway.</p>
+        </section>
+
+        <section class="guide-section">
+          <h3>The Picks</h3>
+          <div class="guide-pin-grid two-col">
+            <article class="guide-pin-card">
+              <a href="https://secure.foratravel.com/intake/Ps0LhXTUCD" target="_blank" rel="noopener" class="guide-pin-img-link" onclick="alert('You are heading to my secure Fora intake form so I can get to know you as a traveler and help book the right dates.');"><img class="guide-pin-card-img" src="nyc-andaz.png" width="1024" height="576" loading="lazy" decoding="async" alt="Andaz 5th Avenue room in New York"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Where to sleep</p>
+                <strong>Andaz 5th Avenue</strong>
+                <p>Book it for the location: Bryant Park, the Library, Midtown access, and easy movement uptown, downtown, or to Broadway. I can help compare dates, rates, perks, and room types before you lock it in.</p>
+                <div class="guide-pin-links"><a href="https://secure.foratravel.com/intake/Ps0LhXTUCD" target="_blank" rel="noopener" onclick="alert('You are heading to my secure Fora intake form so I can get to know you as a traveler and help book the right dates.');">Help me make a reservation</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://resy.com/cities/new-york-ny/venues/eleven-madison-park" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="nyc-eleven-madison.png" width="1024" height="576" loading="lazy" decoding="async" alt="Eleven Madison Park dining room"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Where to eat</p>
+                <strong>Eleven Madison Park</strong>
+                <p>The one for a real occasion: polished, theatrical, and very much a plan-ahead reservation.</p>
+                <div class="guide-pin-links"><a href="https://resy.com/cities/new-york-ny/venues/eleven-madison-park" target="_blank" rel="noopener">Reservations</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://www.libraebakery.com/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="nyc-librae.png" width="1024" height="576" loading="lazy" decoding="async" alt="Librae Bakery pistachio croissant and coffee"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Where to snack</p>
+                <strong>Librae Bakery</strong>
+                <p>Go for the pistachio croissant people fight over, then keep walking through the neighborhood like you meant to discover it casually.</p>
+                <div class="guide-pin-links"><a href="https://www.libraebakery.com/" target="_blank" rel="noopener">35 Cooper Sq, New York, NY</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <a href="https://doublechickenplease.com/" target="_blank" rel="noopener" class="guide-pin-img-link"><img class="guide-pin-card-img" src="nyc-double-chicken.png" width="1024" height="576" loading="lazy" decoding="async" alt="Bar at Double Chicken Please in New York"></a>
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Where to drink</p>
+                <strong>Double Chicken Please</strong>
+                <p>Cocktails that taste like dinner, in the best possible way. Book ahead when you can; this is not a secret anymore.</p>
+                <div class="guide-pin-links"><a href="https://doublechickenplease.com/" target="_blank" rel="noopener">115 Allen St, New York, NY</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Where to work out</p>
+                <strong>Peloton Studios New York</strong>
+                <p>Hudson Yards energy, live-class buzz, and a very specific kind of NYC morning if you like your travel with a sweat slot built in. You generally need a Peloton membership to book, but people ask me about this all the time because I have taken so many classes. If you are curious, ask me before your trip and I can talk you through what to watch for.</p>
+                <div class="guide-pin-links"><a href="https://studio.onepeloton.com/" target="_blank" rel="noopener">Peloton Studios</a></div>
+              </div>
+            </article>
+            <article class="guide-pin-card">
+              <div class="guide-pin-card-body">
+                <p class="guide-pin-meta">Where to get Broadway tix</p>
+                <strong>TodayTix</strong>
+                <p>You can often do better than the obvious sticker price. TodayTix is a good starting point, and I can share the specific trick I use when you want a show night without blowing the trip budget.</p>
+                <div class="guide-pin-links"><a href="https://www.todaytix.com/" target="_blank" rel="noopener">TodayTix</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <div class="guide-side-card">
+          <h4>Good For</h4>
+          <ul>
+            <li>A first night, quick weekend, or return trip that needs a few strong anchors</li>
+            <li>Travelers who want the city to feel planned without feeling overplanned</li>
+            <li>Hotel, food, cocktail, Broadway, and fitness stops that can shape a trip fast</li>
+          </ul>
         </div>
       </aside>
     </div>
@@ -2879,6 +3043,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     if (!dealsModal) return;
     closeSydneyGuide();
     closeLondonGuide();
+    closeNycShortlist();
     dealsModal.classList.add('open');
     if (dealsLauncher) dealsLauncher.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
@@ -2932,6 +3097,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   function openSydneyGuide() {
     closeDealsModal();
     closeLondonGuide();
+    closeNycShortlist();
     sydneyGuideModal.classList.add('open');
     document.body.style.overflow = 'hidden';
     if (window.location.hash !== '#sydney-guide') {
@@ -3026,6 +3192,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   function openLondonGuide() {
     closeDealsModal();
     closeSydneyGuide();
+    closeNycShortlist();
     if (!londonGuideModal) return;
     londonGuideModal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -3084,8 +3251,105 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     });
   }
 
+  // NYC shortlist popup
+  const nycShortlistModal = document.getElementById('nyc-shortlist-modal');
+  const nycShortlistEmailLink = document.getElementById('nyc-shortlist-email-link');
+
+  function getNycShortlistUrl() {
+    return window.location.href.split('#')[0] + '#nyc-shortlist';
+  }
+
+  function closeNycShortlistShareMenu() {
+    const toggle = document.getElementById('nyc-shortlist-share-toggle');
+    const menu = document.getElementById('nyc-shortlist-share-menu');
+    const dd = document.getElementById('nyc-shortlist-share-dropdown');
+    if (!toggle || !menu || !dd) return;
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    dd.classList.remove('open');
+  }
+
+  function toggleNycShortlistShareMenu() {
+    const toggle = document.getElementById('nyc-shortlist-share-toggle');
+    const menu = document.getElementById('nyc-shortlist-share-menu');
+    const dd = document.getElementById('nyc-shortlist-share-dropdown');
+    if (!toggle || !menu || !dd) return;
+    if (menu.hidden) {
+      menu.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      dd.classList.add('open');
+    } else {
+      closeNycShortlistShareMenu();
+    }
+  }
+
+  function openNycShortlist() {
+    closeDealsModal();
+    closeSydneyGuide();
+    closeLondonGuide();
+    if (!nycShortlistModal) return;
+    nycShortlistModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (window.location.hash !== '#nyc-shortlist') {
+      history.replaceState(null, '', '#nyc-shortlist');
+    }
+  }
+
+  function closeNycShortlist() {
+    if (!nycShortlistModal || !nycShortlistModal.classList.contains('open')) return;
+    closeNycShortlistShareMenu();
+    nycShortlistModal.classList.remove('open');
+    document.body.classList.remove('guide-printing');
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    if (window.location.hash === '#nyc-shortlist') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  function printNycShortlist() {
+    document.body.classList.add('guide-printing');
+    window.print();
+  }
+
+  if (nycShortlistModal) {
+    nycShortlistModal.addEventListener('click', (e) => {
+      if (e.target === nycShortlistModal) closeNycShortlist();
+    });
+  }
+
+  const nycShortlistShareToggle = document.getElementById('nyc-shortlist-share-toggle');
+  const nycShortlistShareDropdown = document.getElementById('nyc-shortlist-share-dropdown');
+  const nycShortlistPrintShareBtn = document.getElementById('nyc-shortlist-print-share-btn');
+
+  if (nycShortlistShareToggle) {
+    nycShortlistShareToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleNycShortlistShareMenu();
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!nycShortlistShareDropdown || !nycShortlistModal || !nycShortlistModal.classList.contains('open')) return;
+    if (!nycShortlistShareDropdown.contains(e.target)) closeNycShortlistShareMenu();
+  });
+
+  if (nycShortlistEmailLink) {
+    nycShortlistEmailLink.addEventListener('click', () => closeNycShortlistShareMenu());
+    nycShortlistEmailLink.href = 'mailto:?subject=' + encodeURIComponent("Paul's NYC Shortlist") + '&body=' + encodeURIComponent('NYC shortlist from Seven Feet Travel: ' + getNycShortlistUrl());
+  }
+
+  if (nycShortlistPrintShareBtn) {
+    nycShortlistPrintShareBtn.addEventListener('click', () => {
+      closeNycShortlistShareMenu();
+      printNycShortlist();
+    });
+  }
+
   if (window.location.hash === '#travel-deals') {
     openDealsModal();
+  }
+  else if (window.location.hash === '#nyc-shortlist') {
+    openNycShortlist();
   }
   else if (window.location.hash === '#london-guide') {
     openLondonGuide();
