@@ -723,6 +723,223 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   text-transform:uppercase;
 }
 
+/* ── SPLURGE INVITE CLUB ── */
+.splurge-section {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(200,168,75,0.16), transparent 34%),
+    linear-gradient(135deg,#10100f 0%,#171410 42%,#080808 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.splurge-section::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,0.65),transparent 70%);
+  pointer-events:none;
+}
+.splurge-section .sec-inner { position:relative; z-index:1; }
+.splurge-intro {
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(300px,0.7fr);
+  gap:42px;
+  align-items:stretch;
+}
+.splurge-copy p {
+  color:rgba(255,255,255,0.72);
+  font-size:15px;
+  line-height:1.8;
+  max-width:640px;
+  margin-bottom:16px;
+}
+.splurge-name {
+  font-size:clamp(54px,10vw,112px);
+  line-height:0.86;
+  letter-spacing:-0.07em;
+  margin:6px 0 24px;
+}
+.splurge-name em { color:var(--gold); font-style:italic; letter-spacing:-0.04em; }
+.splurge-pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+.splurge-pill {
+  border:1px solid rgba(200,168,75,0.42);
+  color:#f4df98;
+  background:rgba(200,168,75,0.08);
+  border-radius:999px;
+  padding:9px 13px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.13em;
+  text-transform:uppercase;
+}
+.splurge-gate {
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:24px;
+  padding:28px;
+  backdrop-filter:blur(16px);
+  box-shadow:0 24px 70px rgba(0,0,0,0.25);
+}
+.splurge-gate h3 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  color:#fff;
+  margin-bottom:10px;
+}
+.splurge-gate p {
+  color:rgba(255,255,255,0.68);
+  font-size:13.5px;
+  line-height:1.7;
+  margin-bottom:18px;
+}
+.splurge-access-form { display:grid; gap:12px; }
+.splurge-request-link + .splurge-access-form {
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,0.12);
+}
+.splurge-access-form input {
+  width:100%;
+  border:1px solid rgba(255,255,255,0.18);
+  background:rgba(0,0,0,0.28);
+  color:#fff;
+  border-radius:999px;
+  padding:14px 16px;
+  font:inherit;
+}
+.splurge-access-form input::placeholder { color:rgba(255,255,255,0.42); }
+.splurge-access-form button,
+.splurge-request-link,
+.splurge-offer-actions a {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid rgba(200,168,75,0.75);
+  background:var(--gold);
+  color:#111;
+  border-radius:999px;
+  padding:13px 18px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  text-decoration:none;
+  cursor:pointer;
+}
+.splurge-request-link {
+  margin-top:14px;
+  width:100%;
+  background:#fff;
+  color:#111;
+  border-color:rgba(255,255,255,0.75);
+}
+.splurge-access-error {
+  color:#ffd2c7;
+  font-size:12px;
+  line-height:1.5;
+}
+.splurge-access-hint {
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,0.12);
+  font-size:12px;
+  color:rgba(255,255,255,0.48);
+}
+.splurge-member-content {
+  margin-top:44px;
+  background:#f7f4ee;
+  color:#111;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 28px 90px rgba(0,0,0,0.34);
+}
+.splurge-offer-hero {
+  padding:34px;
+  background:linear-gradient(135deg,#fff 0%,#f1eadf 100%);
+  border-bottom:1px solid #dfd5c5;
+}
+.splurge-offer-kicker {
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#8a7040;
+  margin-bottom:10px;
+}
+.splurge-offer-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(34px,5vw,58px);
+  line-height:0.95;
+  color:#111;
+  margin-bottom:12px;
+}
+.splurge-offer-sub { color:#4d463b; font-size:15px; line-height:1.75; max-width:760px; }
+.splurge-offer-badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+.splurge-offer-badges span {
+  background:#111;
+  color:#fff;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+}
+.splurge-offer-body {
+  padding:34px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,0.75fr);
+  gap:28px;
+}
+.splurge-card {
+  background:#fff;
+  border:1px solid #e4ddd0;
+  border-radius:18px;
+  padding:24px;
+}
+.splurge-card h4 {
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#8a7040;
+  margin-bottom:14px;
+}
+.splurge-itinerary { list-style:none; display:grid; gap:8px; }
+.splurge-itinerary li {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  border-bottom:1px solid #eee8df;
+  padding-bottom:8px;
+  font-size:13.5px;
+  color:#433d35;
+}
+.splurge-itinerary li:last-child { border-bottom:none; padding-bottom:0; }
+.splurge-itinerary strong { color:#111; white-space:nowrap; }
+.splurge-detail-grid { display:grid; gap:16px; }
+.splurge-detail-grid p,
+.splurge-card p {
+  font-size:13.5px;
+  line-height:1.7;
+  color:#433d35;
+  margin-bottom:10px;
+}
+.splurge-detail-grid p:last-child,
+.splurge-card p:last-child { margin-bottom:0; }
+.splurge-offer-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.splurge-offer-actions a.secondary {
+  background:#fff;
+  color:#111;
+  border-color:#d6cbb8;
+}
+@media (max-width:860px) {
+  .splurge-intro,
+  .splurge-offer-body { grid-template-columns:1fr; }
+}
+
 /* London guide: tighter vertical rhythm inside section boxes + spaced eat tiers */
 #london-guide-modal .guide-modal-main-col > .guide-section {
   margin-bottom: 30px;
@@ -1293,6 +1510,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
             <li><a href="#guides" onclick="closeMenu(); openNycShortlist();">Paul's NYC Shortlist</a></li>
           </ul>
         </li>
+        <li><a href="#splurge" onclick="closeMenu()">SPLURGE · Request Access</a></li>
         <li><a href="#inspire" onclick="closeMenu()">Travel Inspiration</a></li>
       </ul>
     </div>
@@ -2424,6 +2642,98 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 
 
 
+<!-- SPLURGE -->
+<section id="splurge" class="sec splurge-section">
+  <div class="sec-inner">
+    <div class="splurge-intro">
+      <div class="splurge-copy">
+        <p class="lbl">Curated Travel</p>
+        <h2 class="splurge-name">SPL<em>URGE</em></h2>
+        <p>SPLURGE is the more curated side of Seven Feet Travel, created for travelers who are open to spending a little more when the experience is worth it.</p>
+        <p>Think of it like the difference between economy and business class. You are still getting where you want to go, and you are still getting great service. SPLURGE is just for the moments when you want a little extra: upgraded experiences, special sailings, added perks, group savings, or a trip that feels more elevated from the start.</p>
+        <p>If you are this type of traveler, please reach out for access. I&rsquo;ll just ask a few quick travel questions so I can share the offers and ideas that actually match the way you like to travel.</p>
+        <div class="splurge-pill-row">
+          <span class="splurge-pill">Special deals</span>
+          <span class="splurge-pill">Curated trips</span>
+          <span class="splurge-pill">Group savings</span>
+          <span class="splurge-pill">Tailored travel</span>
+        </div>
+      </div>
+
+      <div class="splurge-gate" id="splurge-gate">
+        <h3>Request Access</h3>
+        <p>Tell me a little about how you like to travel so I can share the right kinds of SPLURGE opportunities with you.</p>
+        <a class="splurge-request-link" href="mailto:paul.totah@fora.travel?subject=SPLURGE%20access%20request">Request Access</a>
+        <form class="splurge-access-form" id="splurge-access-form">
+          <input type="password" id="splurge-access-code" placeholder="Access code" autocomplete="off" aria-label="SPLURGE access code">
+          <button type="submit">Enter Private Area</button>
+          <p class="splurge-access-error" id="splurge-access-error" hidden>That code did not work. Check the access code and try again.</p>
+        </form>
+        <p class="splurge-access-hint">Local demo code: <strong>splurge2027</strong></p>
+      </div>
+    </div>
+
+    <div class="splurge-member-content" id="splurge-member-content" hidden>
+      <div class="splurge-offer-hero">
+        <p class="splurge-offer-kicker">Current SPLURGE Opportunity</p>
+        <h3 class="splurge-offer-title">Greece Sailing with Virgin Voyages</h3>
+        <p class="splurge-offer-sub">A RED HOT Greece sailing roundtrip from Athens/Piraeus with Santorini, Crete, Ephesus/Kusadasi, and an overnight-style Mykonos moment built into the week.</p>
+        <div class="splurge-offer-badges">
+          <span>July 4-11, 2027</span>
+          <span>Roundtrip Athens</span>
+          <span>RED HOT Sailing</span>
+        </div>
+      </div>
+
+      <div class="splurge-offer-body">
+        <div class="splurge-card">
+          <h4>Itinerary</h4>
+          <ul class="splurge-itinerary">
+            <li><strong>Sun, Jul 4</strong><span>Athens / Piraeus, Greece</span></li>
+            <li><strong>Mon, Jul 5</strong><span>Santorini, Greece</span></li>
+            <li><strong>Tue, Jul 6</strong><span>Chania / Souda Bay, Crete, Greece</span></li>
+            <li><strong>Wed, Jul 7</strong><span>Ephesus / Kusadasi, Turkey</span></li>
+            <li><strong>Thu, Jul 8</strong><span>At Sea</span></li>
+            <li><strong>Fri, Jul 9</strong><span>Mykonos, Greece</span></li>
+            <li><strong>Sat, Jul 10</strong><span>Mykonos, Greece</span></li>
+            <li><strong>Sun, Jul 11</strong><span>Athens / Piraeus, Greece</span></li>
+          </ul>
+        </div>
+
+        <div class="splurge-detail-grid">
+          <div class="splurge-card">
+            <h4>Cabins &amp; Pricing</h4>
+            <p><strong>Cabins:</strong> Central Sea Terrace or Sea Terrace.</p>
+            <p>Rate is based on double occupancy. Depending on cabin type, total cost is about $3,700-$3,900 per cabin with taxes included, or roughly $1,850-$1,950 per person.</p>
+            <p>Booking separately is $400+ more, so there are solid savings by booking into the group.</p>
+          </div>
+
+          <div class="splurge-card">
+            <h4>Group Rate Includes</h4>
+            <p>Classic WiFi for 1 device per sailor, $100 Bar Tab Sailor Loot, and dining pre-booking 45 days before sailing.</p>
+          </div>
+
+          <div class="splurge-card">
+            <h4>Deposit &amp; Payment</h4>
+            <p>20% deposit is due within 24 hours of booking. Final payment is due 120 days before sailing, and you can make payments along the way.</p>
+            <p>This is a RED HOT sailing, which means special guests, extra energy, and a very fun crowd on board.</p>
+          </div>
+        </div>
+
+        <div class="splurge-card">
+          <h4>Next Step</h4>
+          <p>Pricing and availability can move, especially for a group sailing. Send me a note and I can check current cabin availability, confirm the rate, and walk you through the deposit timing.</p>
+          <div class="splurge-offer-actions">
+            <a href="mailto:paul.totah@fora.travel?subject=Greece%20Virgin%20Voyages%20SPLURGE%20sailing">Request cabin pricing</a>
+            <a class="secondary" href="https://www.virginvoyages.com/itinerary/europe/7-night-red-hot-sailing-club-voyage-athens-mykonos-cruise" target="_blank" rel="noopener">View Virgin itinerary</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- INSTAGRAM INSPIRATION -->
 <section id="inspire" class="sec">
   <div class="sec-inner">
@@ -3344,6 +3654,45 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
       closeNycShortlistShareMenu();
       printNycShortlist();
     });
+  }
+
+  // SPLURGE soft gate (demo only; use server-side access control for sensitive offers).
+  const splurgeGate = document.getElementById('splurge-gate');
+  const splurgeContent = document.getElementById('splurge-member-content');
+  const splurgeAccessForm = document.getElementById('splurge-access-form');
+  const splurgeAccessCode = document.getElementById('splurge-access-code');
+  const splurgeAccessError = document.getElementById('splurge-access-error');
+  const splurgeDemoCode = 'splurge2027';
+
+  function unlockSplurge() {
+    if (splurgeGate) splurgeGate.hidden = true;
+    if (splurgeContent) splurgeContent.hidden = false;
+    if (splurgeAccessError) splurgeAccessError.hidden = true;
+    try {
+      sessionStorage.setItem('splurgeUnlocked', 'true');
+    } catch (err) {
+      // Some privacy modes can block storage; the unlocked state still works for this page load.
+    }
+  }
+
+  if (splurgeAccessForm && splurgeAccessCode) {
+    splurgeAccessForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const enteredCode = splurgeAccessCode.value.trim().toLowerCase();
+      if (enteredCode === splurgeDemoCode) {
+        unlockSplurge();
+      } else if (splurgeAccessError) {
+        splurgeAccessError.hidden = false;
+      }
+    });
+  }
+
+  try {
+    if (sessionStorage.getItem('splurgeUnlocked') === 'true') {
+      unlockSplurge();
+    }
+  } catch (err) {
+    // Ignore storage read errors and keep the gate visible.
   }
 
   if (window.location.hash === '#travel-deals') {
