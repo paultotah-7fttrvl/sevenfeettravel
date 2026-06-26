@@ -723,23 +723,12 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   text-transform:uppercase;
 }
 
-/* ── SPLURGE INVITE CLUB ── */
+/* ── SPLURGE ── */
 .splurge-section {
-  background:
-    radial-gradient(circle at 18% 8%, rgba(200,168,75,0.16), transparent 34%),
-    linear-gradient(135deg,#10100f 0%,#171410 42%,#080808 100%);
+  background:var(--black);
   color:#fff;
   position:relative;
   overflow:hidden;
-}
-.splurge-section::before {
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px);
-  background-size:52px 52px;
-  mask-image:linear-gradient(to bottom,rgba(0,0,0,0.65),transparent 70%);
-  pointer-events:none;
 }
 .splurge-section .sec-inner { position:relative; z-index:1; }
 .splurge-intro {
@@ -756,12 +745,14 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   margin-bottom:16px;
 }
 .splurge-name {
-  font-size:clamp(54px,10vw,112px);
-  line-height:0.86;
-  letter-spacing:-0.07em;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,7vw,82px);
+  font-weight:300;
+  line-height:1.02;
+  letter-spacing:-0.01em;
   margin:6px 0 24px;
 }
-.splurge-name em { color:var(--gold); font-style:italic; letter-spacing:-0.04em; }
+.splurge-name em { color:var(--gold); font-style:italic; }
 .splurge-pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
 .splurge-pill {
   border:1px solid rgba(200,168,75,0.42);
@@ -839,13 +830,6 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   color:#ffd2c7;
   font-size:12px;
   line-height:1.5;
-}
-.splurge-access-hint {
-  margin-top:14px;
-  padding-top:14px;
-  border-top:1px solid rgba(255,255,255,0.12);
-  font-size:12px;
-  color:rgba(255,255,255,0.48);
 }
 .splurge-member-content {
   margin-top:44px;
@@ -2669,7 +2653,6 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
           <button type="submit">Enter Private Area</button>
           <p class="splurge-access-error" id="splurge-access-error" hidden>That code did not work. Check the access code and try again.</p>
         </form>
-        <p class="splurge-access-hint">Local demo code: <strong>splurge2027</strong></p>
       </div>
     </div>
 
