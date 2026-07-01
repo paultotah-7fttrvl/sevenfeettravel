@@ -3638,7 +3638,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     });
   }
 
-  // SPLURGE soft gate (demo only; use server-side access control for sensitive offers).
+  // SPLURGE soft gate.
   const splurgeGate = document.getElementById('splurge-gate');
   const splurgeContent = document.getElementById('splurge-member-content');
   const splurgeAccessForm = document.getElementById('splurge-access-form');
@@ -3646,16 +3646,19 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   const splurgeAccessError = document.getElementById('splurge-access-error');
   const splurgeDemoCode = 'splurge2027';
 
+  function lockSplurge() {
+    if (splurgeGate) splurgeGate.hidden = false;
+    if (splurgeContent) splurgeContent.hidden = true;
+    if (splurgeAccessError) splurgeAccessError.hidden = true;
+  }
+
   function unlockSplurge() {
     if (splurgeGate) splurgeGate.hidden = true;
     if (splurgeContent) splurgeContent.hidden = false;
     if (splurgeAccessError) splurgeAccessError.hidden = true;
-    try {
-      sessionStorage.setItem('splurgeUnlocked', 'true');
-    } catch (err) {
-      // Some privacy modes can block storage; the unlocked state still works for this page load.
-    }
   }
+
+  lockSplurge();
 
   if (splurgeAccessForm && splurgeAccessCode) {
     splurgeAccessForm.addEventListener('submit', (e) => {
@@ -3667,14 +3670,6 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
         splurgeAccessError.hidden = false;
       }
     });
-  }
-
-  try {
-    if (sessionStorage.getItem('splurgeUnlocked') === 'true') {
-      unlockSplurge();
-    }
-  } catch (err) {
-    // Ignore storage read errors and keep the gate visible.
   }
 
   if (window.location.hash === '#travel-deals') {
