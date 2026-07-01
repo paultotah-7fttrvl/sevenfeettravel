@@ -839,6 +839,56 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   overflow:hidden;
   box-shadow:0 28px 90px rgba(0,0,0,0.34);
 }
+.splurge-category {
+  padding:34px 34px 0;
+}
+.splurge-category + .splurge-category {
+  padding-top:10px;
+}
+.splurge-category-kicker {
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#8a7040;
+  margin-bottom:8px;
+}
+.splurge-category-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(30px,4.5vw,48px);
+  font-weight:600;
+  line-height:1;
+  color:#111;
+  margin-bottom:12px;
+}
+.splurge-category-intro {
+  color:#4d463b;
+  font-size:14.5px;
+  line-height:1.75;
+  max-width:760px;
+  margin-bottom:22px;
+}
+.splurge-hotel-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-bottom:34px;
+}
+.splurge-hotel-card {
+  background:#fff;
+  border:1px solid #e4ddd0;
+  border-radius:18px;
+  padding:20px;
+}
+.splurge-hotel-card .deal-card-dest {
+  margin-bottom:8px;
+}
+.splurge-hotel-card .deal-card-name {
+  margin-bottom:10px;
+}
+.splurge-hotel-card .deal-card-desc {
+  margin-bottom:12px;
+}
 .splurge-offer-hero {
   padding:34px;
   background:linear-gradient(135deg,#fff 0%,#f1eadf 100%);
@@ -921,7 +971,8 @@ h2.dsp em { font-style:italic; color:var(--gold); }
 }
 @media (max-width:860px) {
   .splurge-intro,
-  .splurge-offer-body { grid-template-columns:1fr; }
+  .splurge-offer-body,
+  .splurge-hotel-grid { grid-template-columns:1fr; }
 }
 
 /* London guide: tighter vertical rhythm inside section boxes + spaced eat tiers */
@@ -1094,6 +1145,11 @@ h2.dsp em { font-style:italic; color:var(--gold); }
   -webkit-overflow-scrolling:touch;
 }
 .deals-modal-intro { font-size:14.5px; color:#555; line-height:1.75; max-width:720px; margin:0 0 24px; }
+.deals-modal-body .travel-deals-region { margin-bottom:22px; }
+.deals-modal-body .travel-deals-region-h { margin-bottom:12px; }
+.travel-deals-grid.single-card {
+  grid-template-columns:minmax(0, 520px);
+}
 .travel-deals-region { margin-bottom:36px; }
 .travel-deals-region:last-of-type { margin-bottom:24px; }
 .travel-deals-region-h {
@@ -1273,8 +1329,8 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 <!-- TRAVEL DEALS FLOAT + MODAL (update month copy in launcher, modal heading, mailto subject) -->
 <button type="button" id="travel-deals-launcher" class="deals-float" onclick="openDealsModal()" aria-expanded="false" aria-controls="deals-modal-panel">
   <span class="deals-float-lines">
-    <span class="deals-float-kicker">Destinations &amp; deals worth knowing about</span>
-    <span class="deals-float-month" id="travel-deals-month-inline">June 2026</span>
+    <span class="deals-float-kicker">Stay in the know</span>
+    <span class="deals-float-month" id="travel-deals-month-inline">Travel deals and more</span>
   </span>
   <span class="deals-float-chevron" aria-hidden="true">↓</span>
 </button>
@@ -1284,146 +1340,18 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
   <div id="deals-modal-panel" class="deals-modal-panel" tabindex="-1">
     <header class="deals-modal-head">
       <div>
-        <p class="lbl" style="justify-content:flex-start;color:#8a7040;margin:0 0 8px;">Featured offers</p>
-        <h2 id="deals-modal-title" class="dsp" style="font-size:clamp(24px,3.8vw,36px); margin:0; line-height:1.08;">Travel deals — <span id="deals-modal-month-h2">June 2026</span></h2>
+        <p class="lbl" style="justify-content:flex-start;color:#8a7040;margin:0 0 8px;">Seven Feet Travel Updates</p>
+        <h2 id="deals-modal-title" class="dsp" style="font-size:clamp(24px,3.8vw,36px); margin:0; line-height:1.08;">Stay in the <em>know.</em></h2>
       </div>
       <button type="button" class="deals-modal-close" onclick="closeDealsModal()" aria-label="Close">×</button>
     </header>
     <div class="deals-modal-body">
 
-    <p class="deals-modal-intro">Fourteen properties on offer this month, from a villa discount in Turks &amp; Caicos to a $1,000 resort credit in Maui. Booking windows and travel dates vary&mdash;reach out to confirm eligibility before you book.</p>
-
-    <section class="travel-deals-region">
-      <h3 class="travel-deals-region-h">Caribbean &amp; The Bahamas</h3>
-      <div class="travel-deals-grid">
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Turks &amp; Caicos</p>
-          <p class="deal-card-name">The Strand Turks &amp; Caicos</p>
-          <p class="deal-card-desc">30% off the Enhanced Villa Experience &middot; Daily breakfast &middot; VIP welcome amenity &middot; $200 hotel credit (4-night minimum).</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Jun 30, 2026 &middot; <strong>Travel through:</strong> Dec 20, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Paradise Island &middot; Bahamas</p>
-          <p class="deal-card-name">The Royal at Atlantis</p>
-          <p class="deal-card-desc">$300 resort credit on 7+ night stays in a 1- or 2-Bedroom Regal or Grand Suite &middot; Daily breakfast &middot; $100 resort credit.</p>
-          <p class="deal-card-when"><strong>Book &amp; travel through:</strong> Nov 20, 2026</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="travel-deals-region">
-      <h3 class="travel-deals-region-h">Mexico &amp; Central America</h3>
-      <div class="travel-deals-grid">
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Los Cabos, Mexico</p>
-          <p class="deal-card-name">Waldorf Astoria Los Cabos Pedregal</p>
-          <p class="deal-card-desc">25% off stays through September 30, 2026.</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Sept 27, 2026 &middot; <strong>Travel through:</strong> Sept 30, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Los Cabos, Mexico</p>
-          <p class="deal-card-name">Nobu Hotel Los Cabos</p>
-          <p class="deal-card-desc">Complimentary spa hydrotherapy for two with a 2+ night stay.</p>
-          <p class="deal-card-when"><strong>Book &amp; travel through:</strong> Dec 15, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Peninsula Papagayo &middot; Costa Rica</p>
-          <p class="deal-card-name">Andaz Peninsula Papagayo Resort, by Hyatt</p>
-          <p class="deal-card-desc">15% off all suites.</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Jun 30, 2026 &middot; <strong>Travel through:</strong> Mar 31, 2027</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="travel-deals-region">
-      <h3 class="travel-deals-region-h">United States</h3>
-      <div class="travel-deals-grid">
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Washington, DC</p>
-          <p class="deal-card-name">Salamander Washington DC</p>
-          <p class="deal-card-desc">$250 hotel credit &middot; Welcome amenity &middot; Valet parking &middot; Minimum 2-night stay.</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Jul 30, 2026 &middot; <strong>Travel through:</strong> Jul 31, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Tampa, Florida</p>
-          <p class="deal-card-name">The Tampa EDITION</p>
-          <p class="deal-card-desc">Guaranteed upgrade from Deluxe to Premier Room, subject to availability at booking.</p>
-          <p class="deal-card-when"><strong>Book &amp; travel through:</strong> Sept 30, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Boston, Massachusetts</p>
-          <p class="deal-card-name">Raffles Boston</p>
-          <p class="deal-card-desc">Complimentary 3rd night on qualifying stays, subject to availability. Third-night offer valid through Aug 31, 2026.</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Sept 30, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Boca Raton, Florida</p>
-          <p class="deal-card-name">Bungalows at The Boca Raton</p>
-          <p class="deal-card-desc">25% off stays of 4+ nights &middot; Daily kids club access for two children &middot; Beach, pools, water park, spa &amp; dining access.</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Oct 28, 2026 &middot; <strong>Travel:</strong> Jul 24 &ndash; Oct 31, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Bel-Air &middot; Los Angeles, California</p>
-          <p class="deal-card-name">Hotel Bel-Air &ndash; Dorchester Collection</p>
-          <p class="deal-card-desc">Complimentary 4th night for stays Jun 1&ndash;11 and Oct 25&ndash;Dec 24.</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Dec 20, 2026 &middot; <strong>Travel through:</strong> Dec 24, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">New Orleans, Louisiana</p>
-          <p class="deal-card-name">The Roosevelt New Orleans, A Waldorf Astoria Hotel</p>
-          <p class="deal-card-desc">15% off stays of 3+ nights (blackout dates may apply).</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Dec 30, 2026 &middot; <strong>Travel:</strong> Jul 26 &ndash; Dec 30, 2026</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Park City, Utah</p>
-          <p class="deal-card-name">Montage Deer Valley</p>
-          <p class="deal-card-desc">15% off select 1- and 2-bedroom specialty suites &middot; $300 daily resort credit &middot; Complimentary valet parking (2-night minimum).</p>
-          <p class="deal-card-when"><strong>Book &amp; travel through:</strong> Dec 31, 2026</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="travel-deals-region">
-      <h3 class="travel-deals-region-h">Hawaii &amp; Europe</h3>
-      <div class="travel-deals-grid">
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Wailea &middot; Maui, Hawaii</p>
-          <p class="deal-card-name">Wailea Beach Resort, Marriott Maui</p>
-          <p class="deal-card-desc">$1,000 resort credit &middot; Daily breakfast for two &middot; Welcome amenity &middot; Wi-Fi &middot; Potential room upgrade &middot; Early check-in/late check-out &middot; Personalized GM welcome (5-night minimum).</p>
-          <p class="deal-card-when"><strong>Book &amp; travel through:</strong> Jan 15, 2027</p>
-        </div>
-
-        <div class="deal-card">
-          <p class="deal-card-dest">Florence, Italy</p>
-          <p class="deal-card-name">The St. Regis Florence</p>
-          <p class="deal-card-desc">10% off &middot; Daily breakfast for two &middot; $100 hotel credit &middot; Welcome amenity &middot; Wi-Fi &middot; Guardian Angel service &middot; Early check-in/late check-out subject to availability.</p>
-          <p class="deal-card-when"><strong>Book by:</strong> Aug 31, 2026 &middot; <strong>Travel through:</strong> Mar 31, 2027</p>
-        </div>
-
-      </div>
-    </section>
-
-    <p class="travel-deals-disclaimer">Perks apply when booked through Seven Feet Travel and is subject to availability and hotel participation. Some offers are time-limited. Use the &ldquo;Ask Me About An Offer&rdquo; link below to contact me to confirm current eligibility before booking.</p>
+    <p class="deals-modal-intro">Occasional notes on smart hotel offers, special sailings, new guides, and travel ideas worth knowing about. I&rsquo;ll keep this light and useful: occasional updates only, no spam.</p>
 
     </div>
     <footer class="deals-modal-footer">
-      <a id="deals-modal-mailto" class="deals-modal-mailto" href="mailto:paul.totah@fora.travel?subject=Travel%20deals%20%E2%80%94%20June%202026">Ask me about an offer</a>
+      <a id="deals-modal-mailto" class="deals-modal-mailto" href="mailto:paul.totah@fora.travel?subject=Add%20me%20to%20the%20Seven%20Feet%20Travel%20update%20list">Join the List</a>
     </footer>
   </div>
 </div>
@@ -2657,9 +2585,79 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
     </div>
 
     <div class="splurge-member-content" id="splurge-member-content" hidden>
+      <div class="splurge-category">
+        <p class="splurge-category-kicker">SPLURGE on Hotels</p>
+        <h3 class="splurge-category-title">Limited-Time Hotel Offers</h3>
+        <p class="splurge-category-intro">A rotating set of hotel opportunities with savings, perks, credits, and elevated stay benefits. Booking windows and availability can move quickly, so reach out before you plan around a specific offer.</p>
+
+        <div class="splurge-hotel-grid">
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">Turks &amp; Caicos</p>
+            <p class="deal-card-name">Tablet Hotels Sale: 20% Off Beach Enclave</p>
+            <p class="deal-card-desc">Save 20% on room rates at Beach Enclave with Tablet Hotels, plus Tablet Plus perks including daily breakfast for two, a room upgrade subject to availability, early check-in/late check-out, and a property credit.</p>
+            <p class="deal-card-when"><strong>Book:</strong> Now &ndash; Jul 6, 2026<br><strong>Travel:</strong> Now &ndash; Dec 22, 2026</p>
+          </article>
+
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">New York City</p>
+            <p class="deal-card-name">Third Night Free at Gansevoort Meatpacking</p>
+            <p class="deal-card-desc">Stay 3 or more consecutive nights at Gansevoort Meatpacking NYC and enjoy a complimentary third night while exploring the best of the Meatpacking District.</p>
+            <p class="deal-card-when"><strong>Book:</strong> Now &ndash; Aug 31, 2026<br><strong>Travel:</strong> Now &ndash; Aug 31, 2026</p>
+          </article>
+
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">St. Lucia</p>
+            <p class="deal-card-name">Paradise Between The Pitons at Ladera Resort</p>
+            <p class="deal-card-desc">Escape to paradise at this adults-only resort and save 40% when you stay 3 or more nights.</p>
+            <p class="deal-card-when"><strong>Book:</strong> Now &ndash; Oct 31, 2026<br><strong>Travel:</strong> Now &ndash; Oct 31, 2026</p>
+          </article>
+
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">Santa Monica</p>
+            <p class="deal-card-name">Complimentary Third Night at Hotel Casa del Mar</p>
+            <p class="deal-card-desc">Stay 3 nights and enjoy a complimentary third night on select summer stays through December 31, 2026. Minimum 3-night stay; blackout dates and restrictions apply.</p>
+            <p class="deal-card-when"><strong>Book:</strong> Now &ndash; Dec 28, 2026<br><strong>Travel:</strong> Now &ndash; Dec 30, 2026</p>
+          </article>
+
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">Kauai</p>
+            <p class="deal-card-name">MAKANI-WIND Build Your Own Retreat at 1 Hotel Hanalei Bay</p>
+            <p class="deal-card-desc">Create a personalized wellness retreat with a 4-night minimum stay, featuring a $500 nightly wellness credit, daily breakfast, beach rentals, sessions with a personal Wellness Coach, and access to spa, fitness, and wellness experiences. Book at least 14 days in advance.</p>
+            <p class="deal-card-when"><strong>Book:</strong> Now &ndash; Dec 31, 2026<br><strong>Travel:</strong> Now &ndash; Dec 31, 2026</p>
+          </article>
+
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">Maui</p>
+            <p class="deal-card-name">$1,000 Resort Credit at Wailea Beach Resort</p>
+            <p class="deal-card-desc">Includes LUMINOUS Program amenities with a 5-night minimum stay: daily breakfast for two, a $1,000 resort credit, welcome amenity, Wi-Fi, airport transfers, early check-in/late check-out subject to availability, and potential room upgrade.</p>
+            <p class="deal-card-when"><strong>Book &amp; travel:</strong> Now &ndash; Jan 15, 2027</p>
+          </article>
+
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">London</p>
+            <p class="deal-card-name">Suite Perks &amp; Airport Transfers at The Dorchester</p>
+            <p class="deal-card-desc">Stay in a One-Bedroom Suite or higher and enjoy daily breakfast, a &pound;100 hotel credit per day, and complimentary roundtrip transfers from all major airports.</p>
+            <p class="deal-card-when"><strong>Book:</strong> Now &ndash; Mar 31, 2027<br><strong>Travel:</strong> Now &ndash; Mar 31, 2027</p>
+          </article>
+
+          <article class="splurge-hotel-card">
+            <p class="deal-card-dest">London</p>
+            <p class="deal-card-name">Complimentary Airport Transfers with Suite Stay at 45 Park Lane</p>
+            <p class="deal-card-desc">Stay in a One-Bedroom Suite or above to receive daily breakfast, a &pound;100 daily hotel credit, and roundtrip transfers from all major airports.</p>
+            <p class="deal-card-when"><strong>Book:</strong> Now &ndash; Mar 31, 2027<br><strong>Travel:</strong> Now &ndash; Mar 31, 2027</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="splurge-category">
+        <p class="splurge-category-kicker">SPLURGE on Cruises</p>
+        <h3 class="splurge-category-title">Group Sailings &amp; Special Voyages</h3>
+        <p class="splurge-category-intro">Cruise opportunities with group pricing, added value, and sailings that have a little more energy built in.</p>
+      </div>
+
       <div class="splurge-offer-hero">
         <p class="splurge-offer-kicker">Current SPLURGE Opportunity</p>
-        <h3 class="splurge-offer-title">Greece Sailing with Virgin Voyages</h3>
+        <h3 class="splurge-offer-title">See Greece &amp; Turkey with Virgin Voyages</h3>
         <p class="splurge-offer-sub">A RED HOT Greece sailing roundtrip from Athens/Piraeus with Santorini, Crete, Ephesus/Kusadasi, and an overnight-style Mykonos moment built into the week.</p>
         <div class="splurge-offer-badges">
           <span>July 4-11, 2027</span>
