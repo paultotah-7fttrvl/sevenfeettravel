@@ -55,9 +55,10 @@ nav {
   border-bottom:1px solid transparent;
 }
 nav.scrolled { background:rgba(13,13,13,0.96); backdrop-filter:blur(14px); border-color:var(--border); }
-.nav-logo { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--white); text-decoration:none; letter-spacing:0.03em; }
+.nav-logo { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--white); text-decoration:none; letter-spacing:0.03em; display:flex; align-items:center; }
 .nav-logo em { font-style:italic; }
 .nav-logo em span { color:inherit; }
+.nav-logo-img { height:48px; width:auto; display:block; }
 .nav-right { display:flex; align-items:center; gap:20px; }
 .nav-ig-link { display:flex; align-items:center; gap:6px; font-size:11px; font-weight:500; letter-spacing:0.1em; color:var(--muted); text-decoration:none; transition:color 0.2s; }
 .nav-ig-link:hover { color:var(--gold); }
@@ -1387,7 +1388,7 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#hero" class="nav-logo"><em>Seven <span>Feet</span></em> Travel</a>
+  <a href="#hero" class="nav-logo"><img src="sevenfeetlogo-nav.png" alt="Seven Feet Travel" class="nav-logo-img"></a>
   <div class="nav-right">
     <a href="https://instagram.com/sevenfeettravel" target="_blank" class="nav-ig-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
