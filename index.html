@@ -1326,6 +1326,81 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 .ig-float svg { width:15px; height:15px; flex-shrink:0; }
 .ig-float-handle { white-space:nowrap; }
 
+/* ── SPLASH INTRO ── */
+body.splash-active { overflow:hidden; }
+.site-splash {
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#050505;
+  color:var(--white);
+  opacity:1;
+  visibility:visible;
+  transition:opacity 0.7s ease, visibility 0.7s ease;
+}
+.site-splash[hidden] { display:none; }
+.site-splash::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center,rgba(200,168,75,0.14),transparent 44%);
+  pointer-events:none;
+}
+.site-splash-inner {
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:28px;
+  padding:32px;
+  text-align:center;
+}
+.site-splash-logo {
+  width:min(620px,72vw);
+  max-height:180px;
+  object-fit:contain;
+  animation:splashLogoIn 1.1s ease both;
+}
+.site-splash-skip {
+  appearance:none;
+  border:1px solid rgba(200,168,75,0.36);
+  background:rgba(255,255,255,0.04);
+  color:var(--muted);
+  border-radius:999px;
+  padding:10px 18px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:color 0.2s,border-color 0.2s,background 0.2s;
+}
+.site-splash-skip:hover {
+  color:var(--gold);
+  border-color:var(--gold);
+  background:rgba(200,168,75,0.08);
+}
+.site-splash-exit {
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+@keyframes splashLogoIn {
+  from { opacity:0; transform:translateY(10px) scale(0.98); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .site-splash,
+  .site-splash-logo {
+    animation:none;
+    transition:none;
+  }
+}
+
 @media (max-width:820px) {
   .ig-float-handle {
     position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
@@ -1349,6 +1424,14 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 </style>
 </head>
 <body>
+
+<!-- SPLASH INTRO -->
+<div id="site-splash" class="site-splash" role="dialog" aria-label="Seven Feet Travel intro">
+  <div class="site-splash-inner">
+    <img src="sevenfeetlogo-nav.png" alt="Seven Feet Travel" class="site-splash-logo">
+    <button type="button" id="site-splash-skip" class="site-splash-skip">Skip Intro</button>
+  </div>
+</div>
 
 <!-- IG FLOAT -->
 <a href="https://instagram.com/sevenfeettravel" target="_blank" class="ig-float" aria-label="Instagram @sevenfeettravel">
@@ -3143,6 +3226,50 @@ footer { background:var(--offblack); border-top:1px solid var(--border); padding
 </footer>
 
 <script>
+  // Splash intro
+  const siteSplash = document.getElementById('site-splash');
+  const siteSplashSkip = document.getElementById('site-splash-skip');
+  const splashStorageKey = 'sevenFeetSplashSeen';
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function hasSeenSplash() {
+    try {
+      return sessionStorage.getItem(splashStorageKey) === 'true';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markSplashSeen() {
+    try {
+      sessionStorage.setItem(splashStorageKey, 'true');
+    } catch (e) {
+      // If storage is unavailable, the intro will simply show again next visit.
+    }
+  }
+
+  function hideSplash() {
+    if (!siteSplash || siteSplash.hidden) return;
+    markSplashSeen();
+    document.body.classList.remove('splash-active');
+    siteSplash.classList.add('site-splash-exit');
+    window.setTimeout(() => {
+      siteSplash.hidden = true;
+      siteSplash.setAttribute('aria-hidden', 'true');
+    }, prefersReducedMotion ? 0 : 720);
+  }
+
+  if (siteSplash) {
+    if (hasSeenSplash()) {
+      siteSplash.hidden = true;
+      siteSplash.setAttribute('aria-hidden', 'true');
+    } else {
+      document.body.classList.add('splash-active');
+      window.setTimeout(hideSplash, prefersReducedMotion ? 700 : 1900);
+      if (siteSplashSkip) siteSplashSkip.addEventListener('click', hideSplash);
+    }
+  }
+
   // Nav scroll
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
