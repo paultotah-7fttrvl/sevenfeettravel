@@ -219,116 +219,6 @@
         <p class="text-link"><a href="about.html">Read the full story</a></p>
       </div>
     </div>
-
-    <div class="about-paths">
-
-          <!-- Card 1: About Seven Feet -->
-          <div class="about-path-card">
-            <button class="about-path-header" onclick="toggleAbout('sft')" aria-expanded="false">
-              <div>
-                <p class="about-path-label">The Business</p>
-                <h3 class="about-path-title">About Seven Feet Travel</h3>
-                <p class="about-path-preview">What I help plan · The approach</p>
-              </div>
-              <span class="about-path-arrow" id="sft-arrow">↓</span>
-            </button>
-            <div class="about-path-body" id="sft-body">
-              <div class="about-path-inner">
-                <div class="about-path-items">
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>Boutique luxury travel planning</strong>
-                      <p>Hotels, restaurants, experiences, and logistics, curated around how you actually like to travel, not a generic itinerary.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>Built around you</strong>
-                      <p>Full day-by-day plan or a loose framework with great picks. Your call every time.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>Fora Travel affiliation</strong>
-                      <p>Preferred rates, room upgrades, and supplier relationships most travelers can't access on their own.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>One point of contact</strong>
-                      <p>Before, during, and after your trip. No handoffs, no hold music.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2: About Paul -->
-          <div class="about-path-card">
-            <button class="about-path-header" onclick="toggleAbout('paul')" aria-expanded="false">
-              <div>
-                <p class="about-path-label">The Advisor</p>
-                <h3 class="about-path-title">About Paul</h3>
-                <p class="about-path-preview">Travel planning shaped by 25+ years on the inside.</p>
-              </div>
-              <span class="about-path-arrow" id="paul-arrow">↓</span>
-            </button>
-            <div class="about-path-body" id="paul-body">
-              <div class="about-path-inner">
-                <div class="about-path-items">
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>25+ years in travel &amp; hospitality</strong>
-                      <p>From writing paper tickets at STA Travel to building hospitality technology, I have seen the industry from nearly every angle.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>12 hotels, from the inside</strong>
-                      <p>I know what great service looks like because I have helped deliver it, across thousands of guest stays, events, and group experiences.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>Millions booked into hotels</strong>
-                      <p>My background in hotel sales and group travel gives me a practical understanding of rates, value, service expectations, and what happens behind the scenes.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>50+ countries traveled</strong>
-                      <p>I bring firsthand perspective from around the world, not just online research or recycled recommendations.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>A sharper eye for the details</strong>
-                      <p>I think about location, arrival flow, room type, service style, pacing, restaurants, transfers, and the little moments that make a trip feel better.</p>
-                    </div>
-                  </div>
-                  <div class="about-path-item">
-                    <span class="api-dot"></span>
-                    <div>
-                      <strong>Someone in your corner</strong>
-                      <p>My travelers should feel looked after, with thoughtful planning up front and support if something needs attention along the way.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-    </div>
   </div>
 </section>
 
@@ -1856,16 +1746,6 @@
     const btn = sub.previousElementSibling;
     const isOpen = sub.classList.toggle('open');
     btn.classList.toggle('is-open', isOpen);
-  }
-
-  // About section expandable cards
-  function toggleAbout(id) {
-    const body = document.getElementById(id + '-body');
-    const arrow = document.getElementById(id + '-arrow');
-    const header = arrow.closest('.about-path-header');
-    const isOpen = body.classList.toggle('open');
-    arrow.classList.toggle('open', isOpen);
-    header.setAttribute('aria-expanded', isOpen);
   }
 
   // Policies expand/collapse
