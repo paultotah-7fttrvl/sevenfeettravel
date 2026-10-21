@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Travel Planning | Seven Feet Travel</title>
+<meta name="description" content="Seven Feet Travel plans boutique luxury trips with a clear fee: complimentary hotel and cruise bookings, custom itineraries from $125, and full-service planning from $300.">
+<link rel="canonical" href="https://www.sevenfeettravel.com/planning.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="sevenfeetlogo-nav.png" alt="Seven Feet Travel" class="nav-logo-img"></a>
+  <div class="nav-right">
+    <a href="https://instagram.com/sevenfeettravel" target="_blank" class="nav-ig-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @sevenfeettravel
+    </a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+      <div class="menu-lines"><span></span><span></span><span></span></div>
+      Menu
+    </button>
+  </div>
+</nav>
+<!-- FULL MENU OVERLAY -->
+<div class="menu-overlay" id="main-menu" role="dialog" aria-label="Site navigation">
+  <button class="menu-close" onclick="toggleMenu()"><span class="menu-close-x">✕</span> Close</button>
+
+  <div class="menu-body">
+
+    <div>
+      <p class="menu-col-title">About</p>
+      <ul class="menu-links">
+        <li><a href="about.html" onclick="closeMenu()">About Seven Feet</a></li>
+        <li><a href="planning.html#how-it-works" onclick="closeMenu()">How It Works</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">Services</p>
+      <ul class="menu-links">
+        <li>
+          <a href="planning.html" onclick="closeMenu()">Planning Services</a>
+          <button class="menu-acc-toggle" onclick="toggleMenuAcc('acc-services')">
+            View tiers <span class="menu-acc-arrow">↓</span>
+          </button>
+          <ul class="menu-sub" id="acc-services">
+            <li><a href="planning.html#hotel" onclick="closeMenu()">Hotel, Rental Car &amp; Train: Free</a></li>
+            <li><a href="planning.html#cruise" onclick="closeMenu()">Cruise Booking: Free</a></li>
+            <li><a href="planning.html#itinerary" onclick="closeMenu()">Custom Itinerary: $125</a></li>
+            <li><a href="planning.html#full-service" onclick="closeMenu()">Full-Service Planning: $300+</a></li>
+            <li><a href="planning.html#groups" onclick="closeMenu()">Group Bookings: $250+</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#scanner" onclick="closeMenu()">Hotel Rate Scanner &amp; Price Alerts</a></li>
+        <li><a href="index.html#travel-deals" onclick="closeMenu()">Travel Deals</a></li>
+        <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">Explore</p>
+      <ul class="menu-links">
+        <li>
+          <a href="index.html#guides" onclick="closeMenu()">Destination Guides</a>
+          <button type="button" class="menu-acc-toggle" onclick="toggleMenuAcc('acc-guides')">
+            View guides <span class="menu-acc-arrow">↓</span>
+          </button>
+          <ul class="menu-sub" id="acc-guides">
+            <li><a href="index.html#guides" onclick="closeMenu()">Sydney</a></li>
+            <li><a href="index.html#guides" onclick="closeMenu()">London</a></li>
+            <li><a href="index.html#guides" onclick="closeMenu()">Paul's NYC Shortlist</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#splurge" onclick="closeMenu()">Splurge: Curated Travel</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">More</p>
+      <ul class="menu-links">
+        <li><a href="index.html#testimonials" onclick="closeMenu()">Client Reviews</a></li>
+        <li><a href="index.html#policies" onclick="closeMenu()">Policies</a></li>
+        <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="menu-footer">
+    <a href="https://instagram.com/sevenfeettravel" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @sevenfeettravel
+    </a>
+  </div>
+</div>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <p class="lbl">Planning Services</p>
+    <h1>Luxury travel, <em>planned with you.</em></h1>
+    <p class="page-lead">Seven Feet Travel is a boutique luxury travel advisory. Some trips need one great hotel. Others need the whole journey held together. The fee matches the work.</p>
+    <div class="page-actions">
+      <a class="btn-primary" href="#services">View the fees</a>
+      <a class="btn-primary" href="index.html#contact" style="background:transparent;color:#fff;border:1px solid rgba(200,168,75,0.7);">Start a trip</a>
+    </div>
+  </div>
+</header>
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="sec-inner">
+    <p class="lbl">Planning Process</p>
+    <h2 class="dsp">How It <em>Works</em></h2>
+    <div class="rule rule-dk"></div>
+    <p class="hiw-intro">Travel planning should feel exciting, not overwhelming. Whether you need a single hotel, a cruise, a multi-stop itinerary, or support for a more complex trip, I help turn the moving pieces into a plan that feels thoughtful, personal, and easy to follow.</p>
+    <div class="hiw-grid">
+      <article class="hiw-card">
+        <div class="hiw-num" aria-hidden="true">1</div>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">Tell me what you&rsquo;re dreaming up</h3>
+          <p>Share where you want to go, who&rsquo;s traveling, your timing, budget, and what you want the trip to feel like.</p>
+        </div>
+      </article>
+      <article class="hiw-card">
+        <div class="hiw-num" aria-hidden="true">2</div>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">I&rsquo;ll help you choose the right level of support</h3>
+          <p>Some trips only need a great hotel or cruise booking. Others need more detailed planning, research, coordination, and support.</p>
+        </div>
+      </article>
+      <article class="hiw-card">
+        <div class="hiw-num" aria-hidden="true">3</div>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">I&rsquo;ll shape the options</h3>
+          <p>I research hotels, routes, cruises, transportation, experiences, and the details that can make the trip smoother, smarter, and more memorable.</p>
+        </div>
+      </article>
+      <article class="hiw-card">
+        <div class="hiw-num" aria-hidden="true">4</div>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">You review and decide</h3>
+          <p>I&rsquo;ll share recommendations, talk through options, and adjust the plan based on what feels right for you.</p>
+        </div>
+      </article>
+      <article class="hiw-card hiw-card-span">
+        <div class="hiw-num" aria-hidden="true">5</div>
+        <div class="hiw-card-copy">
+          <h3 class="hiw-card-title">I stay connected</h3>
+          <p>Once the key pieces are booked, I help keep the details organized and stay available for questions, changes, and support before and during travel.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec" id="services">
+  <div class="sec-inner">
+
+    <p class="lbl">Planning Services</p>
+    <h2 class="dsp">Transparent<br><em>fee structure.</em></h2>
+    <div class="rule"></div>
+    <p class="services-fit-line"><strong>Why book with me?</strong> I help take the guesswork out of travel planning. I do the research and give you back your time.</p>
+
+    <div class="tier-grid">
+
+      <div class="tier t1" id="hotel">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 1 · Accommodations &amp; Transport</p>
+          <h3 class="t-name">Hotel, Rental Car &amp; Train</h3>
+          <p class="t-desc">Single reservations for accommodations or transport. Handled with the same attention to detail as any full itinerary.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Single hotel, rental car, or train reservation</li>
+            <li>Entertainment coordination</li>
+            <li>Itinerary confirmation</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$0</div><div class="p-note">No planning fee</div></div>
+            <div class="bdg b-free">Complimentary</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier t1b" id="cruise">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 1B · Cruise</p>
+          <h3 class="t-name">Cruise Booking</h3>
+          <p class="t-desc">Standard cruise reservations for up to 4 guests, covering cabin selection, dining, and shore excursion guidance.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Cruise cabin booking (up to 4 guests)</li>
+            <li>Dining &amp; preference coordination</li>
+            <li>Shore excursion guidance</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$0</div><div class="p-note">No planning fee</div></div>
+            <div class="bdg b-free">Complimentary</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier t2 ft" id="itinerary">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 2 · Multi-Destination Trips</p>
+          <h3 class="t-name">Custom Itinerary</h3>
+          <p class="t-desc">Multiple hotels, rental cars, or coordinating several moving parts across destinations. Includes up to 2 hours of planning work, with additional time available at $50 per hour.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Multiple hotel &amp; transport coordination</li>
+            <li>Up to 2 hours of planning</li>
+            <li>Additional planning time available at $50 per hour</li>
+            <li>Full itinerary build-out</li>
+            <li>Booking confirmations &amp; documentation</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$125</div><div class="p-note">flat fee · up to 2 hrs</div></div>
+            <div class="bdg b-pop">Most Common</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tier-grid-wide">
+
+      <div class="tier t3" id="full-service">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Tier 3 · Expeditions &amp; Complex Journeys</p>
+          <h3 class="t-name">Full-Service Planning</h3>
+          <p class="t-desc">Around-the-world itineraries, safaris, multi-country expeditions requiring deep research, vendor coordination, and ongoing trip support.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Full expedition &amp; itinerary planning</li>
+            <li>Vendor &amp; excursion coordination</li>
+            <li>Ongoing support throughout planning</li>
+            <li>In-trip availability for questions &amp; concerns</li>
+            <li>Emergency &amp; contingency guidance</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$300<span style="font-size:18px">+</span></div><div class="p-note">starting price · varies by scope</div></div>
+            <div class="bdg b-prem">Premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier tg" id="groups">
+        <div class="ta-top"></div>
+        <div class="tb-card">
+          <p class="t-lbl">Group Travel · Hotel or Cruise</p>
+          <h3 class="t-name">Group Bookings</h3>
+          <p class="t-desc">Room blocks or multiple cruise cabins, hotel or cruise. Flat fees are based on group size and room count.</p>
+          <p class="i-lbl">Includes</p>
+          <ul class="i-list">
+            <li>Room block or cruise cabin group coordination</li>
+            <li>Per-guest rooming list management</li>
+            <li>Group rate negotiation support</li>
+            <li>Confirmations for all travelers</li>
+            <li>$250 for 10-20 guest rooms</li>
+            <li>$400 for 21-30 guest rooms</li>
+            <li>$600 for 31+ guest rooms</li>
+          </ul>
+          <div class="card-price-row">
+            <div><div class="p-num">$250<span style="font-size:18px">+</span></div><div class="p-note">flat fee<br>by group size</div></div>
+            <div class="bdg b-grp">Group Rate</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="page-cta">
+  <p class="lbl" style="justify-content:center;">Start planning</p>
+  <h2>Ready to go <em>somewhere?</em></h2>
+  <p>Tell me where you want to go, when you are thinking of traveling, and what kind of trip feels like you.</p>
+  <a class="btn-primary" href="index.html#contact">Send a note</a>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">Seven <span>Feet</span> Travel</div>
+      <p class="ft-tag">Boutique luxury travel planning, from a single stay to an around-the-world expedition.</p>
+      <a href="https://instagram.com/sevenfeettravel" target="_blank" class="ig-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @sevenfeettravel
+      </a>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Navigate</p>
+      <ul>
+        <li><a href="about.html">About Seven Feet</a></li>
+        <li><a href="planning.html#how-it-works">How It Works</a></li>
+        <li><a href="planning.html">Planning Services</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#scanner">Hotel Rate Scanner &amp; Price Alerts</a></li>
+        <li><a href="index.html#travel-deals" >Travel Deals</a></li>
+        <li><a href="index.html#guides">Destination Guides</a></li>
+        <li><a href="index.html#testimonials">Client Reviews</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Services</p>
+      <ul>
+        <li><a href="planning.html#hotel">Hotel &amp; Car</a></li>
+        <li><a href="planning.html#cruise">Cruise Bookings</a></li>
+        <li><a href="planning.html#itinerary">Custom Itinerary</a></li>
+        <li><a href="planning.html#full-service">Full-Service Planning</a></li>
+        <li><a href="planning.html#groups">Group Travel</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Connect</p>
+      <ul>
+        <li><a href="https://instagram.com/sevenfeettravel" target="_blank">Instagram</a></li>
+        <li><a href="mailto:paul.totah@fora.travel">Email</a></li>
+        <li><a href="index.html#contact">Start Planning</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div>
+      <p class="ft-copy">© 2026 Seven Feet Travel. All rights reserved.</p>
+      <p class="ft-sot">State of Washington Seller of Travel (SOT) · UBI 605329242 &nbsp;·&nbsp; Paul Totah, Independent Fora Travel Advisor d/b/a Seven Feet Travel · UBI 606147086</p>
+    </div>
+    <div class="ft-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="index.html#policies">Policies</a>
+      <a href="planning.html">Fee Structure</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  const menuOverlay = document.getElementById('main-menu');
+  let menuOpen = false;
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    menuOverlay.classList.toggle('open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  }
+  function closeMenu() {
+    menuOpen = false;
+    menuOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function toggleMenuAcc(id) {
+    const sub = document.getElementById(id);
+    if (!sub) return;
+    const btn = sub.previousElementSibling;
+    const isOpen = sub.classList.toggle('open');
+    if (btn) btn.classList.toggle('is-open', isOpen);
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuOpen) closeMenu();
+  });
+</script>
+</body></html>

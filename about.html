@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Seven Feet Travel | Paul Totah</title>
+<meta name="description" content="Seven Feet Travel is Paul Totah's boutique luxury travel advisory. The name is his grandmother's Arabic nickname, and the planning comes from 25+ years inside travel and hospitality.">
+<link rel="canonical" href="https://www.sevenfeettravel.com/about.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="sevenfeetlogo-nav.png" alt="Seven Feet Travel" class="nav-logo-img"></a>
+  <div class="nav-right">
+    <a href="https://instagram.com/sevenfeettravel" target="_blank" class="nav-ig-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @sevenfeettravel
+    </a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+      <div class="menu-lines"><span></span><span></span><span></span></div>
+      Menu
+    </button>
+  </div>
+</nav>
+<!-- FULL MENU OVERLAY -->
+<div class="menu-overlay" id="main-menu" role="dialog" aria-label="Site navigation">
+  <button class="menu-close" onclick="toggleMenu()"><span class="menu-close-x">✕</span> Close</button>
+
+  <div class="menu-body">
+
+    <div>
+      <p class="menu-col-title">About</p>
+      <ul class="menu-links">
+        <li><a href="about.html" onclick="closeMenu()">About Seven Feet</a></li>
+        <li><a href="planning.html#how-it-works" onclick="closeMenu()">How It Works</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">Services</p>
+      <ul class="menu-links">
+        <li>
+          <a href="planning.html" onclick="closeMenu()">Planning Services</a>
+          <button class="menu-acc-toggle" onclick="toggleMenuAcc('acc-services')">
+            View tiers <span class="menu-acc-arrow">↓</span>
+          </button>
+          <ul class="menu-sub" id="acc-services">
+            <li><a href="planning.html#hotel" onclick="closeMenu()">Hotel, Rental Car &amp; Train: Free</a></li>
+            <li><a href="planning.html#cruise" onclick="closeMenu()">Cruise Booking: Free</a></li>
+            <li><a href="planning.html#itinerary" onclick="closeMenu()">Custom Itinerary: $125</a></li>
+            <li><a href="planning.html#full-service" onclick="closeMenu()">Full-Service Planning: $300+</a></li>
+            <li><a href="planning.html#groups" onclick="closeMenu()">Group Bookings: $250+</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#scanner" onclick="closeMenu()">Hotel Rate Scanner &amp; Price Alerts</a></li>
+        <li><a href="index.html#travel-deals" onclick="closeMenu()">Travel Deals</a></li>
+        <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">Explore</p>
+      <ul class="menu-links">
+        <li>
+          <a href="index.html#guides" onclick="closeMenu()">Destination Guides</a>
+          <button type="button" class="menu-acc-toggle" onclick="toggleMenuAcc('acc-guides')">
+            View guides <span class="menu-acc-arrow">↓</span>
+          </button>
+          <ul class="menu-sub" id="acc-guides">
+            <li><a href="index.html#guides" onclick="closeMenu()">Sydney</a></li>
+            <li><a href="index.html#guides" onclick="closeMenu()">London</a></li>
+            <li><a href="index.html#guides" onclick="closeMenu()">Paul's NYC Shortlist</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#splurge" onclick="closeMenu()">Splurge: Curated Travel</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="menu-col-title">More</p>
+      <ul class="menu-links">
+        <li><a href="index.html#testimonials" onclick="closeMenu()">Client Reviews</a></li>
+        <li><a href="index.html#policies" onclick="closeMenu()">Policies</a></li>
+        <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="menu-footer">
+    <a href="https://instagram.com/sevenfeettravel" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @sevenfeettravel
+    </a>
+  </div>
+</div>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <p class="lbl">The Agency</p>
+    <h1>About <em>Seven Feet.</em></h1>
+    <p class="page-lead">Seven Feet Travel is a boutique luxury travel advisory that plans personalized trips around how you actually travel, from hotels and dining to the details in between.</p>
+  </div>
+</header>
+<section class="sec sec-light page-section">
+  <div class="sec-inner story-grid">
+    <div class="story-copy">
+      <div class="name-story">
+        <p>My grandmother had an Arabic nickname for me. In English, it is seven feet. She said I could never sit still.</p>
+        <p>I would plan the next vacation while I was still on one, feet planted on one continent while I figured out which of the other six to go to.</p>
+      </div>
+      <div class="ideal-fit">
+        <h3>How I plan</h3>
+        <p>Best fit for travelers who want to give themselves back their time, whether they&rsquo;re planning a hotel stay, cruise, group trip, or custom itinerary that deserves thoughtful care and a few extra touches.</p>
+      </div>
+      <div class="fact-list">
+        <h3>The work</h3>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>Boutique luxury travel planning</strong><p>Hotels, restaurants, experiences, and logistics, curated around how you actually like to travel, not a generic itinerary.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>Built around you</strong><p>Full day-by-day plan or a loose framework with great picks. Your call every time.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>Fora Travel affiliation</strong><p>Preferred rates, room upgrades, and supplier relationships most travelers can&rsquo;t access on their own.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>One point of contact</strong><p>Before, during, and after your trip. No handoffs, no hold music.</p></div></div>
+        <h3>The advisor</h3>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>25+ years in travel &amp; hospitality</strong><p>From writing paper tickets at STA Travel to building hospitality technology, I have seen the industry from nearly every angle.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>12 hotels, from the inside</strong><p>I know what great service looks like because I have helped deliver it, across thousands of guest stays, events, and group experiences.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>Millions booked into hotels</strong><p>My background in hotel sales and group travel gives me a practical understanding of rates, value, service expectations, and what happens behind the scenes.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>50+ countries traveled</strong><p>I bring firsthand perspective from around the world, not just online research or recycled recommendations.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>A sharper eye for the details</strong><p>I think about location, arrival flow, room type, service style, pacing, restaurants, transfers, and the little moments that make a trip feel better.</p></div></div>
+        <div class="about-path-item"><span class="api-dot"></span><div><strong>Someone in your corner</strong><p>My travelers should feel looked after, with thoughtful planning up front and support if something needs attention along the way.</p></div></div>
+      </div>
+    </div>
+    <div class="about-photo">
+      <img src="paul.jpg" alt="Paul Totah, independent travel advisor at Seven Feet Travel">
+    </div>
+  </div>
+</section>
+<section class="page-cta">
+  <p class="lbl" style="justify-content:center;">Start planning</p>
+  <h2>Ready to go <em>somewhere?</em></h2>
+  <p>Tell me where you want to go, when you are thinking of traveling, and what kind of trip feels like you.</p>
+  <a class="btn-primary" href="index.html#contact">Send a note</a>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">Seven <span>Feet</span> Travel</div>
+      <p class="ft-tag">Boutique luxury travel planning, from a single stay to an around-the-world expedition.</p>
+      <a href="https://instagram.com/sevenfeettravel" target="_blank" class="ig-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @sevenfeettravel
+      </a>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Navigate</p>
+      <ul>
+        <li><a href="about.html">About Seven Feet</a></li>
+        <li><a href="planning.html#how-it-works">How It Works</a></li>
+        <li><a href="planning.html">Planning Services</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#scanner">Hotel Rate Scanner &amp; Price Alerts</a></li>
+        <li><a href="index.html#travel-deals" >Travel Deals</a></li>
+        <li><a href="index.html#guides">Destination Guides</a></li>
+        <li><a href="index.html#testimonials">Client Reviews</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Services</p>
+      <ul>
+        <li><a href="planning.html#hotel">Hotel &amp; Car</a></li>
+        <li><a href="planning.html#cruise">Cruise Bookings</a></li>
+        <li><a href="planning.html#itinerary">Custom Itinerary</a></li>
+        <li><a href="planning.html#full-service">Full-Service Planning</a></li>
+        <li><a href="planning.html#groups">Group Travel</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-col-t">Connect</p>
+      <ul>
+        <li><a href="https://instagram.com/sevenfeettravel" target="_blank">Instagram</a></li>
+        <li><a href="mailto:paul.totah@fora.travel">Email</a></li>
+        <li><a href="index.html#contact">Start Planning</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div>
+      <p class="ft-copy">© 2026 Seven Feet Travel. All rights reserved.</p>
+      <p class="ft-sot">State of Washington Seller of Travel (SOT) · UBI 605329242 &nbsp;·&nbsp; Paul Totah, Independent Fora Travel Advisor d/b/a Seven Feet Travel · UBI 606147086</p>
+    </div>
+    <div class="ft-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="index.html#policies">Policies</a>
+      <a href="planning.html">Fee Structure</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  const menuOverlay = document.getElementById('main-menu');
+  let menuOpen = false;
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    menuOverlay.classList.toggle('open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  }
+  function closeMenu() {
+    menuOpen = false;
+    menuOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function toggleMenuAcc(id) {
+    const sub = document.getElementById(id);
+    if (!sub) return;
+    const btn = sub.previousElementSibling;
+    const isOpen = sub.classList.toggle('open');
+    if (btn) btn.classList.toggle('is-open', isOpen);
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuOpen) closeMenu();
+  });
+</script>
+</body></html>
